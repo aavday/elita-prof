@@ -1,0 +1,31 @@
+{
+  "name": "elita-prof",
+  "version": "1.0.0",
+  "description": "Сайт компании ООО \"Элита-Проф\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aavday/elita-prof.git"
+  },
+  "author": "Alexey Avdeev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aavday/elita-prof/issues"
+  },
+  "homepage": "https://github.com/aavday/elita-prof#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
+    "sass": "^1.43.4"
+  }
+}
