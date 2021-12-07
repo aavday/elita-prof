@@ -1,40 +1,37 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const csso = require('gulp-csso');
-const imagemin = import('gulp-imagemin');
-const jsminify = require('gulp-minify');
-const postcss = require('gulp-postcss');
-const autoprefixer = require('gulp-autoprefixer');
-const babel = require('gulp-babel');
+import gulp from 'gulp';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import csso from 'gulp-csso';
+import imagemin  from 'gulp-imagemin';
+import jsminify from 'gulp-minify';
+import autoprefixer from 'gulp-autoprefixer';
+import babel from 'gulp-babel';
 
-function style () {
+const sass = gulpSass(dartSass);
+
+gulp.task('style', () => {
     return gulp.src('./src/scss/**/*.scss')
-    .pipe(sass())
-    .pipe(csso())
-    .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest('./dist/css'))
-}
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(csso())
+        .pipe(autoprefixer())
+        .pipe(gulp.dest('./dist/css'))
+})
 
-function js () {
+gulp.task('js', () => {
     return gulp.src('./src/js/**/main.js')
-    .pipe(babel())
-    .pipe(jsminify())
-    .pipe(gulp.dest('./dist/js'))
-}
+        .pipe(babel())
+        .pipe(jsminify())
+        .pipe(gulp.dest('./dist/js'))
+})
 
-function img () {
+gulp.task('img', () => {
     return gulp.src('./src/img/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('./dist/img'))
-}
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/img'));
+})
 
-function watch () {
-    gulp.watch('./src/scss/**/*.scss' , style);
-    gulp.watch('./src/img/*' , img);
-    gulp.watch('./src/js/**/*.js' , js);
-}
-
-exports.style = style;
-exports.js = js;
-exports.img = img;
-exports.watch = watch;
+gulp.task('watch', () => {
+    gulp.watch('./src/scss/**/*.scss' , gulp.series('style'));
+    gulp.watch('./src/img/*' , gulp.series('img'));
+    gulp.watch('./src/js/**/*.js' , gulp.series('js'));
+})

@@ -17,15 +17,26 @@
   },
   "homepage": "https://github.com/aavday/elita-prof#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "esm": "^3.2.25",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.3.0",
     "gulp-csso": "^4.0.1",
     "gulp-imagemin": "^8.0.0",
     "gulp-minify": "^3.1.0",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
+    "imagemin": "^8.0.1",
     "node-sass": "^6.0.1",
     "sass": "^1.43.4"
-  }
+  },
+  "type": "module",
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
