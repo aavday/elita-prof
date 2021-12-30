@@ -563,6 +563,21 @@ a.white-link {
     font-size: 18px;
   }
 
+  .feedback-slider {
+    & .owl-nav {
+      top: auto;
+      bottom: 23%;
+    }
+
+    & .owl-prev {
+      left: 45%;
+    }
+
+    & .owl-next {
+      right: 45%;
+    }
+  }
+
   .header {
     &-contacts,
     &-contacts-social {
