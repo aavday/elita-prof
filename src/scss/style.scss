@@ -692,6 +692,16 @@ a.white-link {
       }
     }
   }
+
+  .feedback-slider {
+    & .owl-prev {
+      left: 44%;
+    }
+
+    & .owl-next {
+      right: 44%;
+    }
+  }
 }
 
 @media (max-width: 576px) {
@@ -703,5 +713,15 @@ a.white-link {
 
   body {
     font-size: 16px;
+  }
+
+  .feedback-slider {
+    & .owl-prev {
+      left: 42%;
+    }
+
+    & .owl-next {
+      right: 42%;
+    }
   }
 }
