@@ -258,7 +258,7 @@ a.white-link {
         background: rgba(0, 0, 0, 0.4) !important;
 
         & a:hover {
-          background: rgba(0, 0, 0, 0.4) !important;
+          background: none;
         }
       }
     }
@@ -537,6 +537,15 @@ a.white-link {
     & .owl-prev {
       left: -1.7rem;
     }
+  }
+}
+
+//about
+
+.about {
+  & img {
+    padding: 0 20px;
+    margin-bottom: 15px;
   }
 }
 
