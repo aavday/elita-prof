@@ -38,6 +38,16 @@ $purple-main: #7d74ae;
 $purple-dark: #65589c;
 $smoke: #bbb;
 
+//color classes
+
+.dark-green {
+  color: #3c763d;
+}
+
+.light-green-bg {
+  background-color: #dff0d8;
+}
+
 //common
 
 body {
@@ -341,10 +351,11 @@ a.white-link {
 
 //sliders
 
-.owl-carousel {
+.owl-carousel.owl-theme {
   & .owl-nav {
     position: absolute;
-    top: calc(50% - 1em);
+    z-index: 1000;
+    top: calc(50% - 1rem);
     width: 100%;
     color: #fff;
     font-size: 4em;
@@ -353,6 +364,7 @@ a.white-link {
   & .owl-prev,
   & .owl-next {
     position: absolute;
+    line-height: 0 !important;
 
     &:hover,
     &:focus {
@@ -382,6 +394,28 @@ a.white-link {
     & span {
       opacity: 0.5;
       background: $purple-dark !important;
+    }
+  }
+
+  &.owl-nav-bottom {
+    & .owl-nav {
+      top: auto !important;
+      bottom: 30px !important;
+      color: $purple-dark !important;
+
+      & button:hover {
+        color: $purple-dark !important;
+      }
+    }
+
+    & .owl-prev,
+    & .owl-next {
+      position: absolute;
+
+      &:hover,
+      &:focus {
+        background: none !important;
+      }
     }
   }
 }
@@ -503,7 +537,8 @@ a.white-link {
     }
 
     & .owl-nav {
-      color: $purple-dark;
+
+      color: $purple-dark !important;
 
       & button:hover {
         color: $purple-dark !important;
@@ -522,21 +557,7 @@ a.white-link {
 
 .photos-main {
   &-slider {
-    & .owl-nav {
-      color: $purple-dark;
 
-      & button:hover {
-        color: $purple-dark !important;
-      }
-    }
-
-    & .owl-next {
-      right: -1.7rem;
-    }
-
-    & .owl-prev {
-      left: -1.7rem;
-    }
   }
 }
 
@@ -547,6 +568,12 @@ a.white-link {
     padding: 0 20px;
     margin-bottom: 15px;
   }
+}
+
+//certificates
+
+.certificates-slider__item-img {
+  max-height: 315px;
 }
 
 //footer
@@ -642,7 +669,7 @@ a.white-link {
 
     &-mob {
       height: 80px;
-      
+
       &__nav-toggle {
         cursor: pointer;
         position: relative;
@@ -651,7 +678,7 @@ a.white-link {
         border-radius: 66%;
         height: 24px;
         width: 50px;
-        
+
         &-line {
           position: absolute;
           top: 50%;
