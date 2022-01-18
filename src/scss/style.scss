@@ -48,6 +48,10 @@ $smoke: #bbb;
   background-color: #dff0d8;
 }
 
+.dark-purple-bg {
+  background-color: $purple-dark;
+}
+
 //common
 
 body {
@@ -574,6 +578,18 @@ a.white-link {
 
 .certificates-slider__item-img {
   max-height: 315px;
+}
+
+//catalog
+
+.catalog {
+  &-sections {
+    &__item {
+      line-height: 1.2;
+      margin-left: 0;
+      list-style-type: none;
+    }
+  }
 }
 
 //footer
