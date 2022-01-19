@@ -106,59 +106,71 @@
 <main class="main">
     <section class="section container catalog py-4">
         <div class="bg-white px-3 py-5 rounded">
+            <h1 class="catalog__title section-title fs-big mb-4 text-center">
+                Производство мебели
+            </h1>
             <div class="row">
-                <div class="col-3">
-                    <ul class="catalog-sections rounded shadow dark-purple-bg p-4 accordion accordion-flush">
-                        <li class="catalog-sections__item py-2 accordion-item">
-                            <div class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-item-1">
-                                <a href="" class="white-link hover-underline accordion-header">
+                <div class="col-xl-3 col-md-4">
+                    <ul class="catalog-sections rounded shadow bg-purple-dark p-0  accordion accordion-flush">
+                        <li class="catalog-sections__item py-2 px-4">
+                            <button type="button" class="accordion-button p-0 collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-item-1">
+                                <a href="" class="white-link d-block accordion-header">
                                     Медицинская и лабораторная мебель
                                 </a>
-                            </div>
+                            </button>
                             <div class="accordion-collapse collapse" id="accordion-item-1">
                                 <ul class="accordion-body">
-                                    <li>Модули с мойками</li>
-                                    <li>Надставки для столов</li>
+                                    <li class="catalog-sections__item py-2">
+                                        <a href="" class="white-link d-block">Модули с мойками</a>
+                                    </li>
+                                    <li class="catalog-sections__item py-2">
+                                        <a href="" class="white-link d-block">Надставки для столов</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="catalog-sections__item py-2">
-                            <a href="" class="white-link hover-underline">
+                        <li class="catalog-sections__item py-2 px-4">
+                            <a href="" class="white-link d-block">
                                 Корпусная мебель
                             </a>
                         </li>
-                        <li class="catalog-sections__item py-2">
-                            <a href="" class="white-link hover-underline">
+                        <li class="catalog-sections__item py-2 px-4">
+                            <a href="" class="white-link d-block">
                                 Офисная мебель
                             </a>
                         </li>
-                        <li class="catalog-sections__item py-2">
-                            <a href="" class="white-link hover-underline">
+                        <li class="catalog-sections__item py-2 px-4">
+                            <a href="" class="white-link d-block">
                                 Торговая мебель
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-9">
-                    <h1 class="catalog__title section-title fs-big mb-4 text-center">
-                        Производство мебели
-                    </h1>
+                <div class="col-xl-9 col-md-8">
                     <div class="catalog-items row">
-                        <div class="col-3">
-                            <img src="/dist/img/medicinskaja-i-laboratornaja-mebel.png" alt="" class="catalog-items__img rounded shadow w-100">
-                            <a href="/mebel/medicinskaja-i-laboratornaja-mebel/" class="text-center d-block mt-2">Медицинская и лабораторная мебель</a>
+                        <div class="col-xl-3 col-sm-6">
+                            <a href="/mebel/medicinskaja-i-laboratornaja-mebel/" class="hover-scale text-center d-block dark-purple-link hover-underline fw-bold">
+                                <img src="/dist/img/medicinskaja-i-laboratornaja-mebel.png" alt="" class="catalog-items__img rounded shadow w-100">
+                                <p class="mt-2">Медицинская и лабораторная мебель</p>
+                            </a>
                         </div>
-                        <div class="col-3">
-                            <img src="/dist/img/korpusnaja-mebel.png" alt="" class="catalog-items__img rounded shadow w-100">
-                            <a href="/mebel/korpusnaja-mebel/" class="text-center d-block mt-2">Корпусная мебель</a>
+                        <div class="col-xl-3 col-sm-6">
+                            <a href="/mebel/korpusnaja-mebel/" class="hover-scale text-center d-block dark-purple-link hover-underline fw-bold">
+                                <img src="/dist/img/korpusnaja-mebel.png" alt="" class="catalog-items__img rounded shadow w-100">
+                                <p class="mt-2">Корпусная мебель</p>
+                            </a>
                         </div>
-                        <div class="col-3">
-                            <img src="/dist/img/ofisnaja-mebel.png" alt="" class="catalog-items__img rounded shadow w-100">
-                            <a href="/mebel/ofisnaja-mebel/" class="text-center d-block mt-2">Офисная мебель</a>
+                        <div class="col-xl-3 col-sm-6">
+                            <a href="/mebel/ofisnaja-mebel/" class="hover-scale text-center d-block dark-purple-link hover-underline fw-bold">
+                                <img src="/dist/img/ofisnaja-mebel.png" alt="" class="catalog-items__img rounded shadow w-100">
+                                <p class="mt-2">Офисная мебель</p>
+                            </a>
                         </div>
-                        <div class="col-3">
-                            <img src="/dist/img/torgovaja-mebel.png" alt="" class="catalog-items__img rounded shadow w-100">
-                            <a href="/mebel/torgovaja-mebel/" class="text-center d-block mt-2">Торговая мебель</a>
+                        <div class="col-xl-3 col-sm-6">
+                            <a href="/mebel/torgovaja-mebel/" class="hover-scale text-center d-block dark-purple-link hover-underline fw-bold">
+                                <img src="/dist/img/torgovaja-mebel.png" alt="" class="catalog-items__img rounded shadow w-100">
+                                <p class="mt-2">Торговая мебель</p>
+                            </a>
                         </div>
                     </div>
                 </div>
