@@ -16,6 +16,8 @@ $enable-negative-margins: true;
 @import "../../node_modules/bootstrap/scss/dropdown";
 @import "../../node_modules/bootstrap/scss/modal";
 @import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/accordion";
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 @font-face {
@@ -588,6 +590,23 @@ a.white-link {
       line-height: 1.2;
       margin-left: 0;
       list-style-type: none;
+    }
+  }
+
+  & .accordion {
+    color: #fff;
+
+    ul li {
+      list-style-type: none;
+    }
+
+    &-button {
+      background: none;
+    }
+
+    &-item {
+      background: none !important;
+      border: none !important;
     }
   }
 }

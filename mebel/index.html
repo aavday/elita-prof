@@ -108,11 +108,19 @@
         <div class="bg-white px-3 py-5 rounded">
             <div class="row">
                 <div class="col-3">
-                    <ul class="catalog-sections rounded shadow dark-purple-bg p-4">
-                        <li class="catalog-sections__item py-2">
-                            <a href="" class="white-link hover-underline">
-                                Медицинская и лабораторная мебель
-                            </a>
+                    <ul class="catalog-sections rounded shadow dark-purple-bg p-4 accordion accordion-flush">
+                        <li class="catalog-sections__item py-2 accordion-item">
+                            <div class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-item-1">
+                                <a href="" class="white-link hover-underline accordion-header">
+                                    Медицинская и лабораторная мебель
+                                </a>
+                            </div>
+                            <div class="accordion-collapse collapse" id="accordion-item-1">
+                                <ul class="accordion-body">
+                                    <li>Модули с мойками</li>
+                                    <li>Надставки для столов</li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="catalog-sections__item py-2">
                             <a href="" class="white-link hover-underline">
