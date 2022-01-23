@@ -645,19 +645,15 @@ a.dark-purple-link {
     }
   }
 
-  &-item {
-    &__colors {
-      &-radio {
-        & + label {
-          border: 3px solid transparent;
-        }
+  &-item__colors-radio {
+    & + label {
+      border: 3px solid transparent;
+    }
 
-        &:checked {
-          & + label {
-            box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.5);
-            border: 3px solid $purple-dark;
-          }
-        }
+    &:checked {
+      & + label {
+        box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.5);
+        border: 3px solid $purple-dark;
       }
     }
   }
