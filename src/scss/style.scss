@@ -645,12 +645,19 @@ a.dark-purple-link {
     }
   }
 
-  &-items {
-    &__item {
-      transition: 0.2s;
+  &-item {
+    &__colors {
+      &-radio {
+        & + label {
+          border: 3px solid transparent;
+        }
 
-      &:hover {
-        transform: scale(1.1);
+        &:checked {
+          & + label {
+            box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.5);
+            border: 3px solid $purple-dark;
+          }
+        }
       }
     }
   }
