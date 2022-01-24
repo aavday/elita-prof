@@ -1,6 +1,8 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+
 /** @var $APPLICATION */
+
 $APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
 ?>
 
@@ -463,6 +465,6 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         </div>
     </section>
 
-<?
+<?php
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>
