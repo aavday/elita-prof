@@ -3,8 +3,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
 /** @var $APPLICATION */
 
-echo $_REQUEST['ELEMENT_CODE'];
-
 $APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
 ?>
 

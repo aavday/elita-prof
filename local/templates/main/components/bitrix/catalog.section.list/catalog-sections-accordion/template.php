@@ -13,6 +13,9 @@ if (!empty($arResult['SECTIONS'])):
         } else {
             $accordionBtnAttributes = '';
         }
+
+        $this->AddEditAction($section['ID'], $section['EDIT_LINK'], CIBlock::GetArrayByID($section['IBLOCK_ID'], 'ELEMENT_EDIT'));
+        $this->AddDeleteAction($section['ID'], $section['DELETE_LINK'], CIBlock::GetArrayByID($section['IBLOCK_ID'], 'ELEMENT_DELETE'));
         ?>
         <li class="catalog-sections__item py-2 px-4">
             <button type="button" <?=$accordionBtnAttributes; ?>>

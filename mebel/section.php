@@ -4,6 +4,8 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 /** @var $APPLICATION */
 
 $APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
+
+echo $_REQUEST['SECTION_CODE'];
 ?>
 
 <section class="section container catalog py-4">
@@ -23,11 +25,12 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                 );?>
             </div>
             <div class="col-xl-9 col-md-8">
-                <?php $APPLICATION->IncludeComponent("bitrix:catalog.section","catalog-section-elements",
+                <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list","catalog-sections",
                     Array(
                         "IBLOCK_TYPE" => "catalog",
                         "IBLOCK_ID" => "1",
                         "SECTION_CODE" => $_REQUEST['SECTION_CODE'],
+                        "TOP_DEPTH" => "2"
                     )
                 );?>
             </div>
