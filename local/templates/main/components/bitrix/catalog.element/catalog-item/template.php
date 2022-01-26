@@ -28,7 +28,7 @@ if (!empty($arResult)):
                     <button class="catalog-item__add-to-cart-btn py-2 button hover-scale button-dark-purple text-shadow-contour hover-shadow rounded fw-bold">
                         <i class="fas fa-cart-arrow-down me-2"></i>В корзину
                     </button>
-                    <?php if ($arResult['PROPERTIES']['COLORS']['VALUE'] !== ''): ?>
+                    <?php if (!empty($arResult['PROPERTIES']['COLORS']['VALUE'])): ?>
                     <p class="catalog-item__colors">
                         <p class="fw-bold">Цвет:</p>
                         <?php foreach ($arResult['PROPERTIES']['COLORS']['FIELDS'] as $key => $colorFields): ?>
