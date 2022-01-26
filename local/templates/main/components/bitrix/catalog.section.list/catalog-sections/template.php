@@ -1,10 +1,10 @@
 <?php
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-/** @var $APPLICATION */
 /** @var array $arParams */
 /** @var array $arResult */
-/** @var $component */
+/** @var CBitrixComponent $component */
+/** @global CMain $APPLICATION */
 
 if (!empty($arResult['SECTIONS'])):
 ?>
@@ -28,7 +28,9 @@ if (!empty($arResult['SECTIONS'])):
     Array(
         "IBLOCK_TYPE" => "catalog",
         "IBLOCK_ID" => "1",
-        "SECTION_CODE" => $arParams['SECTION_CODE']
+        "SECTION_CODE" => $arParams['SECTION_CODE'],
+        "SET_TITLE" => "N",
+        "SET_BROWSER_TITLE" => "N"
     ),
     $component
 );?>

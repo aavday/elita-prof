@@ -25,6 +25,8 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                         "IBLOCK_TYPE" => "catalog",
                         "IBLOCK_ID" => "1",
                         "ELEMENT_CODE" => $_REQUEST['ELEMENT_CODE'],
+                        "SET_TITLE" => "N",
+                        "SET_BROWSER_TITLE" => "N"
                     )
                 );?>
             </div>

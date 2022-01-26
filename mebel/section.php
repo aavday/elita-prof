@@ -3,13 +3,13 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
 /** @global CMain $APPLICATION */
 
-$APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
+$APPLICATION->SetTitle("Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России");
 ?>
 
 <section class="section container catalog py-4">
     <div class="bg-white px-3 py-5 rounded">
         <h1 class="catalog__title section-title fs-big mb-4 text-center">
-            Производство мебели
+            <?php $APPLICATION->ShowTitle(); ?>
         </h1>
         <div class="row">
             <div class="col-xl-3 col-md-4">
