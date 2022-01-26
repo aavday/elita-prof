@@ -1,7 +1,7 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
-/** @var $APPLICATION */
+/** @global CMain $APPLICATION */
 
 $APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
 ?>
