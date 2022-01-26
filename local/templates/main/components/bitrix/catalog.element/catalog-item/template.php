@@ -28,17 +28,17 @@ if (!empty($arResult)):
                     <button class="catalog-item__add-to-cart-btn py-2 button hover-scale button-dark-purple text-shadow-contour hover-shadow rounded fw-bold">
                         <i class="fas fa-cart-arrow-down me-2"></i>В корзину
                     </button>
+                    <?php if ($arResult['PROPERTIES']['COLORS']['VALUE'] !== ''): ?>
                     <p class="catalog-item__colors">
-                    <p class="fw-bold">Цвет:</p>
-                    <input type="radio" name="color" id="color-1" class="catalog-item__colors-radio d-none" checked>
-                    <label for="color-1" class="catalog-item__colors-label button rounded py-2" style="background-image: url('/dist/img/color-1-big.jpg')">
-                        Айскрим
-                    </label>
-                    <input type="radio" name="color" id="color-2" class="catalog-item__colors-radio d-none">
-                    <label for="color-2" class="catalog-item__colors-label color-white button rounded py-2" style="background-image: url('/dist/img/wood-1-big.jpg')">
-                        Амброзия
-                    </label>
+                        <p class="fw-bold">Цвет:</p>
+                        <?php foreach ($arResult['PROPERTIES']['COLORS']['FIELDS'] as $key => $colorFields): ?>
+                        <input type="radio" name="color" id="color-<?=$colorFields['CODE']; ?>" class="catalog-item__colors-radio d-none" <?php if ($key === 1) echo 'checked'; ?>>
+                        <label for="color-<?=$colorFields['CODE']; ?>" class="catalog-item__colors-label button rounded py-2" style="background-image: url('<?=CFile::GetPath($colorFields['PREVIEW_PICTURE']); ?>'); color: <?=$colorFields['PROPERTY_TEXT_COLOR_XML_ID']; ?>;">
+                            <?=$colorFields['NAME']; ?>
+                        </label>
+                        <?php endforeach; ?>
                     </p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
