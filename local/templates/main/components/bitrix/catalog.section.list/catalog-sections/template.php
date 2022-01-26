@@ -27,7 +27,7 @@ if (!empty($arResult['SECTIONS'])):
 <?php $APPLICATION->IncludeComponent("bitrix:catalog.section","catalog-section-elements",
     Array(
         "IBLOCK_TYPE" => "catalog",
-        "IBLOCK_ID" => "1",
+        "IBLOCK_ID" => $arParams['IBLOCK_ID'],
         "SECTION_CODE" => $arParams['SECTION_CODE'],
         "SET_TITLE" => "N",
         "SET_BROWSER_TITLE" => "N"
