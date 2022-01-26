@@ -13,7 +13,7 @@ if (!empty($arResult)):
         <div class="row">
             <div class="col-xl-5 col-lg-6">
                 <a href="<?=$arResult['DETAIL_PICTURE']['SRC']; ?>" data-lightbox="catalog-item">
-                    <img src="<?=$arResult['PREVIEW_PICTURE']['SRC']; ?>" alt="" class="catalog-item__img rounded shadow w-100">
+                    <img src="<?=$arResult['PREVIEW_PICTURE']['SRC']; ?>" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img rounded shadow w-100">
                 </a>
             </div>
             <div class="col-xl-7 col-lg-6 mt-lg-0 mt-4" >

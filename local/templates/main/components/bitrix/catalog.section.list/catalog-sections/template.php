@@ -15,7 +15,7 @@ if (!empty($arResult['SECTIONS'])):
             ?>
             <div class="col-xl-3 col-sm-6">
                 <a href="<?=$section['SECTION_PAGE_URL']; ?>" class="hover-scale text-center d-block dark-purple-link hover-underline fw-bold">
-                    <img src="<?=$section['PICTURE']['SRC']; ?>" alt="" class="catalog-items__img rounded shadow w-100">
+                    <img src="<?=$section['PICTURE']['SRC']; ?>" alt="<?=$section['NAME']; ?>" class="catalog-items__img rounded shadow w-100">
                     <p class="mt-2"><?=$section['NAME']; ?></p>
                 </a>
             </div>
