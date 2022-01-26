@@ -4,8 +4,6 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 /** @var $APPLICATION */
 
 $APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
-
-echo $_REQUEST['SECTION_CODE'];
 ?>
 
 <section class="section container catalog py-4">

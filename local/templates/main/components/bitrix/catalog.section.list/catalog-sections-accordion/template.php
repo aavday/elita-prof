@@ -8,21 +8,18 @@ if (!empty($arResult['SECTIONS'])):
     <ul class="catalog-sections rounded shadow bg-purple-dark p-0  accordion accordion-flush">
     <?php
     foreach ($arResult['SECTIONS'] as $key => $section):
-        if (!empty($section['SUB_SECTIONS'])) {
-            $accordionBtnAttributes = 'class="accordion-button p-0 collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-item-' . $key . '"';
-        } else {
-            $accordionBtnAttributes = '';
-        }
-
         $this->AddEditAction($section['ID'], $section['EDIT_LINK'], CIBlock::GetArrayByID($section['IBLOCK_ID'], 'ELEMENT_EDIT'));
         $this->AddDeleteAction($section['ID'], $section['DELETE_LINK'], CIBlock::GetArrayByID($section['IBLOCK_ID'], 'ELEMENT_DELETE'));
         ?>
         <li class="catalog-sections__item py-2 px-4">
-            <button type="button" <?=$accordionBtnAttributes; ?>>
+            <div class="d-flex">
                 <a href="<?=$section['SECTION_PAGE_URL']; ?>" class="white-link d-block accordion-header">
                     <?=$section['NAME']; ?>
                 </a>
-            </button>
+                <?php if (!empty($section['SUB_SECTIONS'])): ?>
+                <button type="button" class="accordion-button collapsed p-0" data-bs-toggle="collapse" data-bs-target="#accordion-item-<?=$key; ?>"></button>
+                <?php endif; ?>
+            </div>
             <?php if (!empty($section['SUB_SECTIONS'])): ?>
                 <div class="accordion-collapse collapse" id="accordion-item-<?=$key; ?>">
                     <ul class="accordion-body">
