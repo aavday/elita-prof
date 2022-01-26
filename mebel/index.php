@@ -48,6 +48,7 @@ $title = $APPLICATION->GetTitle();
     Array(
         "IBLOCK_TYPE" => "catalog",
         "IBLOCK_ID" => "2",
+        "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
         "PARENT_SECTION" => 1,
         "SET_TITLE" => "N",
         "SET_BROWSER_TITLE" => "N",
@@ -60,6 +61,7 @@ $title = $APPLICATION->GetTitle();
     Array(
         "IBLOCK_TYPE" => "catalog",
         "IBLOCK_ID" => "2",
+        "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
         "PARENT_SECTION" => 2,
         "SET_TITLE" => "N",
         "SET_BROWSER_TITLE" => "N",
