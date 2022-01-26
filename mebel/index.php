@@ -4,6 +4,8 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 /** @global CMain $APPLICATION */
 
 $APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
+// сохраняем тайтл, чтобы повторить его в конце страницы и избежать переопределения тайтла в компонентах
+$title = $APPLICATION->GetTitle();
 ?>
 
 <section class="section container catalog py-4">
@@ -57,5 +59,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
 );?>
 
 <?php
+$APPLICATION->SetTitle($title);
+
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
 ?>
