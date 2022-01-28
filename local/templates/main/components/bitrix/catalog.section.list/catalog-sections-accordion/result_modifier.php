@@ -9,6 +9,7 @@ if (!empty($arResult['SECTIONS'])) {
             if ($subSection['IBLOCK_SECTION_ID'] === $section['ID']) {
                 $arResult['SECTIONS'][$keySection]['SUB_SECTIONS'][] = $subSection;
                 unset($arResult['SECTIONS'][$keySubSection]);
+                break;
             }
         }
     }
