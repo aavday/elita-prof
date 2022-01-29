@@ -8,6 +8,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
 
 <section class="section container catalog py-4">
     <div class="bg-white px-3 py-5 rounded">
+        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <div class="row">
             <div class="col-xl-3 col-md-4">
                 <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list","catalog-sections-accordion",

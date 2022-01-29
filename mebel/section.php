@@ -8,12 +8,7 @@ $APPLICATION->SetTitle("Элита-Проф - изготовление мебе�
 
 <section class="section container catalog catalog-furniture py-4">
     <div class="bg-white px-3 py-5 rounded">
-        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
-                "START_FROM" => "0",
-                "PATH" => "",
-                "SITE_ID" => "s1"
-            )
-        );?>
+        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="catalog__title section-title fs-big mb-4 text-center">
             <?php $APPLICATION->ShowTitle(); ?>
         </h1>
