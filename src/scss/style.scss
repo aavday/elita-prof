@@ -669,6 +669,16 @@ a.dark-purple-link {
   z-index: 10;
 }
 
+//404
+
+.page-404 {
+  height: 100vh;
+
+  &__title {
+    font-size: 10em;
+  }
+}
+
 //media
 
 @media (max-width: 1200px) {
