@@ -6,9 +6,9 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle("Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России");
 ?>
 
-<section class="section container catalog py-4">
+<section class="section container catalog catalog-furniture py-4">
     <div class="bg-white px-3 py-5 rounded">
-        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
+        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array(
                 "START_FROM" => "0",
                 "PATH" => "",
                 "SITE_ID" => "s1"
