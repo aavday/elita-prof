@@ -384,7 +384,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
             </h2>
             <?php $APPLICATION->IncludeComponent("bitrix:news.list","photos-main",
                 Array(
-                    "IBLOCK_TYPE" => "photos",
+                    "IBLOCK_TYPE" => "mainpage",
                     "IBLOCK_ID" => IBLOCK_PHOTOS_MAIN,
                     "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
                     "SET_TITLE" => "N",
