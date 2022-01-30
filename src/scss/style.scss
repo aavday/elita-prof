@@ -150,6 +150,11 @@ a.dark-purple-link {
   color: $smoke;
 }
 
+img.img-height-300px {
+  height: 300px;
+  object-fit: contain;
+}
+
 //font-sizes
 
 .fs-small {

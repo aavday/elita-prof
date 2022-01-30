@@ -6,16 +6,15 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Элита-Проф - фотографии');
 ?>
 
-<section class="section photos container py-4">
+<section class="section photo container py-4">
     <div class="bg-white px-3 py-5 rounded">
-        <h1 class="photos__title section-title fs-big mb-4 text-center">
-            Фотогалерея
-        </h1>
-        <?php $APPLICATION->IncludeComponent("bitrix:news.list","photos",
+        <?php $APPLICATION->IncludeComponent("bitrix:news.detail","photo",
             Array(
                 "IBLOCK_TYPE" => "photos",
                 "IBLOCK_ID" => IBLOCK_PHOTOS,
                 "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE'],
+                "ELEMENT_CODE" => $_REQUEST['ELEMENT_CODE'],
+                "PROPERTY_CODE" => ['PHOTOS'],
                 "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "N",
                 "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
