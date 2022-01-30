@@ -382,31 +382,19 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
             <h2 class="photos-main__title section-title fs-big mb-4 text-center">
                 Фото нашей мебели
             </h2>
-            <div class="photos-main-slider pb-5 owl-carousel owl-theme owl-nav-bottom" data-loop="true" data-margin="10" data-nav="true" data-dotsEach="5" data-items="5" data-autoplay="true" data-responsive='{"0":{"items":1},"576":{"items":2},"768":{"items":3},"992":{"items":5}}'>
-                <div class="photos-main-slider__item">
-                    <img src="/dist/img/photos-main-1.jpg" alt="" class="photos-main-slider__item-img">
-                </div>
-                <div class="photos-main-slider__item">
-                    <img src="/dist/img/photos-main-2.jpg" alt="" class="photos-main-slider__item-img">
-                </div>
-                <div class="photos-main-slider__item">
-                    <img src="/dist/img/photos-main-3.jpg" alt="" class="photos-main-slider__item-img">
-                </div>
-                <div class="photos-main-slider__item">
-                    <img src="/dist/img/photos-main-4.jpg" alt="" class="photos-main-slider__item-img">
-                </div>
-                <div class="photos-main-slider__item">
-                    <img src="/dist/img/photos-main-5.jpg" alt="" class="photos-main-slider__item-img">
-                </div>
-                <div class="photos-main-slider__item">
-                    <img src="/dist/img/photos-main-6.jpg" alt="" class="photos-main-slider__item-img">
-                </div>
-                <div class="photos-main-slider__item">
-                    <img src="/dist/img/photos-main-7.jpg" alt="" class="photos-main-slider__item-img">
-                </div>
-            </div>
+            <?php $APPLICATION->IncludeComponent("bitrix:news.list","photos-main",
+                Array(
+                    "IBLOCK_TYPE" => "photos",
+                    "IBLOCK_ID" => IBLOCK_PHOTOS_MAIN,
+                    "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
+                    "SET_TITLE" => "N",
+                    "SET_BROWSER_TITLE" => "N",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "ADD_SECTIONS_CHAIN" => "N"
+                )
+            );?>
             <div class="text-center">
-                <a href="">Смотреть все ></a>
+                <a href="/photo/">Смотреть все ></a>
             </div>
         </div>
     </section>
