@@ -647,6 +647,8 @@ max-height: 315px;
 
   &-item {
     &-img-slider {
+      margin-bottom: 1em;
+
       & .owl-dots {
         bottom: -50px !important;
       }

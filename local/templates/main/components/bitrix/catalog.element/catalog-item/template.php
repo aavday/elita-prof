@@ -10,7 +10,7 @@ if (!empty($arResult)):
         <h1 class="catalog-item__title fs-big mb-4 fw-bold">
             <?=$arResult['NAME']; ?>
         </h1>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-xl-5 col-lg-6">
                 <div class="catalog-item-img-slider owl-carousel owl-carousel owl-theme rounded shadow" data-margin="10" data-nav="true" data-items="1">
                     <?php if ($arResult['PREVIEW_PICTURE']['SRC']): ?>
