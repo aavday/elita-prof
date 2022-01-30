@@ -12,9 +12,24 @@ if (!empty($arResult)):
         </h1>
         <div class="row">
             <div class="col-xl-5 col-lg-6">
-                <a href="<?=$arResult['DETAIL_PICTURE']['SRC']; ?>" data-lightbox="catalog-item">
-                    <img src="<?=$arResult['PREVIEW_PICTURE']['SRC']; ?>" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img rounded shadow w-100">
-                </a>
+                <div class="catalog-item-img-slider owl-carousel owl-carousel owl-theme rounded shadow" data-margin="10" data-nav="true" data-items="1">
+                    <?php if ($arResult['PREVIEW_PICTURE']['SRC']): ?>
+                    <a <?php if ($arResult['DETAIL_PICTURE']['SRC']) echo 'href="' . $arResult['DETAIL_PICTURE']['SRC'] . '" data-lightbox="catalog-item"'; ?>>
+                        <img src="<?=$arResult['PREVIEW_PICTURE']['SRC']; ?>" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img w-100">
+                    </a>
+                        <?php
+                        if ($arResult['PROPERTIES']['PHOTOS']['VALUE']):
+                            foreach ($arResult['PROPERTIES']['PHOTOS']['VALUE'] as $photo):
+                            ?>
+                            <a href="<?=CFile::GetPath($photo); ?>" data-lightbox="catalog-item">
+                                <img src="<?=CFile::GetPath($photo); ?>" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img w-100">
+                            </a>
+                            <?php
+                            endforeach;
+                        endif;
+                        ?>
+                    <?php endif;?>
+                </div>
             </div>
             <div class="col-xl-7 col-lg-6 mt-lg-0 mt-4" >
                 <p class="catalog-item__preview-text">

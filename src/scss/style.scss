@@ -645,15 +645,33 @@ max-height: 315px;
     }
   }
 
-  &-item__colors-radio {
-    & + label {
-      border: 3px solid transparent;
+  &-item {
+    &-img-slider {
+      & .owl-dots {
+        bottom: -50px !important;
+      }
+
+      & .owl-nav {
+        bottom: -20px !important;
+        top: auto !important;
+        color: $purple-dark !important;
+
+        & button:hover {
+          color: $purple-dark !important;
+        }
+      }
     }
 
-    &:checked {
+    &__colors-radio {
       & + label {
-        box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.5);
-        border: 3px solid $purple-dark;
+        border: 3px solid transparent;
+      }
+
+      &:checked {
+        & + label {
+          box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.5);
+          border: 3px solid $purple-dark;
+        }
       }
     }
   }
