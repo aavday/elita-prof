@@ -689,6 +689,19 @@ max-height: 315px;
   }
 }
 
+//question-answers
+
+.question-answers {
+  &-item {
+    border: 4px solid $purple-dark;
+
+    &__answer-text {
+      padding-left: 20px;
+      border-left: 4px solid $purple-dark;
+    }
+  }
+}
+
 //footer
 
 .footer {

@@ -131,6 +131,49 @@
     </div>
 </div>
 
+<div class="modal fade" tabindex="-1" id="question-answers-modal">
+    <div class="modal-dialog">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <p class="modal-title fw-bold fs-medium">Задать вопрос</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="fs-small">
+                    Задайте нам вопрос и мы ответим на него в этом же разделе, а также можем вам позвонить и/или написать на почту
+                </p>
+                <form action="" id="question-answers-form" name="question-answers-form">
+                    <div class="my-2">
+                        <label for="question-answers-name" class="form-label required">Как к вам обращаться</label>
+                        <input type="text" class="form-control" name="question-answers-name" id="question-answers-name" required>
+                    </div>
+                    <div class="my-2">
+                        <label for="question-answers-phone" class="form-label required">Ваш номер телефона (только для связи, не будет показан)</label>
+                        <input type="tel" class="form-control js-mask" name="question-answers-phone" id="question-answers-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99" required>
+                    </div>
+                    <div class="my-2">
+                        <label for="question-answers-email" class="form-label">Ваш E-mail (только для связи, не будет показан)</label>
+                        <input type="email" class="form-control" name="question-answers-email" id="question-answers-email">
+                    </div>
+                    <div class="my-2">
+                        <label for="question-answers-question" class="form-label required">Ваш вопрос</label>
+                        <textarea class="form-control" name="question-answers-question" id="question-answers-question" cols="30" rows="10" required></textarea>
+                    </div>
+                    <div class="my-2 form-check">
+                        <input type="checkbox" class="form-check-input" name="question-answers-agree-policy" id="question-answers-agree-policy" required>
+                        <label class="form-check-label fs-small" for="question-answers-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="question-answers__send-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
+                            Отправить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" tabindex="-1" id="feedback-modal">
     <div class="modal-dialog">
         <div class="modal-content p-4">
