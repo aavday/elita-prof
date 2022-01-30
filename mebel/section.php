@@ -17,7 +17,7 @@ $APPLICATION->SetTitle("Элита-Проф - изготовление мебе�
                 <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list","catalog-sections-accordion",
                     Array(
                         "IBLOCK_TYPE" => "catalog",
-                        "IBLOCK_ID" => "1",
+                        "IBLOCK_ID" => IBLOCK_FURNITURE,
                         "SECTION_CODE" => "",
                         "TOP_DEPTH" => "2",
                     )
@@ -27,7 +27,7 @@ $APPLICATION->SetTitle("Элита-Проф - изготовление мебе�
                 <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list","catalog-sections",
                     Array(
                         "IBLOCK_TYPE" => "catalog",
-                        "IBLOCK_ID" => "1",
+                        "IBLOCK_ID" => IBLOCK_FURNITURE,
                         "SECTION_CODE" => $_REQUEST['SECTION_CODE'],
                         "TOP_DEPTH" => "2"
                     )
@@ -40,7 +40,7 @@ $APPLICATION->SetTitle("Элита-Проф - изготовление мебе�
 <?php $APPLICATION->IncludeComponent("bitrix:news.list","colors",
     Array(
         "IBLOCK_TYPE" => "catalog",
-        "IBLOCK_ID" => "2",
+        "IBLOCK_ID" => IBLOCK_FURNITURE_COLORS,
         "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
         "PARENT_SECTION" => 1,
         "SET_TITLE" => "N",
@@ -53,7 +53,7 @@ $APPLICATION->SetTitle("Элита-Проф - изготовление мебе�
 <?php $APPLICATION->IncludeComponent("bitrix:news.list","colors",
     Array(
         "IBLOCK_TYPE" => "catalog",
-        "IBLOCK_ID" => "2",
+        "IBLOCK_ID" => IBLOCK_FURNITURE_COLORS,
         "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
         "PARENT_SECTION" => 2,
         "SET_TITLE" => "N",

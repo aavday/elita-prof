@@ -19,7 +19,7 @@ $title = $APPLICATION->GetTitle();
                 <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list","catalog-sections-accordion",
                     Array(
                         "IBLOCK_TYPE" => "catalog",
-                        "IBLOCK_ID" => "3",
+                        "IBLOCK_ID" => IBLOCK_ALUMINIUM,
                         "SECTION_CODE" => "",
                         "TOP_DEPTH" => "2",
                     )
@@ -29,7 +29,7 @@ $title = $APPLICATION->GetTitle();
                 <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list","catalog-sections",
                     Array(
                         "IBLOCK_TYPE" => "catalog",
-                        "IBLOCK_ID" => "3",
+                        "IBLOCK_ID" => IBLOCK_ALUMINIUM,
                         "SECTION_CODE" => $_REQUEST['SECTION_CODE'],
                         "TOP_DEPTH" => "2",
                     )
@@ -38,6 +38,18 @@ $title = $APPLICATION->GetTitle();
         </div>
     </div>
 </section>
+
+<?php $APPLICATION->IncludeComponent("bitrix:news.list","colors",
+    Array(
+        "IBLOCK_TYPE" => "catalog",
+        "IBLOCK_ID" => IBLOCK_ALUMINIUM_COLORS,
+        "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
+        "SET_TITLE" => "N",
+        "SET_BROWSER_TITLE" => "N",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "ADD_SECTIONS_CHAIN" => "N"
+    )
+);?>
 
 <?php
 $APPLICATION->SetTitle($title);
