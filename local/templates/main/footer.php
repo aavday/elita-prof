@@ -149,7 +149,7 @@
                     </div>
                     <div class="my-2">
                         <label for="question-answers-phone" class="form-label required">Ваш номер телефона (только для связи, не будет показан)</label>
-                        <input type="tel" class="form-control js-mask" name="question-answers-phone" id="question-answers-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99" required>
+                        <input type="tel" class="form-control js-mask" name="question-answers-phone" id="question-answers-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99">
                     </div>
                     <div class="my-2">
                         <label for="question-answers-email" class="form-label">Ваш E-mail (только для связи, не будет показан)</label>
