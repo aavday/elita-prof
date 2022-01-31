@@ -98,167 +98,21 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
             <h2 class="blog-main__title section-title fs-big mb-4 text-center">
                 Блог
             </h2>
-            <div class="row">
-                <div class="col-xxl-9 col-xl-8 col-lg-7 col-md-6 col-12">
-                    <div class="blog-main__left">
-                        <div class="blog-main__left-item active" id="news-item-1">
-                            <img src="/dist/img/blog-main-1.jpg" alt="Международная выставка здравоохранение" class="blog-main__img mb-3 rounded">
-                            <h3 class="blog-main__title fw-bold fs-medium">
-                                Выставка здравоохранение
-                            </h3>
-                            <p class="blog-main__date">
-                                <i class="fas fa-calendar me-2"></i>10.12.2021
-                            </p>
-                            <p class="blog-main__text">
-                                Компания «Элита-Проф» посетила ежегодную 30-ю юбилейную международную выставку Здравоохранение «Медицинская техника, изделия медицинского назначения и расходные материалы» в городе Москва.
-                            </p>
-                            <p class="blog-main__detail">
-                                <a href="">Читать далее ></a>
-                            </p>
-                        </div>
-                        <div class="blog-main__left-item" id="news-item-2">
-                            <img src="/dist/img/blog-main-2.jpg" alt="Международная выставка здравоохранение" class="blog-main__img mb-3 rounded">
-                            <h3 class="blog-main__title fw-bold fs-medium">
-                                Выставка ЭКСПОЦЕНТР 2021
-                            </h3>
-                            <p class="blog-main__date">
-                                <i class="fas fa-calendar me-2"></i>01.12.2021
-                            </p>
-                            <p class="blog-main__text">
-                                В Москве проходила 32-я международная выставка мебели, фурнитуры и обивочных материалов.
-                                Это крупнейшая в России и Восточной Европе отраслевая выставка, которая ежегодно собирает ведущих мировых производителей, дизайнеров и специалистов по интерьеру, определяет актуальные тенденции и демонстрирует новинки. Здесь представлен широкий выбор элитной и бюджетной мебели для спален, столовых, гостиных, детских, кухни от производителя, диваны и кресла, мебельная фурнитура, отделочные материалы и предметы интерьера.
-                            </p>
-                            <p class="blog-main__detail">
-                                <a href="">Читать далее ></a>
-                            </p>
-                        </div>
-                        <div class="blog-main__left-item" id="news-item-3">
-                            <img src="/dist/img/blog-main-3.jpg" alt="Международная выставка здравоохранение" class="blog-main__img mb-3 rounded">
-                            <h3 class="blog-main__title fw-bold fs-medium">
-                                С верой в успех!
-                            </h3>
-                            <p class="blog-main__date">
-                                <i class="fas fa-calendar me-2"></i>23.12.2018
-                            </p>
-                            <p class="blog-main__text">
-                                Что такое социальная ответственность бизнеса? Для одних - это спонсорские вливания в социальные проекты по "просьбе" местных властей, для других - добровольная помощь ради рекламы или для замаливания грехов. А есть люди, которых, к сожалению, немного, они начинают свое дело, чтобы решить какую-то важную для людей проблему. Вот и бизнес, основанный на производстве мебели для медицинских учреждений, Флеры Закариевны Арслановой — директора хорошо известной в Татарстане компании "ЭЛИТА-ПРОФ" из Набережных Челнов,  начался практически с потрясения.
-                            </p>
-                            <p class="blog-main__detail">
-                                <a href="">Читать далее ></a>
-                            </p>
-                        </div>
-                        <div class="blog-main__left-item" id="news-item-4">
-                            <img src="/dist/img/blog-main-4.jpg" alt="Международная выставка здравоохранение" class="blog-main__img mb-3 rounded">
-                            <h3 class="blog-main__title fw-bold fs-medium">
-                                Ложка дегтя — о проблеме оснащения медицинских учреждений современной специализированной медицинской мебелью
-                            </h3>
-                            <p class="blog-main__date">
-                                <i class="fas fa-calendar me-2"></i>09.08.2018
-                            </p>
-                            <p class="blog-main__text">
-                                Год назад Президент Республики Татарстан Рустам Минниханов принял решение о модернизации первичного звена системы республиканского здравоохранения. Это беспрецедентное в масштабах страны решение направлено на кардинальное улучшение амбулаторно-поликлинического медицинского обслуживания населения.
-                            </p>
-                            <p class="blog-main__detail">
-                                <a href="">Читать далее ></a>
-                            </p>
-                        </div>
-                        <div class="blog-main__left-item" id="news-item-5">
-                            <img src="/dist/img/blog-main-5.jpg" alt="Международная выставка здравоохранение" class="blog-main__img mb-3 rounded">
-                            <h3 class="blog-main__title fw-bold fs-medium">
-                                Красота материнского сердца
-                            </h3>
-                            <p class="blog-main__date">
-                                <i class="fas fa-calendar me-2"></i>10.03.2017
-                            </p>
-                            <p class="blog-main__text">
-                                Не ухищрениями хитроумного маркетинга, а теплотой души и материнской заботой создано было предприятие ООО «Элита-Проф», которое под руководством замечательной женщины Флюры Закариевны Араслановой комплектует специализированной мебелью медицинские учреждения Татарстана и многих других регионов России.
-                            </p>
-                            <p class="blog-main__detail">
-                                <a href="">Читать далее ></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-12">
-                    <div class="blog-main__right fs-small d-flex flex-column mx-2">
-                        <div class="blog-main__right-item active py-2" data-blog-item="news-item-1">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="blog-main__right-item-picture rounded" style="background-image: url('/dist/img/blog-main-thumb-1.jpg')"></div>
-                                </div>
-                                <div class="col-6">
-                                    <p class="blog-main__right-item-date">
-                                        <i class="fas fa-calendar me-2"></i>10.12.2021
-                                    </p>
-                                    <p class="blog-main__right-item-title">
-                                        Выставка Здравоохранение
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-main__right-item py-2" data-blog-item="news-item-2">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="blog-main__right-item-picture rounded" style="background-image: url('/dist/img/blog-main-thumb-2.jpg')"></div>
-                                </div>
-                                <div class="col-6">
-                                    <p class="blog-main__right-item-date">
-                                        <i class="fas fa-calendar me-2"></i>01.12.2021
-                                    </p>
-                                    <p class="blog-main__right-item-title">
-                                        Выставка ЭКСПОЦЕНТР 2021
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-main__right-item py-2" data-blog-item="news-item-3">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="blog-main__right-item-picture rounded" style="background-image: url('/dist/img/blog-main-thumb-3.jpg')"></div>
-                                </div>
-                                <div class="col-6">
-                                    <p class="blog-main__right-item-date">
-                                        <i class="fas fa-calendar me-2"></i>23.12.2018
-                                    </p>
-                                    <p class="blog-main__right-item-title">
-                                        С верой в успех!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-main__right-item py-2" data-blog-item="news-item-4">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="blog-main__right-item-picture rounded" style="background-image: url('/dist/img/blog-main-thumb-4.jpg')"></div>
-                                </div>
-                                <div class="col-6">
-                                    <p class="blog-main__right-item-date">
-                                        <i class="fas fa-calendar me-2"></i>09.08.2018
-                                    </p>
-                                    <p class="blog-main__right-item-title">
-                                        Ложка дегтя - о проблеме оснащения мед. учреждений специализированной мебелью.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-main__right-item py-2" data-blog-item="news-item-5">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="blog-main__right-item-picture rounded" style="background-image: url('/dist/img/blog-main-thumb-5.jpg')"></div>
-                                </div>
-                                <div class="col-6">
-                                    <p class="blog-main__right-item-date">
-                                        <i class="fas fa-calendar me-2"></i>10.03.2017
-                                    </p>
-                                    <p class="blog-main__right-item-title">
-                                        Красота материнского сердца
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php $APPLICATION->IncludeComponent("bitrix:news.list","blog-main",
+                Array(
+                    "IBLOCK_TYPE" => "blog",
+                    "IBLOCK_ID" => IBLOCK_ARTICLES,
+                    "NEWS_COUNT" => 5,
+                    "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
+                    "SET_TITLE" => "N",
+                    "SET_BROWSER_TITLE" => "N",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "ADD_SECTIONS_CHAIN" => "N",
+                    "ACTIVE_DATE_FORMAT" => 'd.m.Y',
+                    "DISPLAY_BOTTOM_PAGER" => "N",
+                    "PAGER_SHOW_ALWAYS" => "Y"
+                )
+            );?>
         </div>
     </section>
 
