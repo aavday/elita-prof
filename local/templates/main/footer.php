@@ -1,4 +1,8 @@
-<?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+
+/** @global CMain $APPLICATION */
+?>
 
 </main>
 
@@ -6,10 +10,19 @@
     <div class="container py-5">
         <div class="footer-top row">
             <div class="col-lg-3 col-sm-6">
-                <p class="fw-bold">ООО «Элита-Проф»</p>
-                <p>Набережные Челны, Профильная улица, 84</p>
-                <a href="" class="white-link hover-underline d-block"><i class="fas fa-phone"></i> (8552)77-80-90</a>
-                <a href="" class="white-link hover-underline d-block"><i class="fas fa-phone"></i> (8552)44-54-04</a>
+                <?php $APPLICATION->IncludeComponent("bitrix:news.detail","footer-contacts",
+                    Array(
+                        "IBLOCK_TYPE" => "info",
+                        "IBLOCK_ID" => IBLOCK_CONTACTS,
+                        "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME'],
+                        "PROPERTY_CODE" => ['PHONES', 'ADDRESS_SHORT'],
+                        "ELEMENT_CODE" => 'contacts',
+                        "SET_TITLE" => "N",
+                        "SET_BROWSER_TITLE" => "N",
+                        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                        "ADD_SECTIONS_CHAIN" => "N"
+                    )
+                );?>
             </div>
             <div class="col-lg-3 col-sm-6 mt-sm-0 mt-3">
                 <p class="fw-bold">Мебель</p>
