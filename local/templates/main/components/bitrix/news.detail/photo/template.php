@@ -3,8 +3,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
-
-$APPLICATION->SetTitle('Элита-Проф - ' . $arResult['NAME']);
 ?>
 
 <h1 class="photo__title section-title fs-big mb-4 text-center">
