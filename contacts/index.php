@@ -8,6 +8,7 @@ $APPLICATION->SetTitle('Элита-Проф - контакты');
 
 <section class="section contacts container py-4">
     <div class="bg-white px-3 py-5 rounded">
+        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="contacts__title section-title fs-big mb-4 text-center">Контакты</h1>
         <?php $APPLICATION->IncludeComponent("bitrix:news.detail","contacts",
             Array(

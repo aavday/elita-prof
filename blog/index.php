@@ -8,6 +8,7 @@ $APPLICATION->SetTitle('Элита-Проф - блог');
 
 <section class="section container blog py-4">
     <div class="bg-white px-3 py-5 rounded">
+        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="blog__title text-center section-title fs-big mb-4">
             Блог
         </h1>

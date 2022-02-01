@@ -8,6 +8,7 @@ $APPLICATION->SetTitle('Элита-Проф - фотографии');
 
 <section class="section photo container py-4">
     <div class="bg-white px-3 py-5 rounded">
+        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <?php $APPLICATION->IncludeComponent("bitrix:news.detail","photo",
             Array(
                 "IBLOCK_TYPE" => "photos",

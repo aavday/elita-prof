@@ -8,6 +8,7 @@ $APPLICATION->SetTitle('Элита-Проф - фотографии');
 
 <section class="section photos container py-4">
     <div class="bg-white px-3 py-5 rounded">
+        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="photos__title section-title fs-big mb-4 text-center">
             Фотогалерея
         </h1>

@@ -8,6 +8,7 @@ $APPLICATION->SetTitle('Элита-Проф - вопрос-ответ');
 
 <section class="section container question-answers py-4">
     <div class="bg-white px-3 py-5 rounded">
+        <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="question-answers__title text-center section-title fs-big mb-4">
             Вопрос-ответ
         </h1>
