@@ -7,6 +7,7 @@ $APPLICATION->SetTitle('Элита-Проф - дилерская информа�
 ?>
     <section class="section container privacy-policy py-4">
         <div class="bg-white px-3 py-5 rounded">
+            <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
             <h1 class="privacy-policy__title section-title fs-big mb-4 text-center">
                 Согласие на обработку персональных данных
             </h1>
