@@ -7,14 +7,14 @@ if (!empty($arResult)) {
     if (!empty($arResult['PROPERTIES']['COLORS']['VALUE'])) {
         $arColors = $arResult['PROPERTIES']['COLORS'];
 
-        $arFilter = ['IBLOCK_ID' => 2, 'ID' => $arColors['VALUE']];
+        $arFilter = ['IBLOCK_ID' => IBLOCK_FURNITURE_COLORS, 'ID' => $arColors['VALUE']];
         $arSelect = ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'DETAIL_PICTURE', 'PREVIEW_PICTURE', 'PROPERTY_TEXT_COLOR'];
         $res = CIBlockElement::GetList([], $arFilter, false, [], $arSelect);
         while ($ob = $res->Fetch()) {
             $arColors['FIELDS'][] = $ob;
         }
 
-        $res = CIBlockPropertyEnum::GetList([], ['IBLOCK_ID' => 2, 'CODE' => 'TEXT_COLOR']);
+        $res = CIBlockPropertyEnum::GetList([], ['IBLOCK_ID' => IBLOCK_FURNITURE_COLORS, 'CODE' => 'TEXT_COLOR']);
 
         $textColorPropertyEnums = [];
 

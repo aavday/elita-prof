@@ -1,6 +1,16 @@
+//variables
+
+$purple-main: #7d74ae;
+$purple-dark: #65589c;
+$smoke: #bbb;
+
 @import "../../node_modules/bootstrap/scss/functions";
 
 $enable-negative-margins: true;
+$nav-tabs-link-active-border-color: $purple-dark $purple-dark #fff;
+$nav-tabs-border-width: 3px;
+$nav-tabs-border-color: $purple-dark;
+$nav-tabs-link-hover-border-color: transparent;
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
@@ -19,6 +29,7 @@ $enable-negative-margins: true;
 @import "../../node_modules/bootstrap/scss/forms";
 @import "../../node_modules/bootstrap/scss/transitions";
 @import "../../node_modules/bootstrap/scss/accordion";
+@import "../../node_modules/bootstrap/scss/nav";
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 @font-face {
@@ -34,12 +45,6 @@ $enable-negative-margins: true;
   font-weight: bold;
   font-style: normal;
 }
-
-//variables
-
-$purple-main: #7d74ae;
-$purple-dark: #65589c;
-$smoke: #bbb;
 
 //color classes
 
@@ -672,7 +677,13 @@ max-height: 315px;
 
     &__colors-radio {
       & + label {
+        cursor: pointer;
         border: 3px solid transparent;
+
+        & img {
+          width: 100px;
+          height: auto;
+        }
       }
 
       &:checked {
@@ -687,6 +698,31 @@ max-height: 315px;
   &-furniture .catalog-items__img {
     height: 300px;
     object-fit: contain;
+  }
+
+  &-colors,
+  &-item__colors {
+    & .nav-tabs .nav-link {
+      flex-grow: 1;
+
+      &.active {
+        border-bottom: 0;
+      }
+
+      &:not(.active) {
+        color: $purple-dark;
+      }
+    }
+
+    & .tab-pane {
+      padding: 15px;
+      border: 3px solid $purple-dark;
+      border-top: 0;
+
+      &:hover {
+
+      }
+    }
   }
 }
 

@@ -39,7 +39,7 @@ $title = $APPLICATION->GetTitle();
     </div>
 </section>
 
-<?php $APPLICATION->IncludeComponent("bitrix:news.list","colors",
+<?php $APPLICATION->IncludeComponent("bitrix:news.list","colors-furniture",
     Array(
         "IBLOCK_TYPE" => "catalog",
         "IBLOCK_ID" => IBLOCK_FURNITURE_COLORS,
@@ -52,7 +52,7 @@ $title = $APPLICATION->GetTitle();
     )
 );?>
 
-<?php $APPLICATION->IncludeComponent("bitrix:news.list","colors",
+<?php $APPLICATION->IncludeComponent("bitrix:news.list","colors-furniture",
     Array(
         "IBLOCK_TYPE" => "catalog",
         "IBLOCK_ID" => IBLOCK_FURNITURE_COLORS,

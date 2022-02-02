@@ -47,8 +47,8 @@ if (!empty($arResult)):
                     <p class="catalog-item__colors">
                         <p class="fw-bold">Цвет:</p>
                         <?php foreach ($arResult['PROPERTIES']['COLORS']['FIELDS'] as $key => $colorFields): ?>
-                        <input type="radio" name="color" id="color-<?=$colorFields['CODE']; ?>" class="catalog-item__colors-radio d-none" <?php if ($key === 1) echo 'checked'; ?>>
-                        <label for="color-<?=$colorFields['CODE']; ?>" class="catalog-item__colors-label button rounded py-2" style="background-image: url('<?=CFile::GetPath($colorFields['PREVIEW_PICTURE']); ?>'); color: <?=$colorFields['PROPERTY_TEXT_COLOR_XML_ID']; ?>;">
+                        <input type="radio" name="color" id="color-<?=$colorFields['ID']; ?>" value="<?=$colorFields['NAME']; ?>" class="catalog-item__colors-radio d-none" <?php if ($key === 0) echo 'checked'; ?>>
+                        <label for="color-<?=$colorFields['ID']; ?>" class="catalog-item__colors-label button rounded py-2" style="background-image: url('<?=CFile::GetPath($colorFields['PREVIEW_PICTURE']); ?>'); color: <?=$colorFields['PROPERTY_TEXT_COLOR_XML_ID']; ?>;">
                             <?=$colorFields['NAME']; ?>
                         </label>
                         <?php endforeach; ?>

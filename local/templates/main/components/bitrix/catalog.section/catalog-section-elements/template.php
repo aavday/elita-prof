@@ -5,8 +5,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 /** @global CMain $APPLICATION */
 
 if (!empty($arResult['ITEMS'])):
-    $APPLICATION->SetTitle('Элита Проф - ' . $arResult['NAME']);
-    $APPLICATION->SetPageProperty('title', $arResult['NAME']);
     ?>
     <div class="row">
         <?php foreach ($arResult['ITEMS'] as $item):
