@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Достижения";
+$arDirProperties = array(
+
+);
+?>

@@ -16,8 +16,8 @@ if (!empty($arResult['ITEMS'])):
         <p class="question-answers-item__question-text">
             <?=$item['PROPERTIES']['QUESTION']['VALUE']['TEXT']; ?>
         </p>
-        <p class="question-answers-item__answer-text">
-            <i><?=$item['PROPERTIES']['ANSWER']['VALUE']['TEXT']; ?></i>
+        <p class="quote">
+            <?=$item['PROPERTIES']['ANSWER']['VALUE']['TEXT']; ?>
         </p>
     </div>
     <?php endforeach; ?>
