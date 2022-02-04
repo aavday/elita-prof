@@ -16,16 +16,16 @@ $(document).ready(function () {
 
     $('form.ajax-form').on('submit', function (e) {
         e.preventDefault();
-
-        console.log('test');
+        const form = $(this);
 
         $.ajax({
-            url: $(this).attr('data-handlerUrl'),
+            url: form.attr('data-handlerUrl'),
             type: 'POST',
-            data: $(this).serialize(),
+            data: form.serialize(),
             dataType: 'json',
             success: function (response) {
                 console.log(response);
+                form.text('Спасибо! Форма отправлена')
             },
             error: function (jqXhr, err) {
                 console.log(jqXhr, err);
