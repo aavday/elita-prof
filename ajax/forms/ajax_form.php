@@ -4,15 +4,15 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
 
     $to = COption::GetOptionString('main', 'email_from');
 
-    $subject = 'Заполнена форма обратной связи';
+    $subject = (!empty($_REQUEST['subject'])) ? $_REQUEST['subject'] : 'Заполнена форма на сайте';;
     $message = $subject . ' на сайте ' . $_SERVER['HTTP_HOST'] . '<br><br>';
-    $list = array();
 
-    foreach ($_POST as $key => $value)
+    foreach ($_REQUEST as $key => $value)
     {
-        $temp = str_replace('_', ' ', $key) . ': ' . $value;
-        $message = $message . $temp . '<br>';
-        $list[] = $temp;
+        if ($value !== '') {
+            $valueText = $key . ': ' . $value;
+            $message = $message . $valueText . '<br>';
+        }
     }
 
     $headers = "MIME-Version: 1.0" . "\r\n";

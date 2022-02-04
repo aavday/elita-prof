@@ -97,7 +97,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
     </div>
 </footer>
 
-<div class="modal fade" tabindex="-1" id="feedback-modal" data-handlerUrl="/ajax/forms/feedback.php">
+<div class="modal fade" tabindex="-1" id="feedback-modal" data-handlerUrl="/ajax/forms/ajax_form.php">
     <div class="modal-dialog">
         <div class="modal-content p-4">
             <div class="modal-header">
@@ -108,29 +108,21 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <p class="fs-small">
                     Если вы имели опыт работы с нашей компанией - пожалуйста, оставьте нам свой отзыв, для нас это очень важно
                 </p>
-                <form action="" id="feedback-form" name="feedback-form" class="ajax-form" data-handlerUrl="/ajax/forms/feedback.php">
+                <form action="" id="feedback-form" name="feedback-form" class="ajax-form" data-handlerUrl="/ajax/forms/ajax_form.php">
                     <div class="my-2">
                         <label for="feedback-name" class="form-label required">Как к вам обращаться</label>
-                        <input type="text" class="form-control" name="feedback-name" id="feedback-name" required>
-                    </div>
-                    <div class="my-2">
-                        <label for="feedback-phone" class="form-label required">Ваш номер телефона</label>
-                        <input type="tel" class="form-control js-mask" name="feedback-phone" id="feedback-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99" required>
-                    </div>
-                    <div class="my-2">
-                        <label for="feedback-email" class="form-label">Ваш E-mail</label>
-                        <input type="email" class="form-control" name="feedback-email" id="feedback-email">
+                        <input type="text" class="form-control" name="Имя" id="feedback-name" required>
                     </div>
                     <div class="my-2">
                         <label for="feedback-city" class="form-label">Ваш город</label>
-                        <input type="text" class="form-control" name="feedback-city" id="feedback-city">
+                        <input type="text" class="form-control" name="Город" id="feedback-city">
                     </div>
                     <div class="my-2">
-                        <label for="feedback-question" class="form-label required">Ваш вопрос</label>
-                        <textarea class="form-control" name="feedback-question" id="feedback-question" cols="30" rows="10" required></textarea>
+                        <label for="feedback-feedback" class="form-label required">Ваш отзыв</label>
+                        <textarea class="form-control" name="Отзыв" id="feedback-feedback" cols="30" rows="10" required></textarea>
                     </div>
                     <div class="my-2 form-check">
-                        <input type="checkbox" class="form-check-input" name="feedback-agree-policy" id="feedback-agree-policy" required>
+                        <input type="checkbox" class="form-check-input" name="agree-policy" id="feedback-agree-policy" required>
                         <label class="form-check-label fs-small" for="feedback-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
                     </div>
                     <div class="text-center">
@@ -138,6 +130,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                             Отправить
                         </button>
                     </div>
+                    <input type="hidden" name="subject" value="Оставлен отзыв">
                 </form>
             </div>
         </div>
@@ -155,25 +148,25 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <p class="fs-small">
                     Задайте нам вопрос и мы ответим на него в этом же разделе, а также можем вам позвонить и/или написать на почту
                 </p>
-                <form action="" id="question-answers-form" class="ajax-form" name="question-answers-form" data-handlerUrl="/ajax/forms/question_answers.php">
+                <form action="" id="question-answers-form" class="ajax-form" name="question-answers-form" data-handlerUrl="/ajax/forms/ajax_form.php">
                     <div class="my-2">
                         <label for="question-answers-name" class="form-label required">Как к вам обращаться</label>
-                        <input type="text" class="form-control" name="question-answers-name" id="question-answers-name" required>
+                        <input type="text" class="form-control" name=Имя" id="question-answers-name" required>
                     </div>
                     <div class="my-2">
                         <label for="question-answers-phone" class="form-label required">Ваш номер телефона (только для связи, не будет показан)</label>
-                        <input type="tel" class="form-control js-mask" name="question-answers-phone" id="question-answers-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99">
+                        <input type="tel" class="form-control js-mask" name="Номер" id="question-answers-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99">
                     </div>
                     <div class="my-2">
                         <label for="question-answers-email" class="form-label">Ваш E-mail (только для связи, не будет показан)</label>
-                        <input type="email" class="form-control" name="question-answers-email" id="question-answers-email">
+                        <input type="email" class="form-control" name="E-mail" id="question-answers-email">
                     </div>
                     <div class="my-2">
                         <label for="question-answers-question" class="form-label required">Ваш вопрос</label>
-                        <textarea class="form-control" name="question-answers-question" id="question-answers-question" cols="30" rows="10" required></textarea>
+                        <textarea class="form-control" name="Вопрос" id="question-answers-question" cols="30" rows="10" required></textarea>
                     </div>
                     <div class="my-2 form-check">
-                        <input type="checkbox" class="form-check-input" name="question-answers-agree-policy" id="question-answers-agree-policy" required>
+                        <input type="checkbox" class="form-check-input" name="agree-policy" id="question-answers-agree-policy" required>
                         <label class="form-check-label fs-small" for="question-answers-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
                     </div>
                     <div class="text-center">
@@ -181,6 +174,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                             Отправить
                         </button>
                     </div>
+                    <input type="hidden" name="subject" value="Задан вопрос">
                 </form>
             </div>
         </div>
@@ -198,30 +192,27 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <p class="fs-small">
                     Оставьте здесь ваш вопрос, и мы ответим в течение 30 минут
                 </p>
-                <form action="" id="contact-us-form" class="ajax-form" name="contact-us-form" data-handlerUrl="/ajax/forms/contact_us.php">
+                <form action="" id="contact-us-form" class="ajax-form" name="contact-us-form" data-handlerUrl="/ajax/forms/ajax_form.php">
                     <div class="my-2">
-                        <label for="contact-us-name" class="form-label required">Ваше имя</label>
-                        <input type="text" class="form-control" name="contact-us-name" id="contact-us-name" required>
-                    </div>
-                    <div class="my-2">
-                        <label for="contact-us-surname" class="form-label required">Ваша фамилия</label>
-                        <input type="text" class="form-control" name="contact-us-surname" id="contact-us-surname" required>
+                        <label for="contact-us-name" class="form-label required">Как к вам обращаться</label>
+                        <input type="text" class="form-control" name="Имя" id="contact-us-name" required>
                     </div>
                     <div class="my-2">
                         <label for="contact-us-city" class="form-label required">Ваш город</label>
-                        <input type="text" class="form-control" name="contact-us-city" id="contact-us-city">
+                        <input type="text" class="form-control" name="Город" id="contact-us-city">
                     </div>
                     <div class="my-2">
                         <label for="contact-us-organization" class="form-label">Ваша организация</label>
-                        <input type="text" class="form-control" name="contact-us-organization" id="contact-us-organization">
+                        <input type="text" class="form-control" name="Организация" id="contact-us-organization">
                     </div>
                     <div class="my-2 form-check">
-                        <input type="checkbox" class="form-check-input" name="contact-us-agree-policy" id="contact-us-agree-policy" required>
+                        <input type="checkbox" class="form-check-input" name="agree-policy" id="contact-us-agree-policy" required>
                         <label class="form-check-label fs-small" for="contact-us-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
                     </div>
                     <button type="submit" class="contact-us__submit-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
                         Отправить
                     </button>
+                    <input type="hidden" name="subject" value="Заполнена форма обратной связи">
                 </form>
             </div>
         </div>
