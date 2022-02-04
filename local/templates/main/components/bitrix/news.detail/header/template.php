@@ -46,7 +46,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                         <input type="text" name="search" id="search h-100" placeholder="Поиск по сайту" class="search-input">
                         <button class="search-btn"><i class="fas fa-search"></i></button>
                     </div>
-                    <button class="button button-dark-purple fs-medium text-shadow-contour hover-shadow-white rounded fw-bold ms-3" data-bs-toggle="modal" data-bs-target="#contact-modal">
+                    <button class="button button-dark-purple fs-medium text-shadow-contour hover-shadow-white rounded fw-bold ms-3" data-bs-toggle="modal" data-bs-target="#contact-us-modal">
                         Связаться с нами
                     </button>
                 </div>

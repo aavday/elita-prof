@@ -97,7 +97,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
     </div>
 </footer>
 
-<div class="modal fade" tabindex="-1" id="contact-modal">
+<div class="modal fade" tabindex="-1" id="feedback-modal" data-handlerUrl="/ajax/forms/feedback.php">
     <div class="modal-dialog">
         <div class="modal-content p-4">
             <div class="modal-header">
@@ -108,33 +108,33 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <p class="fs-small">
                     Если вы имели опыт работы с нашей компанией - пожалуйста, оставьте нам свой отзыв, для нас это очень важно
                 </p>
-                <form action="" id="contact-form" name="contact-form">
+                <form action="" id="feedback-form" name="feedback-form" class="ajax-form" data-handlerUrl="/ajax/forms/feedback.php">
                     <div class="my-2">
-                        <label for="contact-name" class="form-label required">Как к вам обращаться</label>
-                        <input type="text" class="form-control" name="contact-name" id="contact-name" required>
+                        <label for="feedback-name" class="form-label required">Как к вам обращаться</label>
+                        <input type="text" class="form-control" name="feedback-name" id="feedback-name" required>
                     </div>
                     <div class="my-2">
-                        <label for="contact-phone" class="form-label required">Ваш номер телефона</label>
-                        <input type="tel" class="form-control js-mask" name="contact-phone" id="contact-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99" required>
+                        <label for="feedback-phone" class="form-label required">Ваш номер телефона</label>
+                        <input type="tel" class="form-control js-mask" name="feedback-phone" id="feedback-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99" required>
                     </div>
                     <div class="my-2">
-                        <label for="contact-email" class="form-label">Ваш E-mail</label>
-                        <input type="email" class="form-control" name="contact-email" id="contact-email">
+                        <label for="feedback-email" class="form-label">Ваш E-mail</label>
+                        <input type="email" class="form-control" name="feedback-email" id="feedback-email">
                     </div>
                     <div class="my-2">
-                        <label for="contact-city" class="form-label">Ваш город</label>
-                        <input type="text" class="form-control" name="contact-city" id="contact-city">
+                        <label for="feedback-city" class="form-label">Ваш город</label>
+                        <input type="text" class="form-control" name="feedback-city" id="feedback-city">
                     </div>
                     <div class="my-2">
-                        <label for="contact-question" class="form-label required">Ваш вопрос</label>
-                        <textarea class="form-control" name="contact-question" id="contact-question" cols="30" rows="10" required></textarea>
+                        <label for="feedback-question" class="form-label required">Ваш вопрос</label>
+                        <textarea class="form-control" name="feedback-question" id="feedback-question" cols="30" rows="10" required></textarea>
                     </div>
                     <div class="my-2 form-check">
-                        <input type="checkbox" class="form-check-input" name="contact-agree-policy" id="contact-agree-policy" required>
-                        <label class="form-check-label fs-small" for="contact-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
+                        <input type="checkbox" class="form-check-input" name="feedback-agree-policy" id="feedback-agree-policy" required>
+                        <label class="form-check-label fs-small" for="feedback-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="contact__send-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
+                        <button type="submit" class="feedback__submit-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
                             Отправить
                         </button>
                     </div>
@@ -155,7 +155,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <p class="fs-small">
                     Задайте нам вопрос и мы ответим на него в этом же разделе, а также можем вам позвонить и/или написать на почту
                 </p>
-                <form action="" id="question-answers-form" name="question-answers-form">
+                <form action="" id="question-answers-form" class="ajax-form" name="question-answers-form" data-handlerUrl="/ajax/forms/question_answers.php">
                     <div class="my-2">
                         <label for="question-answers-name" class="form-label required">Как к вам обращаться</label>
                         <input type="text" class="form-control" name="question-answers-name" id="question-answers-name" required>
@@ -177,7 +177,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                         <label class="form-check-label fs-small" for="question-answers-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="question-answers__send-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
+                        <button type="submit" class="question-answers__submit-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
                             Отправить
                         </button>
                     </div>
@@ -187,39 +187,39 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
     </div>
 </div>
 
-<div class="modal fade" tabindex="-1" id="feedback-modal">
+<div class="modal fade" tabindex="-1" id="contact-us-modal">
     <div class="modal-dialog">
         <div class="modal-content p-4">
             <div class="modal-header">
-                <p class="modal-title fw-bold fs-medium">Связаться с нами/p>
+                <p class="modal-title fw-bold fs-medium">Связаться с нами</p>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p class="fs-small">
                     Оставьте здесь ваш вопрос, и мы ответим в течение 30 минут
                 </p>
-                <form action="" id="feedback-form" name="feedback-form">
+                <form action="" id="contact-us-form" class="ajax-form" name="contact-us-form" data-handlerUrl="/ajax/forms/contact_us.php">
                     <div class="my-2">
-                        <label for="feedback-name" class="form-label required">Ваше имя</label>
-                        <input type="text" class="form-control" name="feedback-name" id="feedback-name" required>
+                        <label for="contact-us-name" class="form-label required">Ваше имя</label>
+                        <input type="text" class="form-control" name="contact-us-name" id="contact-us-name" required>
                     </div>
                     <div class="my-2">
-                        <label for="feedback-surname" class="form-label required">Ваша фамилия</label>
-                        <input type="text" class="form-control" name="feedback-surname" id="feedback-surname" required>
+                        <label for="contact-us-surname" class="form-label required">Ваша фамилия</label>
+                        <input type="text" class="form-control" name="contact-us-surname" id="contact-us-surname" required>
                     </div>
                     <div class="my-2">
-                        <label for="feedback-city" class="form-label required">Ваш город</label>
-                        <input type="text" class="form-control" name="feedback-city" id="feedback-city">
+                        <label for="contact-us-city" class="form-label required">Ваш город</label>
+                        <input type="text" class="form-control" name="contact-us-city" id="contact-us-city">
                     </div>
                     <div class="my-2">
-                        <label for="feedback-organization" class="form-label">Ваша организация</label>
-                        <input type="text" class="form-control" name="feedback-organization" id="feedback-organization">
+                        <label for="contact-us-organization" class="form-label">Ваша организация</label>
+                        <input type="text" class="form-control" name="contact-us-organization" id="contact-us-organization">
                     </div>
                     <div class="my-2 form-check">
-                        <input type="checkbox" class="form-check-input" name="feedback-agree-policy" id="feedback-agree-policy" required>
-                        <label class="form-check-label fs-small" for="feedback-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
+                        <input type="checkbox" class="form-check-input" name="contact-us-agree-policy" id="contact-us-agree-policy" required>
+                        <label class="form-check-label fs-small" for="contact-us-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
                     </div>
-                    <button type="submit" class="feedback__leave-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
+                    <button type="submit" class="contact-us__submit-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
                         Отправить
                     </button>
                 </form>
