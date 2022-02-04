@@ -5,7 +5,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 /** @global CMain $APPLICATION */
 ?>
 
-<header class="header position-fixed">
+<header class="header">
     <div class="header-main">
         <div class="header-top row px-4 py-2">
             <a href="/" class="header-top__item col-md-2 d-md-inline d-none">
