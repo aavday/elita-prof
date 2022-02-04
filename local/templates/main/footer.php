@@ -151,7 +151,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <form action="" id="question-answers-form" class="ajax-form" name="question-answers-form" data-handlerUrl="/ajax/forms/ajax_form.php">
                     <div class="my-2">
                         <label for="question-answers-name" class="form-label required">Как к вам обращаться</label>
-                        <input type="text" class="form-control" name=Имя" id="question-answers-name" required>
+                        <input type="text" class="form-control" name="Имя" id="question-answers-name" required>
                     </div>
                     <div class="my-2">
                         <label for="question-answers-phone" class="form-label required">Ваш номер телефона (только для связи, не будет показан)</label>
