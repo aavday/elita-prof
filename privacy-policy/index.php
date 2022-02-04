@@ -3,7 +3,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
 /** @global CMain $APPLICATION */
 
-$APPLICATION->SetTitle('Элита-Проф - дилерская информация');
+$APPLICATION->SetTitle('Элита-Проф - согласие на обработку персональных данных');
 ?>
     <section class="section container privacy-policy py-4">
         <div class="bg-white px-3 py-5 rounded">
