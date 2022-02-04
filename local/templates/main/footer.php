@@ -198,12 +198,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                         <input type="text" class="form-control" name="Имя" id="contact-us-name" required>
                     </div>
                     <div class="my-2">
-                        <label for="question-answers-phone" class="form-label required">Ваш номер телефона</label>
-                        <input type="tel" class="form-control js-mask" name="Номер" id="question-answers-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99" required>
+                        <label for="contact-us-phone" class="form-label required">Ваш номер телефона</label>
+                        <input type="tel" class="form-control js-mask" name="Номер" id="contact-us-phone" pattern="+7 \(9[0-9]{2}\) [0-9]{3}-[0-9]{4}" data-mask="+7 (999) 999-99-99" required>
                     </div>
                     <div class="my-2">
-                        <label for="question-answers-email" class="form-label">Ваш E-mail</label>
-                        <input type="email" class="form-control" name="E-mail" id="question-answers-email">
+                        <label for="contact-us-email" class="form-label">Ваш E-mail</label>
+                        <input type="email" class="form-control" name="E-mail" id="contact-us-email">
                     </div>
                     <div class="my-2">
                         <label for="contact-us-city" class="form-label">Ваш город</label>
