@@ -216,59 +216,18 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         </div>
     </section>
 
-    <section class="section advantages container py-4">
-        <div class="bg-white px-3 py-5 rounded">
-            <h2 class="photos-main__title section-title fs-big mb-4 text-center">
-                Почему мебель лучше заказывать у нас?
-            </h2>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="advantages__item d-flex">
-                        <i class="fas fa-cart-arrow-down fs-big color-purple-dark"></i>
-                        <div class="d-flex flex-column ms-2">
-                            <p class="fw-bold color-purple-dark">Большой ассортимент</p>
-                            <p>
-                                Большое количество наименовании мебели различного назначения
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="advantages__item d-flex">
-                        <i class="fas fa-trophy fs-big color-purple-dark"></i>
-                        <div class="d-flex flex-column ms-2">
-                            <p class="fw-bold color-purple-dark">Высочайшее качество</p>
-                            <p>
-                                Высочайшее качество предлагаемой к продаже мебели и аксессуаров
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="advantages__item d-flex">
-                        <i class="fas fa-shipping-fast fs-big color-purple-dark"></i>
-                        <div class="d-flex flex-column ms-2">
-                            <p class="fw-bold color-purple-dark">Доставка и монтаж</p>
-                            <p>
-                                Организация доставки приобретенной мебели в адрес покупателя и ее монтаж
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="advantages__item d-flex">
-                        <i class="fas fa-archive fs-big color-purple-dark"></i>
-                        <div class="d-flex flex-column ms-2">
-                            <p class="fw-bold color-purple-dark">Выбор принадлежностей</p>
-                            <p>
-                                Значительный выбор комплектующих и аксессуаров
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php $APPLICATION->IncludeComponent("bitrix:news.list","advantages",
+        Array(
+            "IBLOCK_TYPE" => "mainpage",
+            "IBLOCK_ID" => IBLOCK_ADVANTAGES,
+            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT'],
+            "PROPERTY_CODE" => ['ICON'],
+            "SET_TITLE" => "N",
+            "SET_BROWSER_TITLE" => "N",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "ADD_SECTIONS_CHAIN" => "N"
+        )
+    );?>
 
 <?php
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
