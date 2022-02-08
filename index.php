@@ -40,14 +40,23 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
             <div class="row flex-xl-row flex-column-reverse">
                 <div class="col-xxl col-xl-5">
                     <div class="about-main__video-wrapper">
-                        <iframe width="100%" height="470" src="https://www.youtube.com/embed/pCx_GwSRd1k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                        <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "PATH" => "/include/mainpage/about_video.html"
+                            )
+                        );?>
                     </div>
                 </div>
                 <div class="col-xxl col-xl-7 mb-4">
                     <div class="about-main__text-wrapper">
-                        <p>Наряду с выпуском серийной медицинской и лабораторной мебели, компания эффективно изготавливает торговую, офисную и бытовую мебель, мебель по индивидуальным заказам, а высокотехнологичное оборудование обеспечивает выполнение проектов любого уровня сложности.</p>
-                        <p>Использование в производстве корпусной мебели анодированного алюминиевого профиля производства «Росла», позволяет сделать нашу мебель уникальной в своём роде: каркас мебели, выполненный из алюминиевого профиля, защищает мебель от всевозможных агрессивных факторов, таких как влажность, механические повреждения, деформации и других.</p>
-                        <a href="" class="about-main__detail-btn py-2 white-link hover-underline text-shadow-contour rounded shadow-white button button-dark-purple fs-medium">
+                        <div>
+                            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => "/include/mainpage/about_text.html"
+                                )
+                            );?>
+                        </div>
+                        <a href="/o-kompanii/" class="about-main__detail-btn py-2 white-link hover-underline text-shadow-contour rounded shadow-white button button-dark-purple fs-medium">
                             Подробнее
                         </a>
                     </div>
