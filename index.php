@@ -224,7 +224,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
             <h2 class="photos-main__title section-title fs-big mb-4 text-center">
                 <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
                         "AREA_FILE_SHOW" => "file",
-                        "PATH" => "/include/mainpage/capture_title.html"
+                        "PATH" => "/include/mainpage/photos_title.html"
                     )
                 );?>
             </h2>
@@ -245,18 +245,30 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         </div>
     </section>
 
-    <?php $APPLICATION->IncludeComponent("bitrix:news.list","advantages",
-        Array(
-            "IBLOCK_TYPE" => "mainpage",
-            "IBLOCK_ID" => IBLOCK_ADVANTAGES,
-            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT'],
-            "PROPERTY_CODE" => ['ICON'],
-            "SET_TITLE" => "N",
-            "SET_BROWSER_TITLE" => "N",
-            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-            "ADD_SECTIONS_CHAIN" => "N"
-        )
-    );?>
+
+    <section class="section advantages container py-4">
+        <div class="bg-white px-3 py-5 rounded">
+            <h2 class="photos-main__title section-title fs-big mb-4 text-center">
+                <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/include/mainpage/advantages_title.html"
+                    )
+                );?>
+            </h2>
+            <?php $APPLICATION->IncludeComponent("bitrix:news.list","advantages",
+                Array(
+                    "IBLOCK_TYPE" => "mainpage",
+                    "IBLOCK_ID" => IBLOCK_ADVANTAGES,
+                    "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT'],
+                    "PROPERTY_CODE" => ['ICON'],
+                    "SET_TITLE" => "N",
+                    "SET_BROWSER_TITLE" => "N",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "ADD_SECTIONS_CHAIN" => "N"
+                )
+            );?>
+        </div>
+    </section>
 
 <?php
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
