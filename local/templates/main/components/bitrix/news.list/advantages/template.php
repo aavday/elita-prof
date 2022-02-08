@@ -15,8 +15,8 @@ if (!empty($arResult['ITEMS'])):
                 <?php foreach ($arResult['ITEMS'] as $item): ?>
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="advantages__item d-flex">
-                        <?php if (!empty($arResult['PROPERTIES']['ICON']['VALUE'])): ?>
-                        <i class="fas fa-cart-arrow-down fs-big color-purple-dark"></i>
+                        <?php if (!empty($item['PROPERTIES']['ICON']['VALUE'])): ?>
+                        <i class="<?=$item['PROPERTIES']['ICON']['VALUE']; ?> fs-big color-purple-dark"></i>
                         <?php endif; ?>
                         <div class="d-flex flex-column ms-2">
                             <p class="fw-bold color-purple-dark"><?=$item['NAME']; ?></p>
