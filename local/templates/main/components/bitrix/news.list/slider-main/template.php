@@ -14,8 +14,8 @@ if (!empty($arResult['ITEMS'])):
                     <div class="intro-slider-item__img" style="background-image: url('<?=$item['PREVIEW_PICTURE']['SRC']; ?>')"></div>
                     <div class="intro-slider-item__txt-big fw-bold"><?=$item['PREVIEW_TEXT']; ?></div>
                     <div class="intro-slider-item__txt-small"><?=$item['DETAIL_TEXT']; ?></div>
-                    <?php if ($item['PROPERTIES']['DETAIL_BTN']['VALUE'] === 'Y'): ?>
-                    <a href="<?=$item['PROPERTIES']['DETAIL_BTN_TEXT']['VALUE']; ?>" class="intro-slider-item__btn text-shadow-contour button button-dark-purple white-link fs-medium hover-scale rounded shadow-white fw-bold">
+                    <?php if (!empty($item['PROPERTIES']['DETAIL_BTN']['VALUE'])): ?>
+                    <a href="<?=$item['PROPERTIES']['DETAIL_BTN']['VALUE']; ?>" class="intro-slider-item__btn text-shadow-contour button button-dark-purple white-link fs-medium hover-scale rounded shadow-white fw-bold">
                         Подробнее
                     </a>
                     <?php endif; ?>
