@@ -35,7 +35,11 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
     <section class="section container about-main py-4">
         <div class="bg-white px-3 py-5 rounded">
             <h2 class="about-main__title text-center section-title fs-big mb-4">
-                О компании «Элита-Проф»
+                <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/include/mainpage/about_title.html"
+                    )
+                );?>
             </h2>
             <div class="row flex-xl-row flex-column-reverse">
                 <div class="col-xxl col-xl-5">
@@ -68,7 +72,11 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
     <section class="section container blog-main py-4">
         <div class="bg-white px-3 py-5 rounded">
             <h2 class="blog-main__title section-title fs-big mb-4 text-center">
-                Блог
+                <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/include/mainpage/blog_title.html"
+                    )
+                );?>
             </h2>
             <?php $APPLICATION->IncludeComponent("bitrix:news.list","blog-main",
                 Array(
@@ -91,7 +99,11 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
     <section class="section container feedback py-4">
         <div class="bg-white px-3 py-5 rounded">
             <h2 class="feedback-main__title section-title fs-big mb-4 text-center">
-                Отзывы
+                <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/include/mainpage/feedback_title.html"
+                    )
+                );?>
             </h2>
             <div class="feedback-slider color-white pb-5 owl-carousel owl-theme" data-loop="true" data-margin="10" data-nav="true" data-dots="false" data-autoplay="true" data-center="true" data-responsive='{"0":{"items":1},"992":{"items":3}}'>
                 <div class="feedback__item p-4 rounded">
@@ -163,7 +175,11 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         <div class="container">
             <div class="bg-white px-3 py-5 rounded">
                 <h2 class="capture__title section-title fs-big mb-4 text-center">
-                    Остались вопросы?
+                    <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "PATH" => "/include/mainpage/capture_title.html"
+                        )
+                    );?>
                 </h2>
                 <p class="text-center">
                     Оставьте здесь ваш вопрос, и мы ответим в течение 30 минут
@@ -206,7 +222,11 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
     <section class="section photos-main container py-4">
         <div class="bg-white px-5 py-5 rounded">
             <h2 class="photos-main__title section-title fs-big mb-4 text-center">
-                Фото нашей мебели
+                <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/include/mainpage/capture_title.html"
+                    )
+                );?>
             </h2>
             <?php $APPLICATION->IncludeComponent("bitrix:news.list","photos-main",
                 Array(

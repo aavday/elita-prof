@@ -10,7 +10,11 @@ $APPLICATION->SetTitle('Элита-Проф - о компании');
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="about__title section-title fs-big mb-4 text-center">
-            О компании
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/about/h1.html"
+                )
+            );?>
         </h1>
         <div class="about__text">
             <img src="/dist/img/office.jpg" alt="" class="float-md-start w-md-50 w-100">

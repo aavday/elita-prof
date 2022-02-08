@@ -12,7 +12,11 @@ $title = $APPLICATION->GetTitle();
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="catalog__title section-title fs-big mb-4 text-center">
-            Производство мебели
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/catalog-furniture/h1.html"
+                )
+            );?>
         </h1>
         <div class="row">
             <div class="col-xl-3 col-md-4">

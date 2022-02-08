@@ -9,7 +9,11 @@ $APPLICATION->SetTitle('Элита-Проф - согласие на обрабо
         <div class="bg-white px-3 py-5 rounded">
             <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
             <h1 class="privacy-policy__title section-title fs-big mb-4 text-center">
-                Согласие на обработку персональных данных
+                <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/include/privacy-policy/h1.html"
+                    )
+                );?>
             </h1>
             <p>
                 Предоставляя свои персональные данные, на основании Федерального закона № 152-ФЗ «О персональных данных» от 27.07.2006 г. Пользователь даёт согласие

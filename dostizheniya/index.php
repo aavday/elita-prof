@@ -10,7 +10,11 @@ $APPLICATION->SetTitle('Элита-Проф - достижения');
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="certificates__title section-title fs-big mb-4 text-center">
-            Сертификаты, дипломы, награды
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/certificates/h1.html"
+                )
+            );?>
         </h1>
         <div class="mt-5">
             <h2 class="text-center mb-3">

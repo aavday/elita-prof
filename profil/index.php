@@ -8,11 +8,15 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
 $title = $APPLICATION->GetTitle();
 ?>
 
-<section class="section container catalog py-4">
+<section class="section container catalog catalog-aluminium py-4">
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="catalog__title section-title fs-big mb-4 text-center">
-            Алюминиевый профиль
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/catalog-aluminium/h1.html"
+                )
+            );?>
         </h1>
         <div class="row">
             <div class="col-xl-3 col-md-4">

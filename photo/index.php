@@ -10,7 +10,11 @@ $APPLICATION->SetTitle('Элита-Проф - фотографии');
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="photos__title section-title fs-big mb-4 text-center">
-            Фотогалерея
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/photos/h1.html"
+                )
+            );?>
         </h1>
         <?php $APPLICATION->IncludeComponent("bitrix:news.list","photos",
             Array(

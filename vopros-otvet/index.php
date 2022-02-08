@@ -10,7 +10,11 @@ $APPLICATION->SetTitle('Элита-Проф - вопрос-ответ');
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="question-answers__title text-center section-title fs-big mb-4">
-            Вопрос-ответ
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/question-answers/h1.html"
+                )
+            );?>
         </h1>
         <div class="mb-4">
             <button class="button button-dark-purple fs-medium text-shadow-contour hover-shadow-white rounded fw-bold" data-bs-toggle="modal" data-bs-target="#question-answers-modal">

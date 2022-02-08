@@ -3,14 +3,18 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
 /** @global CMain $APPLICATION */
 
-$APPLICATION->SetTitle('Наша команда');
+$APPLICATION->SetTitle('Элита-Проф - наша команда');
 ?>
 
 <section class="section container team py-4">
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="team__title section-title fs-big mb-4 text-center">
-            <?php $APPLICATION->ShowTitle(false); ?>
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/team/h1.html"
+                )
+            );?>
         </h1>
         <div class="text-center">
             <p>

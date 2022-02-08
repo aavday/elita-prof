@@ -10,7 +10,11 @@ $APPLICATION->SetTitle('Элита-Проф - блог');
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="blog__title text-center section-title fs-big mb-4">
-            Блог
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/blog/h1.html"
+                )
+            );?>
         </h1>
         <?php $APPLICATION->IncludeComponent("bitrix:news.list","blog",
             Array(

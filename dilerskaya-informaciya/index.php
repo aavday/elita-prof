@@ -10,7 +10,11 @@ $APPLICATION->SetTitle('Элита-Проф - дилерская информа�
     <div class="bg-white px-3 py-5 rounded">
         <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb","",Array());?>
         <h1 class="dealers-info__title section-title fs-big mb-4 text-center">
-            Для дилеров
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/dealers-info/h1.html"
+                )
+            );?>
         </h1>
         <div>
             <img src="/dist/img/karta-png.jpg" alt="">
