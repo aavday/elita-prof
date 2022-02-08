@@ -10,8 +10,8 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         Array(
             "IBLOCK_TYPE" => "mainpage",
             "IBLOCK_ID" => IBLOCK_SLIDER_MAIN,
-            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
-            "PROPERTY_CODE" => ['DETAIL_BTN', 'DETAIL_BTN_TEXT'],
+            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE'],
+            "PROPERTY_CODE" => ['DETAIL_BTN'],
             "SET_TITLE" => "N",
             "SET_BROWSER_TITLE" => "N",
             "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
@@ -19,12 +19,12 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         )
     );?>
 
-    <?php $APPLICATION->IncludeComponent("bitrix:news.list","slider-main",
+    <?php $APPLICATION->IncludeComponent("bitrix:news.list","areas-of-activity",
         Array(
             "IBLOCK_TYPE" => "mainpage",
             "IBLOCK_ID" => IBLOCK_AREAS_OF_ACTIVITY,
-            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
-            "PROPERTY_CODE" => ['DETAIL_BTN', 'DETAIL_BTN_TEXT'],
+            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT'],
+            "PROPERTY_CODE" => ['DETAIL_BTN'],
             "SET_TITLE" => "N",
             "SET_BROWSER_TITLE" => "N",
             "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
