@@ -15,7 +15,7 @@ if (!empty($arResult['ITEMS'])):
                     <div class="intro-slider-item__txt-big fw-bold"><?=$item['PREVIEW_TEXT']; ?></div>
                     <div class="intro-slider-item__txt-small"><?=$item['DETAIL_TEXT']; ?></div>
                     <?php if ($item['PROPERTIES']['DETAIL_BTN']['VALUE'] === 'Y'): ?>
-                    <a href="<?=$item['PROPERTIES']['DETAIL_BTN_TEXT']['VALUE']; ?>" class="intro-slider-item__btn text-shadow-contour button button-dark-purple fs-medium hover-scale rounded shadow-white fw-bold">
+                    <a href="<?=$item['PROPERTIES']['DETAIL_BTN_TEXT']['VALUE']; ?>" class="intro-slider-item__btn text-shadow-contour button button-dark-purple white-link fs-medium hover-scale rounded shadow-white fw-bold">
                         Подробнее
                     </a>
                     <?php endif; ?>
