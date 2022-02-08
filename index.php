@@ -19,49 +19,18 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         )
     );?>
 
-    <section class="section container areas-of-activity pt-4">
-        <div class="row justify-content-center">
-            <div class="col-xl col-md-6 col-12 mb-4">
-                <div class="areas-of-activity-item bg-white p-4 rounded shadow">
-                    <div class="areas-of-activity-item__picture rounded w-100" style="background-image: url('/dist/img/areas-furniture.jpg');">
-                        <a href="" class="areas-of-activity-item__detail-btn white-link hover-underline text-shadow-contour rounded shadow-white button button-dark-purple fs-medium">
-                            Подробнее
-                        </a>
-                    </div>
-                    <div class="areas-of-activity-item__name fs-medium my-2 fw-bold">Производство мебели</div>
-                    <p class="areas-of-activity-item__description">
-                        Можно предположить, что ощущение мира, следовательно, творит неоднозначный интеллект, ломая рамки привычных представлений
-                    </p>
-                </div>
-            </div>
-            <div class="col-xl col-md-6 col-12 mb-4">
-                <div class="areas-of-activity-item bg-white p-4 rounded shadow">
-                    <div class="areas-of-activity-item__picture rounded w-100" style="background-image: url('/dist/img/areas-aluminum.jpg');">
-                        <a href="" class="areas-of-activity-item__detail-btn white-link hover-underline text-shadow-contour rounded shadow-white button button-dark-purple fs-medium">
-                            Подробнее
-                        </a>
-                    </div>
-                    <div class="areas-of-activity-item__name fs-medium my-2 fw-bold">Продажа профиля</div>
-                    <p class="areas-of-activity-item__description">
-                        Можно предположить, что ощущение мира, следовательно, творит неоднозначный интеллект, ломая рамки привычных представлений
-                    </p>
-                </div>
-            </div>
-            <div class="col-xl col-md-6 col-12 mb-4">
-                <div class="areas-of-activity-item bg-white p-4 rounded shadow">
-                    <div class="areas-of-activity-item__picture rounded w-100" style="background-image: url('/dist/img/areas-portfolio.jpg');">
-                        <a href="" class="areas-of-activity-item__detail-btn white-link hover-underline text-shadow-contour rounded shadow-white button button-dark-purple fs-medium">
-                            Подробнее
-                        </a>
-                    </div>
-                    <div class="areas-of-activity-item__name fs-medium my-2 fw-bold">Наши работы</div>
-                    <p class="areas-of-activity-item__description">
-                        Можно предположить, что ощущение мира, следовательно, творит неоднозначный интеллект, ломая рамки привычных представлений
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php $APPLICATION->IncludeComponent("bitrix:news.list","slider-main",
+        Array(
+            "IBLOCK_TYPE" => "mainpage",
+            "IBLOCK_ID" => IBLOCK_AREAS_OF_ACTIVITY,
+            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
+            "PROPERTY_CODE" => ['DETAIL_BTN', 'DETAIL_BTN_TEXT'],
+            "SET_TITLE" => "N",
+            "SET_BROWSER_TITLE" => "N",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "ADD_SECTIONS_CHAIN" => "N"
+        )
+    );?>
 
     <section class="section container about-main py-4">
         <div class="bg-white px-3 py-5 rounded">
