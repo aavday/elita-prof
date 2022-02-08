@@ -6,24 +6,18 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 $APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
 ?>
 
-    <section class="section intro container-fluid py-4 px-md-4">
-        <div class="h-100 w-100">
-            <div class="intro-slider text-shadow-contour owl-carousel owl-theme" data-loop="true" data-margin="10" data-nav="true" data-items="1" data-autoplay="true">
-                <div class="intro-slider-item">
-                    <div class="intro-slider-item__img" style="background-image: url('/dist/img/intro-img.jpg')"></div>
-                    <div class="intro-slider-item__txt-big fw-bold">Какая-то акция</div>
-                    <div class="intro-slider-item__txt-small">Описание акции</div>
-                    <button class="intro-slider-item__btn text-shadow-contour button button-dark-purple fs-medium hover-scale rounded shadow-white fw-bold">Подробнее</button>
-                </div>
-                <div class="intro-slider-item">
-                    <div class="intro-slider-item__img" style="background-image: url('/dist/img/intro-img.jpg')"></div>
-                    <div class="intro-slider-item__txt-big fw-bold">Какая-то акция</div>
-                    <div class="intro-slider-item__txt-small">Описание акции</div>
-                    <button class="intro-slider-item__btn text-shadow-contour button button-dark-purple fs-medium hover-scale rounded shadow-white fw-bold">Подробнее</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php $APPLICATION->IncludeComponent("bitrix:news.list","slider-main",
+        Array(
+            "IBLOCK_TYPE" => "mainpage",
+            "IBLOCK_ID" => IBLOCK_SLIDER_MAIN,
+            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
+            "PROPERTY_CODE" => ['DETAIL_BTN', 'DETAIL_BTN_TEXT'],
+            "SET_TITLE" => "N",
+            "SET_BROWSER_TITLE" => "N",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "ADD_SECTIONS_CHAIN" => "N"
+        )
+    );?>
 
     <section class="section container areas-of-activity pt-4">
         <div class="row justify-content-center">
