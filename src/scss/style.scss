@@ -237,7 +237,8 @@ img.img-height-300px {
     text-decoration: none;
     line-height: 1;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #fff;
       text-decoration: underline;
     }
@@ -299,7 +300,8 @@ img.img-height-300px {
         top: 0.4em !important;
         background: rgba(0, 0, 0, 0.4) !important;
 
-        & a:hover {
+        & a:hover,
+        & a:focus {
           background: none;
         }
       }
