@@ -12,7 +12,7 @@ $APPLICATION->SetTitle('Элита-Проф - достижения');
         <h1 class="achievements__title section-title fs-big mb-4 text-center">
             <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
                     "AREA_FILE_SHOW" => "file",
-                    "PATH" => "/include/certificates/h1.html"
+                    "PATH" => "/include/achievements/h1.html"
                 )
             );?>
         </h1>
