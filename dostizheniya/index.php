@@ -16,7 +16,7 @@ $APPLICATION->SetTitle('Элита-Проф - достижения');
                 )
             );?>
         </h1>
-        <?php $APPLICATION->IncludeComponent("bitrix:news.list","areas-of-activity",
+        <?php $APPLICATION->IncludeComponent("bitrix:news.list","certificates",
             Array(
                 "IBLOCK_TYPE" => "achievements",
                 "IBLOCK_ID" => IBLOCK_CERTIFICATES,
@@ -27,7 +27,7 @@ $APPLICATION->SetTitle('Элита-Проф - достижения');
                 "ADD_SECTIONS_CHAIN" => "N"
             )
         );?>
-        <?php $APPLICATION->IncludeComponent("bitrix:news.list","areas-of-activity",
+        <?php $APPLICATION->IncludeComponent("bitrix:news.list","certificates",
             Array(
                 "IBLOCK_TYPE" => "achievements",
                 "IBLOCK_ID" => IBLOCK_DIPLOMAS,
@@ -38,7 +38,7 @@ $APPLICATION->SetTitle('Элита-Проф - достижения');
                 "ADD_SECTIONS_CHAIN" => "N"
             )
         );?>
-        <?php $APPLICATION->IncludeComponent("bitrix:news.list","areas-of-activity",
+        <?php $APPLICATION->IncludeComponent("bitrix:news.list","certificates",
             Array(
                 "IBLOCK_TYPE" => "achievements",
                 "IBLOCK_ID" => IBLOCK_GRATEFULLNESS,
