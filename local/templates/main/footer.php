@@ -123,7 +123,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                     </div>
                     <div class="my-2 form-check">
                         <input type="checkbox" class="form-check-input" name="agree-policy" id="feedback-agree-policy" required>
-                        <label class="form-check-label fs-small" for="feedback-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
+                        <label class="form-check-label fs-small" for="feedback-agree-policy">Я согласен с <a href="/privacy-policy/">условиями обработки</a> персональных данных</label>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="feedback__submit-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
@@ -167,7 +167,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                     </div>
                     <div class="my-2 form-check">
                         <input type="checkbox" class="form-check-input" name="agree-policy" id="question-answers-agree-policy" required>
-                        <label class="form-check-label fs-small" for="question-answers-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
+                        <label class="form-check-label fs-small" for="question-answers-agree-policy">Я согласен с <a href="/privacy-policy/">условиями обработки</a> персональных данных</label>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="question-answers__submit-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
@@ -215,7 +215,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                     </div>
                     <div class="my-2 form-check">
                         <input type="checkbox" class="form-check-input" name="agree-policy" id="contact-us-agree-policy" required>
-                        <label class="form-check-label fs-small" for="contact-us-agree-policy">Я согласен с <a href="">условиями обработки</a> персональных данных</label>
+                        <label class="form-check-label fs-small" for="contact-us-agree-policy">Я согласен с <a href="/privacy-policy/">условиями обработки</a> персональных данных</label>
                     </div>
                     <button type="submit" class="contact-us__submit-btn mt-2 py-2 text-shadow-contour hover-underline rounded shadow-white button button-dark-purple fs-medium">
                         Отправить
