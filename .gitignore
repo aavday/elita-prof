@@ -42,3 +42,4 @@
 /node_modules
 /local/php_interface/init.php
 /local/php_interface/constants.php
+/include
