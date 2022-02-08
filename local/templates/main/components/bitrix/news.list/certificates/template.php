@@ -1,0 +1,20 @@
+<?php
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+
+/** @var array $arResult */
+
+if (!empty($arResult['ITEMS'])):
+?>
+<div class="mt-5">
+    <h2 class="text-center mb-3">
+        Сертификаты
+    </h2>
+    <div class="certificates-slider pb-5 owl-carousel owl-theme owl-nav-bottom" data-margin="5" data-nav="true" data-dots="true" data-dotsEach="5" data-responsive='{"0":{"items":1,"dots":false},"576":{"items":2},"768":{"items":3},"992":{"items":4},"1400":{"items":5}}'>
+        <?php foreach ($arResult['ITEMS'] as $key => $item): ?>
+        <a href="<?=$item['DETAIL_PICTURE']['SRC']; ?>" class="certificates-slider__item" data-lightbox="certificates">
+            <img src="<?=$item['PREVIEW_PICTURE']['SRC']; ?>" alt="Элита-Проф сертификат <?=$key; ?>" class="certificates-slider__item-img rounded w-auto mx-auto">
+        </a>
+        <?php endforeach; ?>
+    </div>
+</div>
+<?php endif; ?>
