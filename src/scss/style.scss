@@ -561,17 +561,7 @@ img.img-height-300px {
   }
 
   &-slider {
-    & .owl-item {
-      transition: 0.2s;
-
-      &:not(.center) {
-        opacity: 0.8;
-        transform: scale(0.8);
-      }
-    }
-
     & .owl-nav {
-
       color: $purple-dark !important;
 
       & button:hover {
