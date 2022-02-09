@@ -105,7 +105,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                     )
                 );?>
             </h2>
-            <div class="feedback-slider color-white pb-5 owl-carousel owl-theme" data-loop="true" data-margin="10" data-nav="true" data-dots="false" data-autoplay="true" data-center="true" data-responsive='{"0":{"items":1},"992":{"items":3}}'>
+            <div class="feedback-slider color-white pb-5 owl-carousel owl-theme owl-nav-bottom" data-loop="true" data-margin="10" data-nav="true" data-dots="false" data-autoplay="true" data-center="true" data-items="1">
                 <div class="feedback__item p-4 rounded">
                     <div class="feedback__item-header d-flex">
                         <p class="d-flex flex-column">
