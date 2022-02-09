@@ -42,10 +42,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                     </ul>
                 </div>
                 <div class="header-top-bottom text-center text d-md-flex d-sm-none flex-sm-row flex-column justify-content-end">
-                    <div class="search my-sm-0 justify-content-sm-start justify-content-center my-2">
-                        <input type="text" name="search" id="search h-100" placeholder="Поиск по сайту" class="search-input">
+                    <form action="/search/" class="search my-sm-0 justify-content-sm-start justify-content-center my-2" id="form-search">
+                        <input type="search" name="q" id="search" placeholder="Поиск по сайту" class="search-input">
                         <button class="search-btn"><i class="fas fa-search"></i></button>
-                    </div>
+                    </form>
                     <button class="button button-dark-purple fs-medium text-shadow-contour hover-shadow-white rounded fw-bold ms-3" data-bs-toggle="modal" data-bs-target="#contact-us-modal">
                         Связаться с нами
                     </button>
