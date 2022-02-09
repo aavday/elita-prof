@@ -53,38 +53,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
             </div>
         </div>
         <div class="header-bottom px-4">
-            <nav class="header-nav text-shadow-contour" itemscope itemtype="http://schema.org/SiteNavigationElement">
-                <ul class="header-nav__menu d-flex flex-md-row flex-column justify-content-around align-items-center">
-                    <li class="header-nav__menu-item">
-                        <a href="" itemprop="url" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">О компании</a>
-                        <ul class="dropdown-menu px-3 bg-purple-dark" aria-labelledby="dropdownMenuLink">
-                            <li class="my-3"><a class="dropdown-item" href="/o-kompanii/">О компании</a></li>
-                            <li class="my-3"><a class="dropdown-item" href="/komanda/">Команда</a></li>
-                            <li class="my-3"><a class="dropdown-item" href="/dostizheniya/">Достижения</a></li>
-                            <li class="my-3"><a class="dropdown-item" href="/dilerskaya-informaciya/">Дилерская информация</a></li>
-                            <li class="my-3"><a class="dropdown-item" href="/privacy-policy/">Согласие на обработку персональных данных</a></li>
-                        </ul>
-                    </li>
-                    <li class="header-nav__menu-item">
-                        <a href="/mebel/" itemprop="url">Мебель</a>
-                    </li>
-                    <li class="header-nav__menu-item">
-                        <a href="/profil/" itemprop="url">Алюминиевый профиль</a>
-                    </li>
-                    <li class="header-nav__menu-item">
-                        <a href="/photo/" itemprop="url">Фото</a>
-                    </li>
-                    <li class="header-nav__menu-item">
-                        <a href="/vopros-otvet/" itemprop="url">Вопрос-ответ</a>
-                    </li>
-                    <li class="header-nav__menu-item">
-                        <a href="/blog/" itemprop="url">Блог</a>
-                    </li>
-                    <li class="header-nav__menu-item">
-                        <a href="/contacts/" itemprop="url">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
+            <?php $APPLICATION->IncludeComponent("bitrix:menu","header-menu",Array(
+                    "ROOT_MENU_TYPE" => "top",
+                    "MAX_LEVEL" => "2",
+                    "CHILD_MENU_TYPE" => "left",
+                )
+            );?>
         </div>
     </div>
     <div class="header-mob px-4 pb-3 pt-2 d-md-none d-flex justify-content-sm-between justify-content-center align-items-center">
