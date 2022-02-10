@@ -10,11 +10,11 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         <div class="bg-white px-3 py-5 rounded">
             <?php $APPLICATION->IncludeComponent(
                 "bitrix:search.page",
-                "",
+                "suggest",
                 array(
-                    "AJAX_MODE" => "N",
+                    "AJAX_MODE" => "Y",
                     "AJAX_OPTION_HISTORY" => "N",
-                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_JUMP" => "Y",
                     "AJAX_OPTION_SHADOW" => "Y",
                     "AJAX_OPTION_STYLE" => "Y",
                     "CACHE_TIME" => "36000000",
@@ -22,7 +22,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                     "CHECK_DATES" => "N",
                     "PAGER_SHOW_ALWAYS" => "N",
                     "PAGER_TITLE" => "Результаты поиска",
-                    "PAGE_RESULT_COUNT" => "999",
+                    "PAGE_RESULT_COUNT" => "20",
                     "RESTART" => "Y",
                     "SHOW_WHERE" => "N",
                     "USE_TITLE_RANK" => "N",
@@ -38,7 +38,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                     "SHOW_ITEM_DATE_CHANGE" => "Y",
                     "SHOW_ORDER_BY" => "N",
                     "SHOW_TAGS_CLOUD" => "N",
-                    "DISPLAY_TOP_PAGER" => "N",
+                    "DISPLAY_TOP_PAGER" => "Y",
                     "DISPLAY_BOTTOM_PAGER" => "Y",
                 ),
                 false
