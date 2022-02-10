@@ -25,67 +25,53 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 );?>
             </div>
             <div class="col-lg-3 col-sm-6 mt-sm-0 mt-3">
-                <p class="fw-bold">Мебель</p>
-                <nav class="footer__nav">
-                    <ul>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Медицинская и лабораторная мебель</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Корпусная</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Офисная</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Торговая</a>
-                        </li>
-                    </ul>
-                </nav>
+                <p class="fw-bold">
+                    <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "PATH" => "/include/footer/furniture_title.html"
+                        )
+                    );?>
+                </p>
+                <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list","footer-catalog-sections",
+                    Array(
+                        "IBLOCK_TYPE" => "catalog",
+                        "IBLOCK_ID" => IBLOCK_FURNITURE,
+                        "SECTION_CODE" => "",
+                        "TOP_DEPTH" => "2",
+                    )
+                );?>
             </div>
             <div class="col-lg-3 col-sm-6">
-                <p class="fw-bold">Алюминиевый профиль</p>
-                <nav class="footer__nav">
-                    <ul>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Для шкафов</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Для торгово-выставочного оборудования</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Для мобильных перегородок</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Для подвесных дверей</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Для кухни</a>
-                        </li>
-                    </ul>
-                </nav>
+                <p class="fw-bold">
+                    <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "PATH" => "/include/footer/aluminium_title.html"
+                        )
+                    );?>
+                </p>
+                <?php $APPLICATION->IncludeComponent("bitrix:catalog.section.list","footer-catalog-sections",
+                    Array(
+                        "IBLOCK_TYPE" => "catalog",
+                        "IBLOCK_ID" => IBLOCK_ALUMINIUM,
+                        "SECTION_CODE" => "",
+                        "TOP_DEPTH" => "2",
+                    )
+                );?>
             </div>
             <div class="col-lg-3 col-sm-6">
-                <p class="fw-bold">Другие разделы</p>
-                <nav class="footer__nav">
-                    <ul>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">О компании</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Фото</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Вопрос-ответ</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Блог</a>
-                        </li>
-                        <li class="footer__nav-item mb-2">
-                            <a href="" class="white-link hover-underline">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
+                <p class="fw-bold">
+                    <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "PATH" => "/include/footer/all_sections_title.html"
+                        )
+                    );?>
+                </p>
+                <?php $APPLICATION->IncludeComponent("bitrix:menu","footer-menu",Array(
+                        "ROOT_MENU_TYPE" => "top",
+                        "MAX_LEVEL" => "2",
+                        "CHILD_MENU_TYPE" => "left",
+                    )
+                );?>
             </div>
         </div>
     </div>
