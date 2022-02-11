@@ -3,11 +3,18 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
 /** @global CMain $APPLICATION */
 
-$APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
+$APPLICATION->SetTitle('Элита-Проф - поиск по сайту');
 ?>
 
-    <section class="section advantages container py-4">
+    <section class="section search-page container py-4">
         <div class="bg-white px-3 py-5 rounded">
+            <h1 class="search-page__title section-title fs-big mb-4 text-center">
+                <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => "/include/search-page/h1.html"
+                    )
+                );?>
+            </h1>
             <?php $APPLICATION->IncludeComponent(
                 "bitrix:search.page",
                 "clear-custom",
