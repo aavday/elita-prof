@@ -15,14 +15,14 @@ if (!empty($arResult['SECTIONS'])):
         <?php if (!empty($section['SUB_SECTIONS'])): ?>
             <li class="footer__nav-item mb-2">
                 <div class="d-flex">
-                    <a href="<?=$section['LINK']; ?>" class="white-link hover-underline accordion-header"><?=$section['NAME']; ?></a>
+                    <a href="<?=$section['SECTION_PAGE_URL']; ?>" class="white-link hover-underline accordion-header"><?=$section['NAME']; ?></a>
                     <button type="button" class="accordion-button collapsed p-0" data-bs-toggle="collapse" data-bs-target="#footer-sections-<?=$arResult['IBLOCK_SECTION_ID']; ?>-accordion-item-<?=$key; ?>"></button>
                 </div>
                 <div class="accordion-collapse collapse" id="footer-sections-<?=$arResult['IBLOCK_SECTION_ID']; ?>-accordion-item-<?=$key; ?>">
                     <ul class="accordion-body" aria-labelledby="dropdownMenuLink">
                         <?php foreach ($section['SUB_SECTIONS'] as $subSection): ?>
                             <li class="my-3">
-                                <a class="color-white text-decoration-none" href="<?=$subSection['LINK']; ?>"><?=$subSection['NAME']; ?></a>
+                                <a class="color-white text-decoration-none" href="<?=$subSection['SECTION_PAGE_URL']; ?>"><?=$subSection['NAME']; ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
