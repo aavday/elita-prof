@@ -52,10 +52,6 @@ $nav-tabs-link-hover-border-color: transparent;
   color: #3c763d;
 }
 
-.bg-white {
-  background-color: #fff;
-}
-
 .bg-purple {
   background-color: $purple;
 }
@@ -755,6 +751,16 @@ img.img-height-300px {
       background: none !important;
       border: none !important;
     }
+  }
+}
+
+//cart
+
+.cart {
+  &-icon {
+    position: fixed;
+    top: 20%;
+    right: 0.5em;
   }
 }
 
