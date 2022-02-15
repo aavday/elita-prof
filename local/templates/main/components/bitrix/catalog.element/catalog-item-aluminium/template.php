@@ -40,7 +40,7 @@ if (!empty($arResult)):
                     <p class="fw-bold">Цена:</p>
                     <p>От <b><?=$arResult['PROPERTIES']['PRICE']['VALUE']; ?> р.</b></p>
                     <?php endif; ?>
-                    <button class="catalog-item__add-to-cart-btn py-2 button hover-scale button-dark-purple text-shadow-contour hover-shadow rounded fw-bold">
+                    <button class="catalog-item__add-to-cart-btn py-2 button hover-scale button-dark-purple text-shadow-contour hover-shadow rounded fw-bold" data-itemId="<?=$arResult['ID']; ?>" title="Нажмите, чтобы добавить товар в корзину">
                         <i class="fas fa-cart-arrow-down me-2"></i>В корзину
                     </button>
                     <?php if (!empty($arResult['PROPERTIES']['COLORS']['VALUE'])): ?>

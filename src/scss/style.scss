@@ -682,6 +682,11 @@ img.img-height-300px {
         }
       }
     }
+
+    &__add-to-cart-btn.added {
+      color: $purple-dark;
+      background-color: #fff;
+    }
   }
 
   &-furniture .catalog-items__img {
@@ -760,7 +765,9 @@ img.img-height-300px {
   &-icon {
     position: fixed;
     top: 20%;
-    right: 0.5em;
+    right: 0;
+    border-bottom-left-radius: 0.5em;
+    border-top-left-radius: 0.5em;
   }
 }
 
