@@ -79,14 +79,14 @@ $(document).ready(function () {
                 e.preventDefault();
 
                 if (btn.classList.contains('added')) {
-                    btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
+                    btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
                     currentCartItems.forEach((item, index) => {
                         if (item === itemId) {
                             currentCartItems.splice(index, 1)
                         }
                     })
                 } else {
-                    btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
+                    btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
                     if (!currentCartItems) currentCartItems = [];
                     let isDuplicate = false;
 

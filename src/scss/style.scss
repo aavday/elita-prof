@@ -684,6 +684,7 @@ img.img-height-300px {
     }
 
     &__add-to-cart-btn.added {
+      text-shadow: none;
       color: $purple-dark;
       background-color: #fff;
     }
