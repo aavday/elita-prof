@@ -18,7 +18,8 @@ gulp.task('style', () => {
 })
 
 gulp.task('js', () => {
-    return gulp.src('./src/js/**/main.js')
+    return gulp.src('./src/js/**/*.js')
+        .pipe(babel())
         .pipe(jsminify())
         .pipe(gulp.dest('./dist/js'))
 })
