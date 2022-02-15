@@ -37,17 +37,29 @@ $APPLICATION->SetTitle("Элита-Проф - изготовление мебе�
     </div>
 </section>
 
-<?php $APPLICATION->IncludeComponent("bitrix:news.list","colors-aluminium",
-    Array(
-        "IBLOCK_TYPE" => "catalog",
-        "IBLOCK_ID" => IBLOCK_ALUMINIUM_COLORS,
-        "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
-        "SET_TITLE" => "N",
-        "SET_BROWSER_TITLE" => "N",
-        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-        "ADD_SECTIONS_CHAIN" => "N"
-    )
-);?>
+
+<section class="section container catalog-colors py-4">
+    <div class="bg-white px-3 py-5 rounded">
+        <h2 class="catalog-colors__title section-title fs-big mb-4 text-center">
+            <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "PATH" => "/include/catalog-aluminium/colors_title.html"
+                )
+            );?>
+        </h2>
+        <?php $APPLICATION->IncludeComponent("bitrix:news.list","colors",
+            Array(
+                "IBLOCK_TYPE" => "catalog",
+                "IBLOCK_ID" => IBLOCK_ALUMINIUM_COLORS,
+                "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
+                "SET_TITLE" => "N",
+                "SET_BROWSER_TITLE" => "N",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "ADD_SECTIONS_CHAIN" => "N"
+            )
+        );?>
+    </div>
+</section>
 
 <?php
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
