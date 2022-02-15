@@ -57,9 +57,22 @@ $(document).ready(function () {
         })
     }
 
-    /* корзина */
+    /* добавление товаров в корзину */
+
+    const reloadCartIcon = (amountOfItems) => {
+        const cartIcon = document.querySelector('.cart-icon');
+
+        if (amountOfItems) {
+            cartIcon.classList.remove('d-none');
+            cartIcon.querySelector('.cart-icon__amount-of-items').innerHTML = amountOfItems;
+        } else {
+            cartIcon.classList.add('d-none');
+        }
+    }
 
     let currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
+    if (currentCartItems) reloadCartIcon(currentCartItems.length);
+
     const addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
 
     if (addToCartBtns) {
@@ -102,6 +115,7 @@ $(document).ready(function () {
                 btn.classList.toggle('added');
 
                 localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                reloadCartIcon(currentCartItems.length);
 
                 console.log(localStorage.getItem('cartItems'));
             })
