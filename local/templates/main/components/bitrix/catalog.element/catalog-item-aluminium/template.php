@@ -47,36 +47,6 @@ if (!empty($arResult)):
                         <label for="item-<?=$item['ID'] ?>-quantity">Кол-во:</label>
                         <input type="number" class="catalog-item__quantity rounded shadow border-purple-dark" id="item-<?=$item['ID'] ?>-quantity" title="Задайте нужное количество данного товара и добавьте в корзину">
                     </div>
-                    <?php if (!empty($arResult['PROPERTIES']['COLORS']['VALUE'])): ?>
-                    <div class="catalog-item__colors">
-                        <p class="fw-bold">Цвет:</p>
-                        <nav>
-                            <div class="nav nav-tabs">
-                                <?php foreach ($arResult['PROPERTIES']['COLORS']['SECTIONS'] as $key => $section): ?>
-                                    <button class="nav-link <?php if ($key == 0) echo 'active'; ?>" data-bs-toggle="tab" data-bs-target="#color-tab-<?=$key; ?>" type="button">
-                                        <?=$section['NAME']; ?>
-                                    </button>
-                                <?php endforeach; ?>
-                            </div>
-                        </nav>
-                        <div class="tab-content">
-                            <?php foreach ($arResult['PROPERTIES']['COLORS']['SECTIONS'] as $keySection => $section): ?>
-                                <div class="tab-pane <?php if ($keySection == 0) echo 'show active'; ?>" id="color-tab-<?=$keySection; ?>">
-                                    <?php
-                                    foreach ($arResult['PROPERTIES']['COLORS']['FIELDS'] as $key => $colorFields):
-                                        if ($colorFields['IBLOCK_SECTION_ID'] != $section['ID']) continue;
-                                        ?>
-                                        <input type="radio" name="color" id="color-<?=$colorFields['ID']; ?>" value="<?=$colorFields['NAME']; ?>" class="catalog-item__colors-radio d-none" <?php if ($key === 0) echo 'checked'; ?>>
-                                        <label for="color-<?=$colorFields['ID']; ?>" class="catalog-item__colors-label button rounded py-2 text-center">
-                                            <img src="<?=CFile::GetPath($colorFields['PREVIEW_PICTURE']); ?>" alt="Цвет <?=$colorFields['NAME']; ?>" class="rounded shadow">
-                                            <div><?=$colorFields['NAME']; ?></div>
-                                        </label>
-                                    <?php endforeach; ?>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <?php endif; ?>
                 </div>
             </div>
         </div>
