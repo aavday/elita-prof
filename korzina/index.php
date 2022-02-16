@@ -3,7 +3,10 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
 /** @global CMain $APPLICATION */
 
+use \Bitrix\Main\Page\Asset;
+
 $APPLICATION->SetTitle('Элита-Проф - корзина');
+Asset::getInstance()->addJs('/dist/js/cart-min.js');
 ?>
 
     <section class="section container cart py-4">
@@ -15,7 +18,10 @@ $APPLICATION->SetTitle('Элита-Проф - корзина');
                     )
                 );?>
             </h1>
-            <div class="fs-big">
+            <div class="loader text-center">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div class="fs-big cart__empty-text d-none">
                 <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
                         "AREA_FILE_SHOW" => "file",
                         "PATH" => "/include/cart/empty_cart_text.html"

@@ -23,6 +23,7 @@ use \Bitrix\Main\Page\Asset;
         Asset::getInstance()->addJs('/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js');
         Asset::getInstance()->addJs('/node_modules/owl.carousel/dist/owl.carousel.min.js');
         Asset::getInstance()->addJs('/node_modules/lightbox2/dist/js/lightbox.min.js');
+        Asset::getInstance()->addJs('/dist/js/main-min.js');
 
         $APPLICATION->ShowHead();
     ?>

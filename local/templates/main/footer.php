@@ -219,13 +219,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
     </div>
 </div>
 
-<a href="/korzina/" class="cart-icon d-block bg-white p-2 pe-3 text-decoration-none d-none" title="Нажмите, чтобы перейти на страницу корзины">
+<a href="/korzina/" class="cart-icon d-block bg-white p-2 pe-3 text-decoration-none shadow d-none" title="Нажмите, чтобы перейти на страницу корзины">
     <i class="fa-solid fa-cart-shopping fs-big color-purple-dark"></i>
     <div class="cart-icon__amount-of-items text-center fw-bold">
         1
     </div>
 </a>
 
-<script type="module" src="/dist/js/main-min.js"></script>
 </body>
 </html>
