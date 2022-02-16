@@ -48,7 +48,7 @@ $(document).ready(function () {
         blogItems.forEach(function (item) {
           return item.classList.remove('active');
         });
-        var blogItemToOpen = document.querySelector('#' + thumb.getAttribute('data-blog-item'));
+        var blogItemToOpen = document.querySelector("#".concat(thumb.getAttribute('data-blog-item')));
         blogItemToOpen.classList.add('active');
         blogThumbs.forEach(function (item) {
           return item.classList.remove('active');
@@ -59,6 +59,10 @@ $(document).ready(function () {
   }
   /* добавление товаров в корзину */
 
+
+  var currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
+  var addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
+  var itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
 
   var reloadCartIcon = function reloadCartIcon(amountOfItems) {
     var cartIcon = document.querySelector('.cart-icon');
@@ -71,18 +75,24 @@ $(document).ready(function () {
     }
   };
 
-  var currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
-  if (currentCartItems) reloadCartIcon(currentCartItems.length);
-  var addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
-  var itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
+  if (currentCartItems) {
+    reloadCartIcon(currentCartItems.length);
+    itemQuantityInputs.forEach(function (input) {
+      currentCartItems.forEach(function (item) {
+        if (input.getAttribute('data-itemId') === item.id) {
+          input.value = item.quantity;
+        }
+      });
+    });
+  }
 
-  if (addToCartBtns) {
+  if (addToCartBtns && itemQuantityInputs) {
     addToCartBtns.forEach(function (btn) {
       var itemId = btn.getAttribute('data-itemId');
 
       if (currentCartItems) {
         currentCartItems.forEach(function (item) {
-          if (item === itemId) {
+          if (item.id === itemId) {
             btn.classList.add('added');
             btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
             btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
@@ -97,8 +107,9 @@ $(document).ready(function () {
           btn.setAttribute('title', 'Нажмите, чтобы добавить товар в корзину');
           btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
           currentCartItems.forEach(function (item, index) {
-            if (item === itemId) {
+            if (item.id === itemId) {
               currentCartItems.splice(index, 1);
+              document.querySelector("#item-".concat(itemId, "-quantity")).value = 1;
             }
           });
         } else {
@@ -107,17 +118,41 @@ $(document).ready(function () {
           if (!currentCartItems) currentCartItems = [];
           var isDuplicate = false;
           currentCartItems.forEach(function (item) {
-            if (item === itemId) {
+            if (item.id === itemId) {
               isDuplicate = true;
             }
           });
-          if (!isDuplicate) currentCartItems.push(itemId);
+
+          if (!isDuplicate) {
+            currentCartItems.push({
+              id: itemId,
+              quantity: document.querySelector("#item-".concat(itemId, "-quantity")).value
+            });
+          }
         }
 
         btn.classList.toggle('added');
         localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
         reloadCartIcon(currentCartItems.length);
-        console.log(localStorage.getItem('cartItems'));
+      });
+    });
+    itemQuantityInputs.forEach(function (input) {
+      input.addEventListener('change', function () {
+        var itemId = input.getAttribute('data-itemId');
+        var addToCartBtn = document.querySelector(".catalog-item__add-to-cart-btn[data-itemId=\"".concat(itemId, "\"]"));
+
+        if (addToCartBtn.classList.contains('added')) {
+          currentCartItems.forEach(function (item, index) {
+            if (item.id === itemId) {
+              currentCartItems[index] = {
+                id: itemId,
+                quantity: input.value
+              };
+            }
+          });
+        }
+
+        localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
       });
     });
   }

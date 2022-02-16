@@ -5,14 +5,25 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
     CModule::IncludeModule('iblock');
 
     $items = [];
-    $_REQUEST['items'] = json_decode($_REQUEST['items']);
 
     if ($_REQUEST['items']) {
-        $arFilter  = ['IBLOCK_ID' => [IBLOCK_FURNITURE, IBLOCK_ALUMINIUM], 'ID' => $_REQUEST['items'], 'ACTIVE' => 'Y'];
+        $_REQUEST['items'] = json_decode($_REQUEST['items'], true);
+        $itemIds = [];
+        $_SESSION['items'] = $_REQUEST['items'];
+        foreach ($_REQUEST['items'] as $cartItem) {
+            $itemIds[] = $cartItem['id'];
+        }
+
+        $arFilter  = ['IBLOCK_ID' => [IBLOCK_FURNITURE, IBLOCK_ALUMINIUM], 'ID' => $itemIds, 'ACTIVE' => 'Y'];
         $arSelect = ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PAGE_URL', 'PROPERTY_PRICE'];
         $res = CIBlockElement::GetList([], $arFilter, false, ['nPageSize' => 999], $arSelect);
         while ($item = $res->GetNext()) {
             if ($item['PREVIEW_PICTURE']) $item['PREVIEW_PICTURE_SRC'] = CFile::GetPath($item['PREVIEW_PICTURE']);
+
+            foreach ($_REQUEST['items'] as $cartItem) {
+                $item['QUANTITY'] = $cartItem['quantity'];
+            }
+
             $items[] = $item;
         }
     }

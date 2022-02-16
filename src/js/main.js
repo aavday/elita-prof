@@ -49,7 +49,7 @@ $(document).ready(function () {
             thumb.addEventListener('click', () => {
                 const blogItems = document.querySelectorAll('.blog-main__left-item');
                 blogItems.forEach(item => item.classList.remove('active'));
-                const blogItemToOpen = document.querySelector('#' + thumb.getAttribute('data-blog-item'));
+                const blogItemToOpen = document.querySelector(`#${thumb.getAttribute('data-blog-item')}`);
                 blogItemToOpen.classList.add('active');
                 blogThumbs.forEach(item => item.classList.remove('active'));
                 thumb.classList.add('active');
@@ -58,6 +58,10 @@ $(document).ready(function () {
     }
 
     /* добавление товаров в корзину */
+
+    let currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
+    const addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
+    const itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
 
     const reloadCartIcon = (amountOfItems) => {
         const cartIcon = document.querySelector('.cart-icon');
@@ -70,19 +74,25 @@ $(document).ready(function () {
         }
     }
 
-    let currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
-    if (currentCartItems) reloadCartIcon(currentCartItems.length);
+    if (currentCartItems) {
+        reloadCartIcon(currentCartItems.length);
 
-    const addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
-    const itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
+        itemQuantityInputs.forEach(input => {
+            currentCartItems.forEach(item => {
+                if (input.getAttribute('data-itemId') === item.id) {
+                    input.value = item.quantity
+                }
+            })
+        })
+    }
 
-    if (addToCartBtns) {
+    if (addToCartBtns && itemQuantityInputs) {
         addToCartBtns.forEach(btn => {
             const itemId = btn.getAttribute('data-itemId');
 
             if (currentCartItems) {
                 currentCartItems.forEach(item => {
-                    if (item === itemId) {
+                    if (item.id === itemId) {
                         btn.classList.add('added');
                         btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
                         btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
@@ -97,8 +107,9 @@ $(document).ready(function () {
                     btn.setAttribute('title', 'Нажмите, чтобы добавить товар в корзину');
                     btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
                     currentCartItems.forEach((item, index) => {
-                        if (item === itemId) {
+                        if (item.id === itemId) {
                             currentCartItems.splice(index, 1)
+                            document.querySelector(`#item-${itemId}-quantity`).value = 1;
                         }
                     })
                 } else {
@@ -108,20 +119,42 @@ $(document).ready(function () {
                     let isDuplicate = false;
 
                     currentCartItems.forEach(item => {
-                        if (item === itemId) {
+                        if (item.id === itemId) {
                             isDuplicate = true;
                         }
                     })
 
-                    if (!isDuplicate) currentCartItems.push(itemId);
+                    if (!isDuplicate) {
+                        currentCartItems.push({
+                            id: itemId,
+                            quantity: document.querySelector(`#item-${itemId}-quantity`).value
+                        });
+                    }
                 }
 
                 btn.classList.toggle('added');
 
                 localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
                 reloadCartIcon(currentCartItems.length);
+            })
+        })
 
-                console.log(localStorage.getItem('cartItems'));
+        itemQuantityInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const itemId = input.getAttribute('data-itemId');
+                const addToCartBtn = document.querySelector(`.catalog-item__add-to-cart-btn[data-itemId="${itemId}"]`);
+                if (addToCartBtn.classList.contains('added')) {
+                    currentCartItems.forEach((item, index) => {
+                        if (item.id === itemId) {
+                            currentCartItems[index] = {
+                                id: itemId,
+                                quantity: input.value
+                            }
+                        }
+                    })
+                }
+
+                localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
             })
         })
     }
