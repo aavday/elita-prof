@@ -3,6 +3,7 @@
 $purple-main: #7d74ae;
 $purple-dark: #65589c;
 $smoke: #bbb;
+$red: #d61818;
 
 @import "../../node_modules/bootstrap/scss/functions";
 
@@ -87,6 +88,10 @@ button {
 input {
   border: 0;
   outline: 0;
+
+  &[type="number"] {
+    max-width: 60px;
+  }
 }
 
 .form-label.required:after {
@@ -150,6 +155,18 @@ a.dark-purple-link {
 
 .color-smoke {
   color: $smoke;
+}
+
+.color-red {
+  color: $red;
+}
+
+.border-bold-purple-dark {
+  border: 4px solid $purple-dark;
+}
+
+.border-purple-dark {
+  border: 2px solid $purple-dark;
 }
 
 img.img-height-300px {
@@ -812,6 +829,37 @@ img.img-height-300px {
     right: 0;
     border-bottom-left-radius: 0.5em;
     border-top-left-radius: 0.5em;
+  }
+
+  &-item {
+    &__img {
+      max-height: 150px;
+    }
+
+    &__delete {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      position: relative;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 48%;
+        content: "";
+        background-color: $red;
+        width: 30px;
+        height: 4px;
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
   }
 }
 

@@ -28,6 +28,7 @@ Asset::getInstance()->addJs('/dist/js/cart-min.js');
                     )
                 );?>
             </div>
+            <div class="cart-items"></div>
         </div>
     </section>
 

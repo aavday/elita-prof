@@ -74,6 +74,7 @@ $(document).ready(function () {
     if (currentCartItems) reloadCartIcon(currentCartItems.length);
 
     const addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
+    const itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
 
     if (addToCartBtns) {
         addToCartBtns.forEach(btn => {
@@ -83,6 +84,7 @@ $(document).ready(function () {
                 currentCartItems.forEach(item => {
                     if (item === itemId) {
                         btn.classList.add('added');
+                        btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
                         btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
                     }
                 })
@@ -92,6 +94,7 @@ $(document).ready(function () {
                 e.preventDefault();
 
                 if (btn.classList.contains('added')) {
+                    btn.setAttribute('title', 'Нажмите, чтобы добавить товар в корзину');
                     btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
                     currentCartItems.forEach((item, index) => {
                         if (item === itemId) {
@@ -99,6 +102,7 @@ $(document).ready(function () {
                         }
                     })
                 } else {
+                    btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
                     btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
                     if (!currentCartItems) currentCartItems = [];
                     let isDuplicate = false;

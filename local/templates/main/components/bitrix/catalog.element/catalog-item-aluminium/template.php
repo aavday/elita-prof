@@ -43,6 +43,10 @@ if (!empty($arResult)):
                     <button class="catalog-item__add-to-cart-btn py-2 button hover-scale button-dark-purple text-shadow-contour hover-shadow rounded fw-bold" data-itemId="<?=$arResult['ID']; ?>" title="Нажмите, чтобы добавить товар в корзину">
                         <i class="fas fa-cart-arrow-down me-2"></i>В корзину
                     </button>
+                    <div class="mt-2" >
+                        <label for="item-<?=$item['ID'] ?>-quantity">Кол-во:</label>
+                        <input type="number" class="catalog-item__quantity rounded shadow border-purple-dark" id="item-<?=$item['ID'] ?>-quantity" title="Задайте нужное количество данного товара и добавьте в корзину">
+                    </div>
                     <?php if (!empty($arResult['PROPERTIES']['COLORS']['VALUE'])): ?>
                     <div class="catalog-item__colors">
                         <p class="fw-bold">Цвет:</p>
