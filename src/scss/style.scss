@@ -832,15 +832,20 @@ img.img-height-300px {
   }
 
   &-item {
+    position: relative;
+
     &__img {
       max-height: 150px;
     }
 
     &__delete {
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
       width: 30px;
       height: 30px;
       cursor: pointer;
-      position: relative;
+      position: absolute;
 
       &::before,
       &::after {

@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     /* добавление товаров в корзину */
 
-    let currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
+    let currentCartItems = JSON.parse(localStorage.getItem('elitaProfCartItems'));
     const addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
     const itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
 
@@ -134,7 +134,7 @@ $(document).ready(function () {
 
                 btn.classList.toggle('added');
 
-                localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
                 reloadCartIcon(currentCartItems.length);
             })
         })
@@ -154,7 +154,7 @@ $(document).ready(function () {
                     })
                 }
 
-                localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
             })
         })
     }

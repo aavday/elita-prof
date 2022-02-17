@@ -1,7 +1,7 @@
 $(document).ready(function () {
     /* инициализация корзины */
 
-    const currentCartItemsJSON = localStorage.getItem('cartItems');
+    const currentCartItemsJSON = localStorage.getItem('elitaProfCartItems');
     const cartLoader = document.querySelector('.cart .loader');
     const cartItemsBlock = document.querySelector('.cart-items');
     const cartIcon = document.querySelector('.cart-icon');
@@ -19,12 +19,12 @@ $(document).ready(function () {
                 response.forEach(item => {
                     itemsHTML +=
                     `
-                        <div class="cart-item p-3 my-3 rounded shadow border-bold-purple-dark d-flex justify-content-between align-items-center" id="item-${item.ID}">
-                            <div class="d-flex align-items-center">
-                                <img src="${item.PREVIEW_PICTURE_SRC}" alt="${item.NAME}" class="cart-item__img">
-                                <a href="${item.DETAIL_PAGE_URL}" class="cart-item__name fw-bold fs-big ms-4">${item.NAME}</a>
+                        <div class="cart-item p-3 my-3 rounded shadow border-bold-purple-dark d-flex flex-lg-row flex-column justify-content-between align-items-center" id="item-${item.ID}">
+                            <div class="d-flex align-items-center flex-sm-row flex-column">
+                                <img src="${item.PREVIEW_PICTURE_SRC}" alt="${item.NAME}" class="cart-item__img my-2">
+                                <a href="${item.DETAIL_PAGE_URL}" class="cart-item__name fw-bold fs-big ms-4 my-2">${item.NAME}</a>
                             </div>
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center my-2">
                                 <label for="item-${item.ID}-quantity">Кол-во:</label>
                                 <input type="number" value="${item.QUANTITY}" class="catalog-item__quantity rounded shadow border-purple-dark mx-2" id="item-${item.ID}-quantity" title="Задайте нужное количество данного товара и добавьте в корзину" data-itemId="${item.ID}">
                             `
@@ -53,7 +53,7 @@ $(document).ready(function () {
                             }
                         })
 
-                        localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                        localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
                     })
                 })
 
@@ -69,7 +69,7 @@ $(document).ready(function () {
                             }
                         })
 
-                        localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                        localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
 
                         if (currentCartItems) {
                             cartLoader.classList.add('d-none');
