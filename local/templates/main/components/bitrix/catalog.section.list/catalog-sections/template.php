@@ -14,7 +14,7 @@ if (!empty($arResult['SECTIONS'])):
         $this->AddDeleteAction($section['ID'], $section['DELETE_LINK'], CIBlock::GetArrayByID($section['IBLOCK_ID'], 'ELEMENT_DELETE'));
         ?>
         <div class="col-xl-3 col-sm-6 mb-4">
-            <a href="<?=$section['SECTION_PAGE_URL']; ?>" class="hover-scale text-center d-block dark-purple-link hover-underline fw-bold">
+            <a href="<?=$section['SECTION_PAGE_URL']; ?>" class="hover-scale text-center d-block dark-purple-link hover-underline fw-bold" id="<?=$this->GetEditAreaId($section['ID']); ?>">
                 <img src="<?=$section['PICTURE']['SRC']; ?>" alt="<?=$section['NAME']; ?>" class="catalog-items__img rounded shadow w-100">
                 <p class="mt-2"><?=$section['NAME']; ?></p>
             </a>

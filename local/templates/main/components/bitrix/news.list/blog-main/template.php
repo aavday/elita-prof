@@ -11,10 +11,10 @@ if (!empty($arResult['ITEMS'])):
         <div class="blog-main__left">
         <?php
         foreach ($arResult['ITEMS'] as $key => $item):
-            $this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
-            $this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_DELETE'));
+            $this->AddEditAction('blog-item-' . $key, $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
+            $this->AddDeleteAction('blog-item-' . $key, $item['DELETE_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_DELETE'));
             ?>
-            <div class="blog-main__left-item <?php if ($key == 0) echo 'active'; ?>" id="blog-item-<?=$key; ?>">
+            <div class="blog-main__left-item <?php if ($key == 0) echo 'active'; ?>" id="<?=$this->GetEditAreaId('blog-item-' . $key); ?>">
                 <img src="<?=$item['DETAIL_PICTURE']['SRC'] ?>" alt="<?=$item['NAME'] ?>" class="blog-main__img mb-3 rounded">
                 <h3 class="blog-main__title fw-bold fs-medium">
                     <?=$item['NAME'] ?>
@@ -35,7 +35,7 @@ if (!empty($arResult['ITEMS'])):
     <div class="col-xxl-3 col-xl-4 col-lg-5 col-md-6 col-12">
         <div class="blog-main__right fs-small d-flex flex-column mx-2">
         <?php foreach ($arResult['ITEMS'] as $key => $item):?>
-            <div class="blog-main__right-item py-2 <?php if ($key == 0) echo 'active'; ?>" data-blog-item="blog-item-<?=$key; ?>">
+            <div class="blog-main__right-item py-2 <?php if ($key == 0) echo 'active'; ?>" data-blog-item="<?=$this->GetEditAreaId('blog-item-' . $key); ?>">
                 <div class="row">
                     <div class="col-6">
                         <div class="blog-main__right-item-picture rounded" style="background-image: url('<?=$item['PREVIEW_PICTURE']['SRC']; ?>')"></div>

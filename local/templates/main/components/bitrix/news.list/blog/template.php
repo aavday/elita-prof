@@ -11,7 +11,7 @@ if (!empty($arResult['ITEMS'])):
         $this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
         $this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_DELETE'));
         ?>
-        <div class="blog-item row">
+        <div class="blog-item row" id="<?=$this->GetEditAreaId($item['ID']);?>">
             <div class="col-2">
                 <img src="<?=$item['PREVIEW_PICTURE']['SRC'] ?>" alt="<?=$item['NAME']; ?>" class="rounded shadow w-100">
             </div>

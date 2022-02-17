@@ -9,8 +9,12 @@ if (!empty($arResult['ITEMS'])):
     <section class="section intro container-fluid py-4 px-md-4">
         <div class="h-100 w-100">
             <div class="intro-slider text-shadow-contour owl-carousel owl-theme" data-loop="true" data-margin="10" data-nav="true" data-items="1" data-autoplay="true">
-                <?php foreach ($arResult['ITEMS'] as $item): ?>
-                <div class="intro-slider-item">
+            <?php
+            foreach ($arResult['ITEMS'] as $item):
+                $this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
+                $this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_DELETE'));
+                ?>
+                <div class="intro-slider-item" id="<?=$this->GetEditAreaId($item['ID']);?>">
                     <div class="intro-slider-item__img" style="background-image: url('<?=$item['PREVIEW_PICTURE']['SRC']; ?>')"></div>
                     <div class="intro-slider-item__txt-big fw-bold"><?=$item['PREVIEW_TEXT']; ?></div>
                     <div class="intro-slider-item__txt-small"><?=$item['DETAIL_TEXT']; ?></div>
@@ -20,7 +24,7 @@ if (!empty($arResult['ITEMS'])):
                     </a>
                     <?php endif; ?>
                 </div>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
             </div>
         </div>
     </section>
