@@ -29,7 +29,7 @@ Asset::getInstance()->addJs('/dist/js/cart-min.js');
                 );?>
             </div>
             <div class="cart-items"></div>
-            <form class="cart__place-order my-2 ajax-form" id="cart__place-order" name="cart__place-order" data-handlerUrl="/ajax/forms/ajax_form.php">
+            <form class="cart__place-order my-2 ajax-form d-none" id="cart__place-order" name="cart__place-order" data-handlerUrl="/ajax/forms/ajax_form.php" data-successText="Спасибо за ваш заказ! Скоро с вами свяжется один из наших менеджеров">
                 <h2 class="text-center fw-bold fs-big">
                     <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
                             "AREA_FILE_SHOW" => "file",
@@ -63,7 +63,7 @@ Asset::getInstance()->addJs('/dist/js/cart-min.js');
                 </div>
                 <div class="my-2">
                     <label for="cart__place-order-comment" class="form-label">Комментарий к заказу</label>
-                    <textarea class="form-control" name="Комментарий к заказу" id="cart__place-order-comment" cols="30" rows="10"></textarea>
+                    <textarea class="form-control" name="Комментарий" id="cart__place-order-comment" cols="30" rows="10"></textarea>
                 </div>
                 <div class="my-2 form-check">
                     <input type="checkbox" class="form-check-input" name="agree-policy" id="cart__place-order-agree-policy" required>

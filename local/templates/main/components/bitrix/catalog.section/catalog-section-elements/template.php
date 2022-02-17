@@ -25,7 +25,7 @@ if (!empty($arResult['ITEMS'])):
                 </button>
                 <div class="mt-2">
                     <label for="item-<?=$item['ID']; ?>-quantity me-2">Кол-во:</label>
-                    <input type="number" value="1" class="catalog-item__quantity rounded shadow border-purple-dark" id="item-<?=$item['ID']; ?>-quantity" title="Задайте нужное количество данного товара и добавьте в корзину" data-itemId="<?=$item['ID']; ?>">
+                    <input type="number" min="1" value="1" class="catalog-item__quantity rounded shadow border-purple-dark" id="item-<?=$item['ID']; ?>-quantity" title="Задайте нужное количество данного товара и добавьте в корзину" data-itemId="<?=$item['ID']; ?>">
                 </div>
             </div>
         </div>

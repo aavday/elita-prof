@@ -100,7 +100,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <p class="fs-small">
                     Если вы имели опыт работы с нашей компанией - пожалуйста, оставьте нам свой отзыв, для нас это очень важно
                 </p>
-                <form action="" id="feedback-form" name="feedback-form" class="ajax-form" data-handlerUrl="/ajax/forms/ajax_form.php">
+                <form action="" id="feedback-form" name="feedback-form" class="ajax-form" data-handlerUrl="/ajax/forms/ajax_form.php" data-successText="Спасибо за ваш отзыв! Нам очень важно знать ваше мнение">
                     <div class="my-2">
                         <label for="feedback-name" class="form-label required">Как к вам обращаться</label>
                         <input type="text" class="form-control" name="Имя" id="feedback-name" required>
@@ -140,7 +140,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <p class="fs-small">
                     Задайте нам вопрос и мы ответим на него в этом же разделе, а также можем вам позвонить и/или написать на почту
                 </p>
-                <form action="" id="question-answers-form" class="ajax-form" name="question-answers-form" data-handlerUrl="/ajax/forms/ajax_form.php">
+                <form action="" id="question-answers-form" class="ajax-form" name="question-answers-form" data-handlerUrl="/ajax/forms/ajax_form.php" data-successText="Спасибо за ваш вопрос! Мы скоро дадим на него ответ">
                     <div class="my-2">
                         <label for="question-answers-name" class="form-label required">Как к вам обращаться</label>
                         <input type="text" class="form-control" name="Имя" id="question-answers-name" required>
@@ -184,7 +184,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                 <p class="fs-small">
                     Оставьте здесь ваш вопрос, и мы ответим в течение 30 минут
                 </p>
-                <form action="" id="contact-us-form" class="ajax-form" name="contact-us-form" data-handlerUrl="/ajax/forms/ajax_form.php">
+                <form action="" id="contact-us-form" class="ajax-form" name="contact-us-form" data-handlerUrl="/ajax/forms/ajax_form.php" data-successText="Спасибо за ваш отклик! С вами скоро свяжется один из наших менеджеров">
                     <div class="my-2">
                         <label for="contact-us-name" class="form-label required">Как к вам обращаться</label>
                         <input type="text" class="form-control" name="Имя" id="contact-us-name" required>

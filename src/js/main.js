@@ -25,7 +25,13 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 console.log(response);
-                form.text('Спасибо! Форма отправлена')
+                form.text(form.attr('data-successText'))
+
+                if (form.prop('id') === 'cart__place-order') {
+                    document.querySelector('.cart-icon').classList.add('d-none');
+                    document.querySelector('.cart-items').innerHTML = '';
+                    localStorage.removeItem('cartItems');
+                }
             },
             error: function (jqXhr, err) {
                 console.log(jqXhr, err);
@@ -59,7 +65,7 @@ $(document).ready(function () {
 
     /* добавление товаров в корзину */
 
-    let currentCartItems = JSON.parse(localStorage.getItem('elitaProfCartItems'));
+    let currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
     const addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
     const itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
 
@@ -74,48 +80,75 @@ $(document).ready(function () {
         }
     }
 
-    if (currentCartItems) {
-        reloadCartIcon(currentCartItems.length);
+    const refreshBtnsAndInputs = () => {
+        currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
 
-        itemQuantityInputs.forEach(input => {
-            currentCartItems.forEach(item => {
-                if (input.getAttribute('data-itemId') === item.id) {
-                    input.value = item.quantity
-                }
-            })
-        })
-    }
-
-    if (addToCartBtns && itemQuantityInputs) {
         addToCartBtns.forEach(btn => {
             const itemId = btn.getAttribute('data-itemId');
 
-            if (currentCartItems) {
+            if (currentCartItems && currentCartItems.length !== 0) {
+                let isInArray = false;
+
                 currentCartItems.forEach(item => {
-                    if (item.id === itemId) {
-                        btn.classList.add('added');
-                        btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
-                        btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
-                    }
+                    if (item.id === itemId) isInArray = true;
                 })
-            }
 
-            btn.addEventListener('click', e => {
-                e.preventDefault();
-
-                if (btn.classList.contains('added')) {
+                if (isInArray) {
+                    btn.classList.add('added');
+                    btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
+                    btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
+                } else {
+                    btn.classList.remove('added');
                     btn.setAttribute('title', 'Нажмите, чтобы добавить товар в корзину');
                     btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
+                }
+            } else {
+                btn.classList.remove('added');
+                btn.setAttribute('title', 'Нажмите, чтобы добавить товар в корзину');
+                btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
+            }
+        })
+
+        itemQuantityInputs.forEach(input => {
+            if (currentCartItems && currentCartItems.length !== 0) {
+                let isInArray = false;
+
+                currentCartItems.forEach(item => {
+                    if (input.getAttribute('data-itemId') === item.id) {
+                        input.value = item.quantity
+                        isInArray = true;
+                    }
+                })
+
+                if (!isInArray) {
+                    input.value = 1;
+                }
+            } else {
+                input.value = 1;
+            }
+        })
+    }
+
+    if (currentCartItems) reloadCartIcon(currentCartItems.length);
+
+    if (addToCartBtns && itemQuantityInputs) {
+        refreshBtnsAndInputs();
+
+        addToCartBtns.forEach(btn => {
+            const itemId = btn.getAttribute('data-itemId');
+
+            btn.addEventListener('click', () => {
+                currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
+                if (!currentCartItems) currentCartItems = [];
+
+                if (btn.classList.contains('added')) {
                     currentCartItems.forEach((item, index) => {
                         if (item.id === itemId) {
-                            currentCartItems.splice(index, 1)
+                            currentCartItems.splice(index, 1);
                             document.querySelector(`#item-${itemId}-quantity`).value = 1;
                         }
                     })
                 } else {
-                    btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
-                    btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
-                    if (!currentCartItems) currentCartItems = [];
                     let isDuplicate = false;
 
                     currentCartItems.forEach(item => {
@@ -132,15 +165,17 @@ $(document).ready(function () {
                     }
                 }
 
-                btn.classList.toggle('added');
-
-                localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
+                localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
                 reloadCartIcon(currentCartItems.length);
+                refreshBtnsAndInputs();
             })
         })
 
         itemQuantityInputs.forEach(input => {
             input.addEventListener('change', () => {
+                currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
+                if (!currentCartItems) currentCartItems = [];
+
                 const itemId = input.getAttribute('data-itemId');
                 const addToCartBtn = document.querySelector(`.catalog-item__add-to-cart-btn[data-itemId="${itemId}"]`);
                 if (addToCartBtn.classList.contains('added')) {
@@ -152,9 +187,11 @@ $(document).ready(function () {
                             }
                         }
                     })
-                }
 
-                localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
+                    localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                    reloadCartIcon(currentCartItems.length);
+                    refreshBtnsAndInputs();
+                }
             })
         })
     }

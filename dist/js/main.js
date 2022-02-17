@@ -23,7 +23,13 @@ $(document).ready(function () {
       dataType: 'json',
       success: function success(response) {
         console.log(response);
-        form.text('Спасибо! Форма отправлена');
+        form.text(form.attr('data-successText'));
+
+        if (form.prop('id') === 'cart__place-order') {
+          document.querySelector('.cart-icon').classList.add('d-none');
+          document.querySelector('.cart-items').innerHTML = '';
+          localStorage.removeItem('cartItems');
+        }
       },
       error: function error(jqXhr, err) {
         console.log(jqXhr, err);
@@ -60,7 +66,7 @@ $(document).ready(function () {
   /* добавление товаров в корзину */
 
 
-  var currentCartItems = JSON.parse(localStorage.getItem('elitaProfCartItems'));
+  var currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
   var addToCartBtns = document.querySelectorAll('.catalog-item__add-to-cart-btn');
   var itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
 
@@ -75,37 +81,62 @@ $(document).ready(function () {
     }
   };
 
-  if (currentCartItems) {
-    reloadCartIcon(currentCartItems.length);
-    itemQuantityInputs.forEach(function (input) {
-      currentCartItems.forEach(function (item) {
-        if (input.getAttribute('data-itemId') === item.id) {
-          input.value = item.quantity;
-        }
-      });
-    });
-  }
-
-  if (addToCartBtns && itemQuantityInputs) {
+  var refreshBtnsAndInputs = function refreshBtnsAndInputs() {
+    currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
     addToCartBtns.forEach(function (btn) {
       var itemId = btn.getAttribute('data-itemId');
 
-      if (currentCartItems) {
+      if (currentCartItems && currentCartItems.length !== 0) {
+        var isInArray = false;
         currentCartItems.forEach(function (item) {
-          if (item.id === itemId) {
-            btn.classList.add('added');
-            btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
-            btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
-          }
+          if (item.id === itemId) isInArray = true;
         });
-      }
 
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        if (btn.classList.contains('added')) {
+        if (isInArray) {
+          btn.classList.add('added');
+          btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
+          btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
+        } else {
+          btn.classList.remove('added');
           btn.setAttribute('title', 'Нажмите, чтобы добавить товар в корзину');
           btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
+        }
+      } else {
+        btn.classList.remove('added');
+        btn.setAttribute('title', 'Нажмите, чтобы добавить товар в корзину');
+        btn.innerHTML = '<i class="fas fa-cart-arrow-down me-2"></i>В корзину';
+      }
+    });
+    itemQuantityInputs.forEach(function (input) {
+      if (currentCartItems && currentCartItems.length !== 0) {
+        var isInArray = false;
+        currentCartItems.forEach(function (item) {
+          if (input.getAttribute('data-itemId') === item.id) {
+            input.value = item.quantity;
+            isInArray = true;
+          }
+        });
+
+        if (!isInArray) {
+          input.value = 1;
+        }
+      } else {
+        input.value = 1;
+      }
+    });
+  };
+
+  if (currentCartItems) reloadCartIcon(currentCartItems.length);
+
+  if (addToCartBtns && itemQuantityInputs) {
+    refreshBtnsAndInputs();
+    addToCartBtns.forEach(function (btn) {
+      var itemId = btn.getAttribute('data-itemId');
+      btn.addEventListener('click', function () {
+        currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
+        if (!currentCartItems) currentCartItems = [];
+
+        if (btn.classList.contains('added')) {
           currentCartItems.forEach(function (item, index) {
             if (item.id === itemId) {
               currentCartItems.splice(index, 1);
@@ -113,9 +144,6 @@ $(document).ready(function () {
             }
           });
         } else {
-          btn.setAttribute('title', 'Нажмите, чтобы убрать товар из корзины');
-          btn.innerHTML = '<i class="fa-solid fa-check me-2"></i>В корзине';
-          if (!currentCartItems) currentCartItems = [];
           var isDuplicate = false;
           currentCartItems.forEach(function (item) {
             if (item.id === itemId) {
@@ -131,13 +159,15 @@ $(document).ready(function () {
           }
         }
 
-        btn.classList.toggle('added');
-        localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
+        localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
         reloadCartIcon(currentCartItems.length);
+        refreshBtnsAndInputs();
       });
     });
     itemQuantityInputs.forEach(function (input) {
       input.addEventListener('change', function () {
+        currentCartItems = JSON.parse(localStorage.getItem('cartItems'));
+        if (!currentCartItems) currentCartItems = [];
         var itemId = input.getAttribute('data-itemId');
         var addToCartBtn = document.querySelector(".catalog-item__add-to-cart-btn[data-itemId=\"".concat(itemId, "\"]"));
 
@@ -150,9 +180,10 @@ $(document).ready(function () {
               };
             }
           });
+          localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+          reloadCartIcon(currentCartItems.length);
+          refreshBtnsAndInputs();
         }
-
-        localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
       });
     });
   }

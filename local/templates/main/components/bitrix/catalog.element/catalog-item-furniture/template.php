@@ -38,14 +38,14 @@ if (!empty($arResult)):
                 <div>
                     <?php if ($arResult['PROPERTIES']['PRICE']['VALUE']): ?>
                     <p class="fw-bold">Цена:</p>
-                    <p>От <b><?=$arResult['PROPERTIES']['PRICE']['VALUE']; ?> р.</b></p>
+                    <p>От <b><?=$arResult['PROPERTIES']['PRICE']['VALUE']; ?></b> р.</p>
                     <?php endif; ?>
-                    <button class="catalog-item__add-to-cart-btn py-2 button hover-scale button-dark-purple text-shadow-contour hover-shadow rounded fw-bold" data-itemId="<?=$arResult['ID']; ?>" title="Нажмите, чтобы добавить товар в корзину">
+                    <button class="catalog-item__add-to-cart-btn py-2 button hover-scale button-dark-purple text-shadow-contour hover-shadow rounded fw-bold" data-itemId="<?=$item['ID']; ?>" title="Нажмите, чтобы добавить товар в корзину">
                         <i class="fas fa-cart-arrow-down me-2"></i>В корзину
                     </button>
                     <div class="mt-2">
-                        <label for="item-<?=$item['ID'] ?>-quantity">Кол-во:</label>
-                        <input type="number" class="catalog-item__quantity rounded shadow border-purple-dark" id="item-<?=$item['ID'] ?>-quantity" title="Задайте нужное количество данного товара и добавьте в корзину">
+                        <label for="item-<?=$item['ID']; ?>-quantity me-2">Кол-во:</label>
+                        <input type="number" min="1" value="1" class="catalog-item__quantity rounded shadow border-purple-dark" id="item-<?=$item['ID']; ?>-quantity" title="Задайте нужное количество данного товара и добавьте в корзину" data-itemId="<?=$item['ID']; ?>">
                     </div>
                 </div>
             </div>

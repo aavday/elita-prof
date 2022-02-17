@@ -5,13 +5,13 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
     $to = COption::GetOptionString('main', 'email_from');
 
     $subject = (!empty($_REQUEST['subject'])) ? $_REQUEST['subject'] : 'Заполнена форма на сайте';;
-    $message = $subject . ' на сайте ' . $_SERVER['HTTP_HOST'] . '<br><br>';
+    $message = '<b>' . $subject . '</b> на сайте ' . $_SERVER['HTTP_HOST'] . '<br><br>';
 
     foreach ($_POST as $key => $value)
     {
         if ($value !== '' && $key !== 'agree-policy' && $key !== 'subject') {
-            $valueText = $key . ': ' . $value;
-            $message = $message . $valueText . '<br>';
+            $valueText = '<b>' . $key . ':</b> ' . $value;
+            $message = $message . $valueText . '<br><br>';
         }
     }
 

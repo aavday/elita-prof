@@ -1,12 +1,16 @@
 $(document).ready(function () {
     /* инициализация корзины */
 
-    const currentCartItemsJSON = localStorage.getItem('elitaProfCartItems');
+    const currentCartItemsJSON = localStorage.getItem('cartItems');
     const cartLoader = document.querySelector('.cart .loader');
     const cartItemsBlock = document.querySelector('.cart-items');
     const cartIcon = document.querySelector('.cart-icon');
+    const cartPlaceOrderForm = document.querySelector('#cart__place-order');
+    const cartItemsDataTextarea = document.querySelector('#cart__place-order__items-data');
 
     if (currentCartItemsJSON && currentCartItemsJSON !== '[]') {
+        const currentCartItems = JSON.parse(currentCartItemsJSON);
+
         $.ajax({
             url: '/ajax/cart/getItemsData.php',
             type: 'POST',
@@ -28,7 +32,7 @@ $(document).ready(function () {
                                 <label for="item-${item.ID}-quantity">Кол-во:</label>
                                 <input type="number" value="${item.QUANTITY}" class="catalog-item__quantity rounded shadow border-purple-dark mx-2" id="item-${item.ID}-quantity" title="Задайте нужное количество данного товара и добавьте в корзину" data-itemId="${item.ID}">
                             `
-                                if (item.PROPERTY_PRICE_VALUE !== null) itemsHTML += `<span class="cart-item__price justify-self-end me-4">От <b>${item.PROPERTY_PRICE_VALUE} р.</b></span>`
+                                if (item.PROPERTY_PRICE_VALUE !== null) itemsHTML += `<span class="cart-item__price justify-self-end me-4">От <b class="cart-item__price-value">${item.PROPERTY_PRICE_VALUE}</b> р.</span>`
                                 itemsHTML +=
                                 `<span class="cart-item__delete" data-itemId="${item.ID}"></span>
                             </div>
@@ -38,6 +42,8 @@ $(document).ready(function () {
 
                 cartItemsBlock.innerHTML = itemsHTML;
                 cartLoader.classList.add('d-none');
+                cartPlaceOrderForm.classList.remove('d-none');
+                updateCartItemsTextarea();
 
                 const itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
 
@@ -53,12 +59,12 @@ $(document).ready(function () {
                             }
                         })
 
-                        localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
+                        localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                        updateCartItemsTextarea();
                     })
                 })
 
                 const cartItemsDeleteBtns = document.querySelectorAll('.cart-item__delete');
-                const currentCartItems = JSON.parse(currentCartItemsJSON);
 
                 cartItemsDeleteBtns.forEach(btn => {
                     btn.addEventListener('click', () => {
@@ -69,11 +75,13 @@ $(document).ready(function () {
                             }
                         })
 
-                        localStorage.setItem('elitaProfCartItems', JSON.stringify(currentCartItems));
+                        localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                        reloadCartIcon(currentCartItems.length);
+                        updateCartItemsTextarea();
 
-                        if (currentCartItems) {
-                            cartLoader.classList.add('d-none');
+                        if (currentCartItems.length === 0) {
                             document.querySelector('.cart__empty-text').classList.remove('d-none');
+                            cartPlaceOrderForm.classList.add('d-none');
                             cartIcon.classList.add('d-none');
                         }
 
@@ -85,6 +93,33 @@ $(document).ready(function () {
                 console.log(jqXhr, err);
             }
         })
+
+        const updateCartItemsTextarea = () => {
+            cartItemsDataTextarea.value = '<br><br>';
+            currentCartItems.forEach((item, index) => {
+                const itemElement = document.querySelector(`#item-${item.id}`);
+                const itemName = itemElement.querySelector('.cart-item__name').innerHTML;
+                cartItemsDataTextarea.value += `${index + 1}. <b>Назв.:</b> ${itemName}, <b>Кол-во:</b> ${item.quantity}`;
+
+                const itemPrice = itemElement.querySelector('.cart-item__price');
+                if (itemPrice) {
+                    cartItemsDataTextarea.value += ` <b>Цена за шт.:</b> ${itemPrice} <br><br>`
+                } else {
+                    cartItemsDataTextarea.value += '<br><br>'
+                }
+            })
+        }
+
+        const reloadCartIcon = (amountOfItems) => {
+            const cartIcon = document.querySelector('.cart-icon');
+
+            if (amountOfItems) {
+                cartIcon.classList.remove('d-none');
+                cartIcon.querySelector('.cart-icon__amount-of-items').innerHTML = amountOfItems;
+            } else {
+                cartIcon.classList.add('d-none');
+            }
+        }
     } else {
         cartLoader.classList.add('d-none');
         document.querySelector('.cart__empty-text').classList.remove('d-none');

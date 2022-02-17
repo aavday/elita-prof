@@ -14,17 +14,19 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
             $itemIds[] = $cartItem['id'];
         }
 
-        $arFilter  = ['IBLOCK_ID' => [IBLOCK_FURNITURE, IBLOCK_ALUMINIUM], 'ID' => $itemIds, 'ACTIVE' => 'Y'];
-        $arSelect = ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PAGE_URL', 'PROPERTY_PRICE'];
-        $res = CIBlockElement::GetList([], $arFilter, false, ['nPageSize' => 999], $arSelect);
-        while ($item = $res->GetNext()) {
-            if ($item['PREVIEW_PICTURE']) $item['PREVIEW_PICTURE_SRC'] = CFile::GetPath($item['PREVIEW_PICTURE']);
+        if ($itemIds) {
+            $arFilter  = ['IBLOCK_ID' => [IBLOCK_FURNITURE, IBLOCK_ALUMINIUM], 'ID' => $itemIds, 'ACTIVE' => 'Y'];
+            $arSelect = ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PAGE_URL', 'PROPERTY_PRICE'];
+            $res = CIBlockElement::GetList([], $arFilter, false, ['nPageSize' => 999], $arSelect);
+            while ($item = $res->GetNext()) {
+                if ($item['PREVIEW_PICTURE']) $item['PREVIEW_PICTURE_SRC'] = CFile::GetPath($item['PREVIEW_PICTURE']);
 
-            foreach ($_REQUEST['items'] as $cartItem) {
-                $item['QUANTITY'] = $cartItem['quantity'];
+                foreach ($_REQUEST['items'] as $cartItem) {
+                    if ($cartItem['id'] == $item['ID']) $item['QUANTITY'] = $cartItem['quantity'];
+                }
+
+                $items[] = $item;
             }
-
-            $items[] = $item;
         }
     }
 
