@@ -136,7 +136,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                 <p class="text-center">
                     Оставьте здесь ваш вопрос, и мы ответим в течение 30 минут
                 </p>
-                <form action="" name="capture-form" id="capture-form">
+                <form action="" class="ajax-form" name="capture-form" id="capture-form" data-handlerUrl="/ajax/forms/ajax_form.php" data-successText="Спасибо за ваш вопрос! Мы скоро дадим на него ответ">
                     <div class="my-2">
                         <label for="capture-name" class="form-label required">Как к вам обращаться</label>
                         <input type="text" class="form-control" name="capture-name" id="capture-name" required>
@@ -166,6 +166,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                             Отправить
                         </button>
                     </div>
+                    <input type="hidden" name="subject" value="Задан вопрос">
                 </form>
             </div>
         </div>
