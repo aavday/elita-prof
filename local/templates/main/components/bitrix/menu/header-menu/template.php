@@ -10,7 +10,7 @@ if (!empty($arResult)):
     <ul class="header-nav__menu d-flex flex-md-row flex-column justify-content-around align-items-center">
     <?php foreach($arResult as $item): ?>
         <?php if (!empty($item['SUB_ITEMS'])): ?>
-        <li class="header-nav__menu-item <?php if($item["SELECTED"]) echo 'selected'; ?>">
+        <li class="header-nav__menu-item <?php if($item["SELECTED"]) echo 'fw-bold'; ?>">
             <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><?=$item["TEXT"]; ?></a>
             <ul class="dropdown-menu px-3 bg-purple-dark" aria-labelledby="dropdownMenuLink">
                 <?php foreach ($item['SUB_ITEMS'] as $subItem): ?>
@@ -21,7 +21,7 @@ if (!empty($arResult)):
             </ul>
         </li>
         <?php else: ?>
-        <li class="header-nav__menu-item <?php if($item["SELECTED"]) echo 'selected'; ?>">
+        <li class="header-nav__menu-item <?php if($item["SELECTED"]) echo 'fw-bold' ?>">
             <a href="<?=$item["LINK"]?>" itemprop="url"><?=$item["TEXT"]; ?></a>
         </li>
         <?php endif; ?>

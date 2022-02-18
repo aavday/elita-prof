@@ -35,18 +35,44 @@ use \Bitrix\Main\Page\Asset;
     <?php $APPLICATION->ShowPanel(); ?>
 </div>
 
-<?php $APPLICATION->IncludeComponent("bitrix:news.detail","header",
-    Array(
-        "IBLOCK_TYPE" => "info",
-        "IBLOCK_ID" => IBLOCK_CONTACTS,
-        "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME'],
-        "PROPERTY_CODE" => ['PHONES', 'VK', 'INSTAGRAM', 'FACEBOOK', 'LOGO'],
-        "ELEMENT_CODE" => 'contacts',
-        "SET_TITLE" => "N",
-        "SET_BROWSER_TITLE" => "N",
-        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-        "ADD_SECTIONS_CHAIN" => "N"
-    )
-);?>
+<header class="header">
+    <div class="header-main">
+        <?php $APPLICATION->IncludeComponent("bitrix:news.detail","header-top",
+            Array(
+                "IBLOCK_TYPE" => "info",
+                "IBLOCK_ID" => IBLOCK_CONTACTS,
+                "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME'],
+                "PROPERTY_CODE" => ['PHONES', 'VK', 'INSTAGRAM', 'FACEBOOK', 'LOGO'],
+                "ELEMENT_CODE" => 'contacts',
+                "SET_TITLE" => "N",
+                "SET_BROWSER_TITLE" => "N",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "ADD_SECTIONS_CHAIN" => "N"
+            )
+        );?>
+        <div class="header-bottom px-4">
+            <?php $APPLICATION->IncludeComponent("bitrix:menu","header-menu",
+                Array(
+                    "ROOT_MENU_TYPE" => "top",
+                    "MAX_LEVEL" => "2",
+                    "CHILD_MENU_TYPE" => "left"
+                )
+            );?>
+        </div>
+    </div>
+    <?php $APPLICATION->IncludeComponent("bitrix:news.detail","header-mob",
+        Array(
+            "IBLOCK_TYPE" => "info",
+            "IBLOCK_ID" => IBLOCK_CONTACTS,
+            "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME'],
+            "PROPERTY_CODE" => ['LOGO'],
+            "ELEMENT_CODE" => 'contacts',
+            "SET_TITLE" => "N",
+            "SET_BROWSER_TITLE" => "N",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "ADD_SECTIONS_CHAIN" => "N"
+        )
+    );?>
+</header>
 
 <main class="main">

@@ -10,7 +10,7 @@ if (!empty($arResult)):
     <ul class="accordion accordion-flush">
     <?php foreach($arResult as $key => $item): ?>
         <?php if (!empty($item['SUB_ITEMS'])): ?>
-        <li class="footer__nav-item mb-2 <?php if($item['SELECTED']) echo 'selected'; ?>">
+        <li class="footer__nav-item mb-2 <?php if($item['SELECTED']) echo 'fw-bold'; ?>">
             <div class="d-flex">
                 <a class="white-link hover-underline accordion-header"><?=$item['TEXT']; ?></a>
                 <button type="button" class="accordion-button collapsed p-0" data-bs-toggle="collapse" data-bs-target="#footer-other-sections-accordion-item-<?=$key; ?>"></button>
@@ -26,7 +26,7 @@ if (!empty($arResult)):
             </div>
         </li>
         <?php else: ?>
-        <li class="footer__nav-item mb-2 <?php if($item['SELECTED']) echo 'selected'; ?>">
+        <li class="footer__nav-item mb-2 <?php if($item['SELECTED']) echo 'fw-bold'; ?>">
             <a href="<?=$item['LINK']?>" class="white-link hover-underline"><?=$item['TEXT']; ?></a>
         </li>
         <?php endif; ?>
