@@ -11,10 +11,10 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED
         $itemIds = [];
         $_SESSION['items'] = $_REQUEST['items'];
         foreach ($_REQUEST['items'] as $cartItem) {
-            $itemIds[] = $cartItem['id'];
+            if ($cartItem['id']) $itemIds[] = $cartItem['id'];
         }
 
-        if ($itemIds) {
+        if (!empty($itemIds)) {
             $arFilter  = ['IBLOCK_ID' => [IBLOCK_FURNITURE, IBLOCK_ALUMINIUM], 'ID' => $itemIds, 'ACTIVE' => 'Y'];
             $arSelect = ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PAGE_URL', 'PROPERTY_PRICE'];
             $res = CIBlockElement::GetList([], $arFilter, false, ['nPageSize' => 999], $arSelect);

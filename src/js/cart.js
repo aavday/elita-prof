@@ -7,6 +7,7 @@ $(document).ready(function () {
     const cartIcon = document.querySelector('.cart-icon');
     const cartPlaceOrderForm = document.querySelector('#cart__place-order');
     const cartItemsDataTextarea = document.querySelector('#cart__place-order__items-data');
+    const cartEmptyText = document.querySelector('.cart__empty-text');
 
     if (currentCartItemsJSON && currentCartItemsJSON !== '[]') {
         const currentCartItems = JSON.parse(currentCartItemsJSON);
@@ -20,9 +21,12 @@ $(document).ready(function () {
 
                 let itemsHTML = ''
 
-                response.forEach(item => {
-                    itemsHTML +=
-                    `
+                console.log(response);
+
+                if (response && response.length !== 0) {
+                    response.forEach(item => {
+                        itemsHTML +=
+                            `
                         <div class="cart-item p-3 my-3 rounded shadow border-bold-purple-dark d-flex flex-lg-row flex-column justify-content-between align-items-center" id="item-${item.ID}">
                             <div class="d-flex align-items-center flex-sm-row flex-column">
                                 <img src="${item.PREVIEW_PICTURE_SRC}" alt="${item.NAME}" class="cart-item__img my-2">
@@ -32,62 +36,66 @@ $(document).ready(function () {
                                 <label for="item-${item.ID}-quantity">Кол-во:</label>
                                 <input type="number" value="${item.QUANTITY}" class="catalog-item__quantity rounded shadow border-purple-dark mx-2" id="item-${item.ID}-quantity" title="Вы можете изменить количество данного товара" data-itemId="${item.ID}">
                             `
-                                if (item.PROPERTY_PRICE_VALUE !== null) itemsHTML += `<span class="cart-item__price justify-self-end me-4">От <b class="cart-item__price-value">${item.PROPERTY_PRICE_VALUE}</b> р.</span>`
-                                itemsHTML +=
-                                `<span class="cart-item__delete" data-itemId="${item.ID}"></span>
+                        if (item.PROPERTY_PRICE_VALUE !== null) itemsHTML += `<span class="cart-item__price justify-self-end me-4">От <b class="cart-item__price-value">${item.PROPERTY_PRICE_VALUE}</b> р.</span>`
+                        itemsHTML +=
+                            `<span class="cart-item__delete" data-itemId="${item.ID}"></span>
                             </div>
                         </div>
                     `
-                })
+                    })
 
-                cartItemsBlock.innerHTML = itemsHTML;
-                cartLoader.classList.add('d-none');
-                cartPlaceOrderForm.classList.remove('d-none');
-                updateCartItemsTextarea();
+                    cartItemsBlock.innerHTML = itemsHTML;
+                    cartPlaceOrderForm.classList.remove('d-none');
+                    updateCartItemsTextarea();
 
-                const itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
+                    const itemQuantityInputs = document.querySelectorAll('.catalog-item__quantity');
 
-                itemQuantityInputs.forEach(input => {
-                    input.addEventListener('change', () => {
-                        const itemId = input.getAttribute('data-itemId');
-                        currentCartItems.forEach((item, index) => {
-                            if (item.id === itemId) {
-                                currentCartItems[index] = {
-                                    id: itemId,
-                                    quantity: input.value
+                    itemQuantityInputs.forEach(input => {
+                        input.addEventListener('change', () => {
+                            const itemId = input.getAttribute('data-itemId');
+                            currentCartItems.forEach((item, index) => {
+                                if (item.id === itemId) {
+                                    currentCartItems[index] = {
+                                        id: itemId,
+                                        quantity: input.value
+                                    }
                                 }
-                            }
+                            })
+
+                            localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                            updateCartItemsTextarea();
                         })
-
-                        localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
-                        updateCartItemsTextarea();
                     })
-                })
 
-                const cartItemsDeleteBtns = document.querySelectorAll('.cart-item__delete');
+                    const cartItemsDeleteBtns = document.querySelectorAll('.cart-item__delete');
 
-                cartItemsDeleteBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const itemId = btn.getAttribute('data-itemId');
-                        currentCartItems.forEach((item, index) => {
-                            if (item.id === itemId) {
-                                currentCartItems.splice(index, 1)
+                    cartItemsDeleteBtns.forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            const itemId = btn.getAttribute('data-itemId');
+                            currentCartItems.forEach((item, index) => {
+                                if (item.id === itemId) {
+                                    currentCartItems.splice(index, 1)
+                                }
+                            })
+
+                            localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
+                            reloadCartIcon(currentCartItems.length);
+                            updateCartItemsTextarea();
+
+                            if (currentCartItems.length === 0) {
+                                document.querySelector('.cart__empty-text').classList.remove('d-none');
+                                cartPlaceOrderForm.classList.add('d-none');
+                                cartIcon.classList.add('d-none');
                             }
+
+                            document.querySelector(`#item-${itemId}`).remove();
                         })
-
-                        localStorage.setItem('cartItems', JSON.stringify(currentCartItems));
-                        reloadCartIcon(currentCartItems.length);
-                        updateCartItemsTextarea();
-
-                        if (currentCartItems.length === 0) {
-                            document.querySelector('.cart__empty-text').classList.remove('d-none');
-                            cartPlaceOrderForm.classList.add('d-none');
-                            cartIcon.classList.add('d-none');
-                        }
-
-                        document.querySelector(`#item-${itemId}`).remove();
                     })
-                })
+                } else {
+                    cartEmptyText.classList.remove('d-none');
+                }
+
+                cartLoader.classList.add('d-none');
             },
             error: function (jqXhr, err) {
                 console.log(jqXhr, err);
@@ -122,6 +130,6 @@ $(document).ready(function () {
         }
     } else {
         cartLoader.classList.add('d-none');
-        document.querySelector('.cart__empty-text').classList.remove('d-none');
+        cartEmptyText.classList.remove('d-none');
     }
 })
