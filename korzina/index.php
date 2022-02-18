@@ -5,8 +5,9 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
 use \Bitrix\Main\Page\Asset;
 
-$APPLICATION->SetTitle('Элита-Проф - корзина');
 Asset::getInstance()->addJs('/dist/js/cart-min.js');
+
+$APPLICATION->SetTitle('Элита-Проф - корзина');
 ?>
 
     <section class="section container cart py-4">

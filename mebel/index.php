@@ -3,6 +3,10 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
 
 /** @global CMain $APPLICATION */
 
+use \Bitrix\Main\Page\Asset;
+
+Asset::getInstance()->addJs('/dist/js/catalog-min.js');
+
 $APPLICATION->SetTitle('Элита-Проф - изготовление мебели любой сложности под заказ, доставка по всей России');
 // сохраняем тайтл, чтобы повторить его в конце страницы и избежать переопределения тайтла в компонентах
 $title = $APPLICATION->GetTitle();
