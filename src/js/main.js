@@ -4,6 +4,16 @@ $(document).ready(function () {
     $('.owl-carousel').each(function() {
         const parameters = $(this).data();
         $(this).owlCarousel(parameters);
+        console.log('#' + $(this).attr('id') + ' .owl-prev');
+        $('#' + $(this).attr('id') + ' .owl-prev').click(function() {
+            $(this).trigger('stop.owl.autoplay');
+        })
+        $('#' + $(this).attr('id') + ' .owl-next').click(function() {
+            $(this).trigger('stop.owl.autoplay');
+        })
+        $('#' + $(this).attr('id') + ' .owl-dot').click(function() {
+            $(this).trigger('stop.owl.autoplay');
+        })
     })
 
     /* инициализация масок */

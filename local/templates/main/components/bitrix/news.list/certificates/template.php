@@ -9,7 +9,7 @@ if (!empty($arResult['ITEMS'])):
     <h2 class="text-center mb-3">
         <?=$arResult['NAME']; ?>
     </h2>
-    <div class="certificates-slider pb-5 owl-carousel owl-theme owl-nav-bottom" data-margin="5" data-lazy-Load="true" data-nav="true" data-dots="true" data-responsive='{"0":{"items":1,"dots":false},"576":{"items":2,"dotsEach":2},"768":{"items":3,"dotsEach":3},"992":{"items":4,"dotsEach":4},"1400":{"items":5,"dotsEach":5}}'>
+    <div id="certificates-slider" class="certificates-slider pb-5 owl-carousel owl-theme owl-nav-bottom" data-margin="5" data-lazy-Load="true" data-nav="true" data-dots="true" data-responsive='{"0":{"items":1,"dots":false},"576":{"items":2,"dotsEach":2},"768":{"items":3,"dotsEach":3},"992":{"items":4,"dotsEach":4},"1400":{"items":5,"dotsEach":5}}'>
     <?php
     foreach ($arResult['ITEMS'] as $item):
         $this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
