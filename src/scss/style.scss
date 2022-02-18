@@ -607,6 +607,14 @@ img.img-height-300px {
   }
 }
 
+//blog
+
+.blog-article {
+  & img {
+    max-width: 100%;
+  }
+}
+
 //feedback
 
 .feedback {
