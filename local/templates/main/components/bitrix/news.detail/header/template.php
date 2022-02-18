@@ -42,10 +42,14 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                     </ul>
                 </div>
                 <div class="header-top-bottom text-center text d-md-flex d-sm-none flex-sm-row flex-column justify-content-end">
-                    <form action="/search/" class="search my-sm-0 justify-content-sm-start justify-content-center my-2" id="form-search">
-                        <input type="search" name="q" id="search" placeholder="Поиск по сайту" class="search-input">
-                        <button class="search-btn"><i class="fas fa-search"></i></button>
-                    </form>
+                    <div itemscope itemtype="http://schema.org/WebSite" class="d-flex justify-content-center">
+                        <span itemprop="url" class="d-none">https://<?=$_SERVER['HTTP_HOST']; ?>/</span>
+                        <form action="/search/" class="search my-sm-0 justify-content-sm-start justify-content-center my-2" id="form-search" itemprop="potentialAction" itemscope itemtype="//schema.org/SearchAction">
+                            <meta itemprop="target" content="https://<?=$_SERVER['HTTP_HOST']; ?>/search/?q={q}"/>
+                            <input type="search" name="q" id="search" placeholder="Поиск по сайту" class="search-input" itemprop="query-input" required>
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
                     <button class="button button-dark-purple fs-medium text-shadow-contour hover-shadow-white rounded fw-bold ms-3" data-bs-toggle="modal" data-bs-target="#contact-us-modal">
                         Связаться с нами
                     </button>
