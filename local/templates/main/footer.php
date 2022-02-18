@@ -15,7 +15,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                         "IBLOCK_TYPE" => "info",
                         "IBLOCK_ID" => IBLOCK_CONTACTS,
                         "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME'],
-                        "PROPERTY_CODE" => ['PHONES', 'ADDRESS_SHORT'],
+                        "PROPERTY_CODE" => ['*'],
                         "ELEMENT_CODE" => 'contacts',
                         "SET_TITLE" => "N",
                         "SET_BROWSER_TITLE" => "N",
