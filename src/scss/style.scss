@@ -184,6 +184,10 @@ img.img-height-300px {
   cursor: pointer;
 }
 
+.opacity-medium {
+  opacity: 0.7;
+}
+
 //loader
 
 .lds-ring {
@@ -392,7 +396,6 @@ img.img-height-300px {
   &-slider {
     width: 100%;
     height: 100%;
-    background-color: #000;
 
     & .owl-stage-outer,
     & .owl-stage,
@@ -432,11 +435,11 @@ img.img-height-300px {
 
       &__img {
         position: relative;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
         width: 100%;
         height: 100%;
-        opacity: 0.7;
       }
     }
   }
@@ -458,6 +461,7 @@ img.img-height-300px {
   & .owl-next {
     position: absolute;
     line-height: 0 !important;
+    text-shadow: 1px 1px 2px #000;
 
     &:hover,
     &:focus {
@@ -853,7 +857,6 @@ img.img-height-300px {
       width: 30px;
       height: 30px;
       cursor: pointer;
-      position: absolute;
 
       &::before,
       &::after {
