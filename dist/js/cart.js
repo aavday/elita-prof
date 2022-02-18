@@ -85,7 +85,7 @@ $(document).ready(function () {
         var itemElement = document.querySelector("#item-".concat(item.id));
         var itemName = itemElement.querySelector('.cart-item__name').innerHTML;
         cartItemsDataTextarea.value += "".concat(index + 1, ". <b>\u041D\u0430\u0437\u0432.:</b> ").concat(itemName, ", <b>\u041A\u043E\u043B-\u0432\u043E:</b> ").concat(item.quantity);
-        var itemPrice = itemElement.querySelector('.cart-item__price');
+        var itemPrice = itemElement.querySelector('.cart-item__price').innerHTML;
 
         if (itemPrice) {
           cartItemsDataTextarea.value += " <b>\u0426\u0435\u043D\u0430 \u0437\u0430 \u0448\u0442.:</b> ".concat(itemPrice, " <br><br>");
