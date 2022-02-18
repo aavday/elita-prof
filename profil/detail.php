@@ -50,6 +50,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
             Array(
                 "IBLOCK_TYPE" => "catalog",
                 "IBLOCK_ID" => IBLOCK_ALUMINIUM_COLORS,
+                "NEWS_COUNT" => 999,
                 "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
                 "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "N",

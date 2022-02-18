@@ -56,6 +56,7 @@ $title = $APPLICATION->GetTitle();
             Array(
                 "IBLOCK_TYPE" => "catalog",
                 "IBLOCK_ID" => IBLOCK_FURNITURE_COLORS,
+                "NEWS_COUNT" => 999,
                 "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'CODE', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
                 "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "N",
