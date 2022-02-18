@@ -30,7 +30,7 @@ $(document).ready(function () {
                             </div>
                             <div class="d-flex align-items-center my-2">
                                 <label for="item-${item.ID}-quantity">Кол-во:</label>
-                                <input type="number" value="${item.QUANTITY}" class="catalog-item__quantity rounded shadow border-purple-dark mx-2" id="item-${item.ID}-quantity" title="Задайте нужное количество данного товара и добавьте в корзину" data-itemId="${item.ID}">
+                                <input type="number" value="${item.QUANTITY}" class="catalog-item__quantity rounded shadow border-purple-dark mx-2" id="item-${item.ID}-quantity" title="Вы можете изменить количество данного товара" data-itemId="${item.ID}">
                             `
                                 if (item.PROPERTY_PRICE_VALUE !== null) itemsHTML += `<span class="cart-item__price justify-self-end me-4">От <b class="cart-item__price-value">${item.PROPERTY_PRICE_VALUE}</b> р.</span>`
                                 itemsHTML +=

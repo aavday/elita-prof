@@ -112,15 +112,18 @@ $(document).ready(function () {
         var isInArray = false;
         currentCartItems.forEach(function (item) {
           if (input.getAttribute('data-itemId') === item.id) {
+            input.title = 'Вы можете изменить количество данного товара и изменения отобразятся в корзине';
             input.value = item.quantity;
             isInArray = true;
           }
         });
 
         if (!isInArray) {
+          input.title = 'Задайте нужное количество данного товара и добавьте в корзину';
           input.value = 1;
         }
       } else {
+        input.title = 'Задайте нужное количество данного товара и добавьте в корзину';
         input.value = 1;
       }
     });
