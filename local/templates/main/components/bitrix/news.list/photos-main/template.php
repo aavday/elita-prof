@@ -6,7 +6,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 if (!empty($arResult['ITEMS'])):
 ?>
 
-<div class="photos-main-slider pb-5 owl-carousel owl-theme owl-nav-bottom" data-loop="false" data-margin="10" data-nav="true" data-dotsEach="5" data-items="5" data-responsive='{"0":{"items":1},"576":{"items":2},"768":{"items":3},"992":{"items":5}}'>
+<div class="photos-main-slider pb-5 owl-carousel owl-theme owl-nav-bottom" data-loop="false" data-margin="10" data-nav="true" data-dotsEach="5" data-lazyLoad="true" data-items="5" data-responsive='{"0":{"items":1},"576":{"items":2},"768":{"items":3},"992":{"items":5}}'>
 <?php
 foreach ($arResult['ITEMS'] as $item):
     $this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
