@@ -19,7 +19,6 @@ $(document).ready(function () {
       success: function success(response) {
         response = JSON.parse(response);
         var itemsHTML = '';
-        console.log(response);
 
         if (response && response.length !== 0) {
           response.forEach(function (item) {
