@@ -9,7 +9,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
     </h1>
     <div class="row mb-5">
         <div class="col-xl-5 col-lg-6">
-            <div class="catalog-item-img-slider owl-carousel owl-carousel owl-theme rounded shadow" data-lazyLoad="true" data-margin="10" data-nav="true" data-items="1">
+            <div class="catalog-item-img-slider owl-carousel owl-carousel owl-theme rounded shadow" data--lazy-Load="true" data-margin="10" data-nav="true" data-items="1">
                 <?php if ($arResult['PREVIEW_PICTURE']['SRC']): ?>
                 <a <?php if ($arResult['DETAIL_PICTURE']['SRC']) echo 'href="' . $arResult['DETAIL_PICTURE']['SRC'] . '" data-lightbox="catalog-item"'; ?>>
                     <img src="<?=$arResult['PREVIEW_PICTURE']['SRC']; ?>" itemprop="image" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img w-100">
@@ -19,7 +19,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                         foreach ($arResult['PROPERTIES']['PHOTOS']['VALUE'] as $photo):
                         ?>
                         <a href="<?=CFile::GetPath($photo); ?>" data-lightbox="catalog-item">
-                            <img src="<?=CFile::GetPath($photo); ?>" itemprop="image" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img w-100">
+                            <img data-src="<?=CFile::GetPath($photo); ?>" itemprop="image" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img w-100">
                         </a>
                         <?php
                         endforeach;

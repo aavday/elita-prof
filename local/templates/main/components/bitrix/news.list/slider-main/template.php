@@ -8,7 +8,7 @@ if (!empty($arResult['ITEMS'])):
 
     <section class="section intro container-fluid py-4 px-md-4">
         <div class="h-100 w-100">
-            <div class="intro-slider text-shadow-contour owl-carousel owl-theme" data-loop="true" data-margin="10" data-nav="true" data-items="1" data-autoplay="true" data-lazyLoad="true">
+            <div class="intro-slider text-shadow-contour owl-carousel owl-theme" data-loop="true" data-margin="10" data-nav="true" data-items="1" data-autoplay="true" data-lazy-Load="true">
             <?php
             foreach ($arResult['ITEMS'] as $item):
                 $this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
