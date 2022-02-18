@@ -34,7 +34,6 @@ $(document).ready(function () {
             data: form.serialize(),
             dataType: 'json',
             success: function (response) {
-                console.log(response);
                 form.text(form.attr('data-successText'))
 
                 if (form.prop('id') === 'cart__place-order') {

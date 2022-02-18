@@ -21,8 +21,6 @@ $(document).ready(function () {
 
                 let itemsHTML = ''
 
-                console.log(response);
-
                 if (response && response.length !== 0) {
                     response.forEach(item => {
                         itemsHTML +=
