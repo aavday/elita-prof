@@ -21,7 +21,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                 );?>
             </div>
             <div class="col-xl-9 col-md-8">
-                <?php $APPLICATION->IncludeComponent("bitrix:catalog.element","catalog-item-aluminium",
+                <?php $APPLICATION->IncludeComponent("bitrix:catalog.element","catalog-item",
                     Array(
                         "IBLOCK_TYPE" => "catalog",
                         "IBLOCK_ID" => IBLOCK_ALUMINIUM,
