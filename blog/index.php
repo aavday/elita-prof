@@ -20,6 +20,7 @@ $APPLICATION->SetTitle('Элита-Проф - блог');
             Array(
                 "IBLOCK_TYPE" => "blog",
                 "IBLOCK_ID" => IBLOCK_ARTICLES,
+                "NEWS_COUNT" => 999,
                 "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE'],
                 "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "N",

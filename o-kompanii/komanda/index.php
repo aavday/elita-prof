@@ -24,6 +24,7 @@ $APPLICATION->SetTitle('Элита-Проф - наша команда');
                 Array(
                     "IBLOCK_TYPE" => "info",
                     "IBLOCK_ID" => IBLOCK_TEAM,
+                    "NEWS_COUNT" => 999,
                     "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE'],
                     "PROPERTY_CODE" => ['POSITION'],
                     "SET_TITLE" => "N",

@@ -10,6 +10,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
         Array(
             "IBLOCK_TYPE" => "mainpage",
             "IBLOCK_ID" => IBLOCK_SLIDER_MAIN,
+            "NEWS_COUNT" => 999,
             "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE'],
             "PROPERTY_CODE" => ['DETAIL_BTN'],
             "SET_TITLE" => "N",
@@ -185,6 +186,7 @@ $APPLICATION->SetTitle('Элита-Проф - изготовление мебе�
                 Array(
                     "IBLOCK_TYPE" => "mainpage",
                     "IBLOCK_ID" => IBLOCK_PHOTOS_MAIN,
+                    "NEWS_COUNT" => 999,
                     "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
                     "SET_TITLE" => "N",
                     "SET_BROWSER_TITLE" => "N",

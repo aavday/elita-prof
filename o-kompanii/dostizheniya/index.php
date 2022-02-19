@@ -20,6 +20,7 @@ $APPLICATION->SetTitle('Элита-Проф - достижения');
             Array(
                 "IBLOCK_TYPE" => "achievements",
                 "IBLOCK_ID" => IBLOCK_CERTIFICATES,
+                "NEWS_COUNT" => 999,
                 "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
                 "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "N",
@@ -31,6 +32,7 @@ $APPLICATION->SetTitle('Элита-Проф - достижения');
             Array(
                 "IBLOCK_TYPE" => "achievements",
                 "IBLOCK_ID" => IBLOCK_DIPLOMAS,
+                "NEWS_COUNT" => 999,
                 "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
                 "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "N",
@@ -42,6 +44,7 @@ $APPLICATION->SetTitle('Элита-Проф - достижения');
             Array(
                 "IBLOCK_TYPE" => "achievements",
                 "IBLOCK_ID" => IBLOCK_GRATEFULLNESS,
+                "NEWS_COUNT" => 999,
                 "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
                 "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "N",
