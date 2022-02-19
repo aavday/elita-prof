@@ -107,9 +107,9 @@ $(document).ready(function () {
                 const itemName = itemElement.querySelector('.cart-item__name').innerHTML;
                 cartItemsDataTextarea.value += `${index + 1}. <b>Назв.:</b> ${itemName}, <b>Кол-во:</b> ${item.quantity}`;
 
-                const itemPrice = itemElement.querySelector('.cart-item__price').innerHTML;
+                const itemPrice = itemElement.querySelector('.cart-item__price');
                 if (itemPrice) {
-                    cartItemsDataTextarea.value += ` <b>Цена за шт.:</b> ${itemPrice} <br><br>`
+                    cartItemsDataTextarea.value += ` <b>Цена за шт.:</b> ${itemPrice.innerHTML} <br><br>`
                 } else {
                     cartItemsDataTextarea.value += '<br><br>'
                 }
