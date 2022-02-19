@@ -2,6 +2,10 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 /** @var array $arResult */
+
+use \Bitrix\Main\Page\Asset;
+
+Asset::getInstance()->addString('<link rel="canonical" href="https://' . $_SERVER['HTTP_HOST'] . $arResult['DETAIL_PAGE_URL'] . '"/>');
 ?>
 <div class="catalog-item" itemtype="http://schema.org/Product" itemscope>
     <h1 class="catalog-item__title fs-big mb-4 fw-bold" itemprop="name">

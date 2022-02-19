@@ -3,6 +3,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
+
+use \Bitrix\Main\Page\Asset;
+
+Asset::getInstance()->addString('<link rel="canonical" href="https://' . $_SERVER['HTTP_HOST'] . $arResult['DETAIL_PAGE_URL'] . '"/>');
 ?>
 
 <h1 class="photo__title section-title fs-big mb-4 text-center">
