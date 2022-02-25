@@ -12,7 +12,7 @@ foreach ($arResult['ITEMS'] as $item):
     $this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
     $this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_DELETE'));
     ?>
-    <div class="question-answers-item p-4" id="<?=$this->GetEditAreaId($item['ID']);?>" itemscope itemtype="http://schema.org/Question">
+    <div class="question-answers-item p-4 my-4" id="<?=$this->GetEditAreaId($item['ID']);?>" itemscope itemtype="http://schema.org/Question">
         <p>
             <span class="question-answers-item__date me-2"><i class="fas fa-calendar me-2"></i><?=$item['DISPLAY_ACTIVE_FROM']; ?></span>
             <span class="question-answers-item__author">

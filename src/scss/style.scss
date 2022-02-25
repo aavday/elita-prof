@@ -615,6 +615,16 @@ img.img-height-300px {
 .blog-article {
   & img {
     max-width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &[align="left"] {
+      padding-right: 15px;
+    }
+
+    &[align="right"] {
+      padding-left: 15px;
+    }
   }
 }
 
@@ -651,8 +661,16 @@ img.img-height-300px {
 
 .about {
   & img {
-    padding: 0 20px;
-    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &[align="left"] {
+      padding-right: 15px;
+    }
+
+    &[align="right"] {
+      padding-left: 15px;
+    }
   }
 }
 
