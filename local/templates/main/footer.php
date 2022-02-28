@@ -67,6 +67,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                     );?>
                 </p>
                 <?php $APPLICATION->IncludeComponent("bitrix:menu","footer-menu",Array(
+                        "MENU_CACHE_TYPE" => "Y",
                         "ROOT_MENU_TYPE" => "top",
                         "MAX_LEVEL" => "2",
                         "CHILD_MENU_TYPE" => "left",

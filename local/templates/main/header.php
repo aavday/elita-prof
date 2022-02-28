@@ -53,6 +53,7 @@ use \Bitrix\Main\Page\Asset;
         <div class="header-bottom px-4">
             <?php $APPLICATION->IncludeComponent("bitrix:menu","header-menu",
                 Array(
+                    "MENU_CACHE_TYPE" => "Y",
                     "ROOT_MENU_TYPE" => "top",
                     "MAX_LEVEL" => "2",
                     "CHILD_MENU_TYPE" => "left"
