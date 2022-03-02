@@ -13,7 +13,7 @@ Asset::getInstance()->addString('<link rel="canonical" href="https://' . $_SERVE
     </h1>
     <div class="row mb-5">
         <div class="col-xl-5 col-lg-6">
-            <div id="catalog-item-img-slider" class="catalog-item-img-slider owl-carousel owl-carousel owl-theme rounded shadow" data--lazy-Load="true" data-margin="10" data-nav="true" data-items="1">
+            <div id="catalog-item-img-slider" class="catalog-item-img-slider owl-carousel owl-carousel owl-theme rounded shadow" data-lazy-Load="true" data-margin="10" data-nav="true" data-items="1">
                 <?php if ($arResult['PREVIEW_PICTURE']['SRC']): ?>
                 <a <?php if ($arResult['DETAIL_PICTURE']['SRC']) echo 'href="' . $arResult['DETAIL_PICTURE']['SRC'] . '" data-lightbox="catalog-item"'; ?>>
                     <img src="<?=$arResult['PREVIEW_PICTURE']['SRC']; ?>" itemprop="image" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img w-100">
@@ -23,7 +23,7 @@ Asset::getInstance()->addString('<link rel="canonical" href="https://' . $_SERVE
                         foreach ($arResult['PROPERTIES']['PHOTOS']['VALUE'] as $photo):
                         ?>
                         <a href="<?=CFile::GetPath($photo); ?>" data-lightbox="catalog-item">
-                            <img data-src="<?=CFile::GetPath($photo); ?>" itemprop="image" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img w-100">
+                            <img data-src="<?=CFile::GetPath($photo); ?>" itemprop="image" alt="<?=$arResult['NAME']; ?>" class="catalog-item__img w-100 owl-lazy">
                         </a>
                         <?php
                         endforeach;
