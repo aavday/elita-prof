@@ -27,6 +27,16 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
                     <a href="<?=$arResult['PROPERTIES']['VK']['VALUE']; ?>"><i class="fab fa-vk"></i></a>
                 </li>
                 <?php endif; ?>
+                <?php if ($arResult['PROPERTIES']['OZON']['VALUE']): ?>
+                    <li class="header-contacts__item text-shadow-contour">
+                        <a href="<?=$arResult['PROPERTIES']['OZON']['VALUE']; ?>"><img src="/dist/img/ozon.png" class="img-icon" alt=""></a>
+                    </li>
+                <?php endif; ?>
+                <?php if ($arResult['PROPERTIES']['WILDBERRIES']['VALUE']): ?>
+                    <li class="header-contacts__item text-shadow-contour">
+                        <a href="<?=$arResult['PROPERTIES']['WILDBERRIES']['VALUE']; ?>"><img src="/dist/img/wb.png" class="img-icon" alt=""></a>
+                    </li>
+                <?php endif; ?>
                 <?php if ($arResult['PROPERTIES']['INSTAGRAM']['VALUE']): ?>
                 <li class="header-contacts__item text-shadow-contour">
                     <a href="<?=$arResult['PROPERTIES']['INSTAGRAM']['VALUE']; ?>"><i class="fab fa-instagram"></i></a>
