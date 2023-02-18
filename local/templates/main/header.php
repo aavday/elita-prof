@@ -57,7 +57,7 @@ use \Bitrix\Main\Page\Asset;
                 "IBLOCK_TYPE" => "info",
                 "IBLOCK_ID" => IBLOCK_CONTACTS,
                 "FIELD_CODE" => ['ID', 'IBLOCK_ID', 'NAME'],
-                "PROPERTY_CODE" => ['PHONES', 'VK', 'INSTAGRAM', 'FACEBOOK', 'LOGO'],
+                "PROPERTY_CODE" => ['PHONES', 'VK', 'INSTAGRAM', 'FACEBOOK', 'LOGO', 'OZON', 'WILDBERRIES'],
                 "ELEMENT_CODE" => 'contacts',
                 "SET_TITLE" => "N",
                 "SET_BROWSER_TITLE" => "N",
