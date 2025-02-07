@@ -79,13 +79,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
     <div class="footer-bottom bg-purple-dark py-1 color-smoke fs-small">
         <div class="container d-flex justify-content-between align-items-center">
             <span class="footer-copyright mx-2">
-                <?php $APPLICATION->IncludeComponent("bitrix:main.include","",Array(
-                        "AREA_FILE_SHOW" => "file",
-                        "PATH" => "/include/footer/copyright_text.html"
-                    )
-                );?>
+                © 2012–<?=date('Y') ?> ООО «Элита-Проф»
             </span>
-            <span class="footer-copyright mx-2">Дизайн, разработка и поддержка - Авдеев Алексей, avdey@avdey.su</span>
         </div>
     </div>
 </footer>
